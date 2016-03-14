@@ -4,12 +4,16 @@
 
 
 
-Version 0.0
------------
-Updated 10.03.16
+Version 0.01
+-------------
+Updated 14.03.16
 
 
 
+
+Compatibility
+-------------
+Android API 15 - API 23
 
 Authors
 
