@@ -18,6 +18,69 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".WellActivity"
+            android:label="@string/title_activity_well"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.prco203d.asthmaapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".UnwellActivity"
+            android:label="@string/title_activity_unwell"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.prco203d.asthmaapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".EmergencyActivity"
+            android:label="@string/title_activity_emergency"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.prco203d.asthmaapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".MyDataActivity"
+            android:label="@string/title_activity_my_data"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.prco203d.asthmaapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".GraphAndCalendarActivity"
+            android:label="@string/title_activity_graph_and_calendar"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.prco203d.asthmaapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".MedRefActivity"
+            android:label="@string/title_activity_med_ref"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.prco203d.asthmaapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".AppSettingsActivity"
+            android:label="@string/title_activity_app_settings"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.prco203d.asthmaapp.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

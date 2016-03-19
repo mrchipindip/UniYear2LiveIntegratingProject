@@ -1,5 +1,6 @@
 package com.prco203d.asthmaapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,14 +19,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     @Override
@@ -48,5 +41,40 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void openWell(View view) {
+        Intent intent = new Intent(this, WellActivity.class);
+        startActivity(intent);
+    }
+
+    public void openUnwell(View view) {
+        Intent intent = new Intent(this, UnwellActivity.class);
+        startActivity(intent);
+    }
+
+    public void openEmergency(View view) {
+        Intent intent = new Intent(this, EmergencyActivity.class);
+        startActivity(intent);
+    }
+
+    public void openMyData(View view) {
+        Intent intent = new Intent(this, MyDataActivity.class);
+        startActivity(intent);
+    }
+
+    public void openGraphAndCalendar(View view) {
+        Intent intent = new Intent(this, GraphAndCalendarActivity.class);
+        startActivity(intent);
+    }
+
+    public void openMedRef(View view) {
+        Intent intent = new Intent(this, MedRefActivity.class);
+        startActivity(intent);
+    }
+
+    public void openAppSettings(View view) {
+        Intent intent = new Intent(this, AppSettingsActivity.class);
+        startActivity(intent);
     }
 }
