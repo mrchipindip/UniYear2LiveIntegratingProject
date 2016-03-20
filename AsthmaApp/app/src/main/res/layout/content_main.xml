@@ -15,7 +15,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Well"
+        android:text="@string/button_well"
         android:id="@+id/buttonWell"
         android:layout_marginTop="154dp"
         android:layout_alignParentTop="true"
@@ -28,7 +28,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Unwell"
+        android:text="@string/button_unwell"
         android:id="@+id/buttonUnwell"
         android:layout_alignBottom="@+id/buttonWell"
         android:layout_centerHorizontal="true"
@@ -39,7 +39,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Emergency"
+        android:text="@string/button_emergency"
         android:id="@+id/buttonEmergency"
         android:layout_alignBottom="@+id/buttonUnwell"
         android:layout_alignParentRight="true"
@@ -51,7 +51,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="My Data"
+        android:text="@string/button_my_data"
         android:id="@+id/buttonOpenMyData"
         android:onClick="openMyData"
         android:layout_marginTop="53dp"
@@ -64,10 +64,10 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Graph and Calendar"
+        android:text="@string/button_graph"
         android:id="@+id/buttonGraphAndCalendar"
         android:onClick="openGraphAndCalendar"
-        android:layout_below="@+id/openMyData"
+        android:layout_below="@+id/buttonOpenMyData"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
@@ -76,7 +76,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Medical Reference"
+        android:text="@string/button_med_ref"
         android:id="@+id/buttonMedRef"
         android:layout_below="@+id/buttonGraphAndCalendar"
         android:onClick="openMedRef"
@@ -88,7 +88,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="App Settings"
+        android:text="@string/button_app_settings"
         android:id="@+id/button"
         android:layout_below="@+id/buttonMedRef"
         android:onClick="openAppSettings"
