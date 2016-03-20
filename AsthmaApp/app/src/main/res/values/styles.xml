@@ -8,6 +8,30 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="WellTheme" parent="style/AppTheme">
+        <item name="android:actionBarStyle">@style/WellActionBarTheme</item>
+    </style>
+
+    <style name="WellActionBarTheme" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/green</item>
+    </style>
+
+    <style name="UnwellTheme" parent="style/AppTheme">
+        <item name="android:actionBarStyle">@style/UnwellActionBarTheme</item>
+    </style>
+
+    <style name="UnwellActionBarTheme" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/amber</item>
+    </style>
+
+    <style name="EmergencyTheme" parent="style/AppTheme">
+        <item name="android:actionBarStyle">@style/EmergencyActionBarTheme</item>
+    </style>
+
+    <style name="EmergencyActionBarTheme" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/red</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
