@@ -22,6 +22,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:onClick="openWell"
+        android:background="@color/green"
         />
 
     <Button
@@ -32,6 +33,7 @@
         android:layout_alignBottom="@+id/buttonWell"
         android:layout_centerHorizontal="true"
         android:onClick="openUnwell"
+        android:background="@color/amber"
         />
 
     <Button
@@ -42,19 +44,20 @@
         android:layout_alignBottom="@+id/buttonUnwell"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="openMyData"
+        android:onClick="openEmergency"
+        android:background="@color/red"
         />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="My Data"
-        android:id="@+id/buttonMyData"
-        android:onClick="openEmergency"
+        android:id="@+id/buttonOpenMyData"
+        android:onClick="openMyData"
+        android:layout_marginTop="53dp"
         android:layout_below="@+id/buttonWell"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="91dp"
         android:layout_alignRight="@+id/buttonGraphAndCalendar"
         android:layout_alignEnd="@+id/buttonGraphAndCalendar" />
 
@@ -63,12 +66,12 @@
         android:layout_height="wrap_content"
         android:text="Graph and Calendar"
         android:id="@+id/buttonGraphAndCalendar"
-        android:layout_below="@+id/buttonMyData"
         android:onClick="openGraphAndCalendar"
+        android:layout_below="@+id/openMyData"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/buttonMedRef"
-        android:layout_alignEnd="@+id/buttonMedRef" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"

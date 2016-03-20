@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this, R.string.no_value, Toast.LENGTH_SHORT).show();
         }
 
-        }
+    }
 
     @Override
     public boolean onKey(View v, int keyCode, KeyEvent event) {
