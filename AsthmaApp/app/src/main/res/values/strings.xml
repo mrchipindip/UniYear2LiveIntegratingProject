@@ -8,4 +8,7 @@
     <string name="title_activity_graph_and_calendar">GraphAndCalendarActivity</string>
     <string name="title_activity_med_ref">MedRefActivity</string>
     <string name="title_activity_app_settings">AppSettingsActivity</string>
+    <string name="daily_peak_flow">My Peak Flow Today Is...</string>
+    <string name="submit">Submit</string>
+    <string name="no_value">You must enter a value for peak flow</string>
 </resources>

@@ -50,10 +50,13 @@
         android:layout_height="wrap_content"
         android:text="My Data"
         android:id="@+id/buttonMyData"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:onClick="openEmergency"
-        />
+        android:layout_below="@+id/buttonWell"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="91dp"
+        android:layout_alignRight="@+id/buttonGraphAndCalendar"
+        android:layout_alignEnd="@+id/buttonGraphAndCalendar" />
 
     <Button
         android:layout_width="wrap_content"
@@ -61,9 +64,11 @@
         android:text="Graph and Calendar"
         android:id="@+id/buttonGraphAndCalendar"
         android:layout_below="@+id/buttonMyData"
-        android:layout_centerHorizontal="true"
         android:onClick="openGraphAndCalendar"
-        />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/buttonMedRef"
+        android:layout_alignEnd="@+id/buttonMedRef" />
 
     <Button
         android:layout_width="wrap_content"
@@ -71,9 +76,11 @@
         android:text="Medical Reference"
         android:id="@+id/buttonMedRef"
         android:layout_below="@+id/buttonGraphAndCalendar"
-        android:layout_centerHorizontal="true"
         android:onClick="openMedRef"
-        />
+        android:layout_alignRight="@+id/button"
+        android:layout_alignEnd="@+id/button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -81,7 +88,46 @@
         android:text="App Settings"
         android:id="@+id/button"
         android:layout_below="@+id/buttonMedRef"
-        android:layout_centerHorizontal="true"
         android:onClick="openAppSettings"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/buttonEmergency"
+        android:layout_alignEnd="@+id/buttonEmergency" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/daily_peak_flow"
+        android:id="@+id/dailyPeakFlowTextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/buttonUnwell"
+        android:layout_alignEnd="@+id/buttonUnwell" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/peakFlowVariableEditText"
+        android:layout_below="@+id/dailyPeakFlowTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/dailyPeakFlowTextView"
+        android:layout_alignEnd="@+id/dailyPeakFlowTextView"
+        android:inputType="number"
         />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:id="@+id/submitButton"
+        android:layout_below="@+id/dailyPeakFlowTextView"
+        android:layout_alignBottom="@+id/peakFlowVariableEditText"
+        android:layout_toRightOf="@+id/peakFlowVariableEditText"
+        android:layout_alignRight="@+id/buttonEmergency"
+        android:layout_alignEnd="@+id/buttonEmergency" />
+
 </RelativeLayout>
