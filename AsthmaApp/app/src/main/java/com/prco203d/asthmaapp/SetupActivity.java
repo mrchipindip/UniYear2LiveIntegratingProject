@@ -15,8 +15,8 @@ import android.widget.Spinner;
 public class SetupActivity extends AppCompatActivity {
 
     private EditText editTextName = null;
-    private Spinner  spinnerGender = null;
     private Spinner spinnerAge = null;
+    private Spinner  spinnerGender = null;
     private EditText  editPeakFlow   = null;
 
     private final int   spinnerPosMALE    = 0;
@@ -44,6 +44,13 @@ public class SetupActivity extends AppCompatActivity {
         spinnerGender = (Spinner) findViewById(R.id.spinnerGender);
         editPeakFlow = (EditText) findViewById(R.id.editTextPeak);
 
+        SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+
+        String name = sharedPrefs.getString("Name", "User");
+        editTextName.setText(name);
+
+        int peak = (sharedPrefs.getInt("Peak", 0));
+        editPeakFlow.setText("" + peak);
     }
 
     public void submitData(View view) {
@@ -55,10 +62,21 @@ public class SetupActivity extends AppCompatActivity {
 
         // Do the textView ones
 
-        String userName = editTextName.getText().toString();
-        editor.putString("Name", userName) ;
+        String userName;
+        if(editTextName.getText().toString() != null && editTextName.getText().toString() != "") {
+            userName = editTextName.getText().toString();
+        } else{
+            userName = "User";
+        }
+        editor.putString("Name", userName);
 
-        int peak = Integer.parseInt(editPeakFlow.getText().toString());
+        int peak;
+        if(editPeakFlow.getText().toString() != null && editPeakFlow.getText().toString() != ""){
+            peak = Integer.parseInt(editPeakFlow.getText().toString());
+        }
+        else {
+            peak = 0;
+        }
         editor.putInt("Peak", peak);
 
         // Do the spinners
@@ -83,42 +101,41 @@ public class SetupActivity extends AppCompatActivity {
         editor.putString("Gender", genderString) ;
 
         String ageString = "";
-        int spinnerPosAge = spinnerGender.getSelectedItemPosition();
+        int spinnerPosAge = spinnerAge.getSelectedItemPosition();
         switch (spinnerPosAge)
         {
             case spinnerPos0_10:
-                genderString += "0-10";
+                ageString += "0-10";
                 break;
 
             case spinnerPos11_20:
-                genderString += "11-20";
+                ageString += "11-20";
                 break;
 
             case spinnerPos21_30:
-                genderString += "21-30";
+                ageString += "21-30";
                 break;
 
             case spinnerPos31_40:
-                genderString += "31-40";
+                ageString += "31-40";
                 break;
 
             case spinnerPos41_50:
-                genderString += "41-50";
+                ageString += "41-50";
                 break;
 
             case spinnerPos51_60:
-                genderString += "51-60";
+                ageString += "51-60";
                 break;
 
             case spinnerPos61_70:
-                genderString += "61-70";
+                ageString += "61-70";
                 break;
 
             case spinnerPos70plus:
-                genderString += "70+";
+                ageString += "70+";
                 break;
         }
-
         editor.putString("Age", ageString) ;
 
         editor.apply();

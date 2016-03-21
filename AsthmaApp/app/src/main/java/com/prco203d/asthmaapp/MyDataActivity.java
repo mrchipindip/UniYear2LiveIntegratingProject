@@ -39,8 +39,8 @@ public class MyDataActivity extends AppCompatActivity {
         String peakString = "Peak Flow: " + peak;
         textPeak.setText(peakString);
 
-        String age = sharedPrefs.getString("Age", "User");
-        String gender = sharedPrefs.getString("Gender", "User");
+        String age = sharedPrefs.getString("Age", "User Age");
+        String gender = sharedPrefs.getString("Gender", "User Gender");
         ageGender.setText(age + gender);
 
     }
