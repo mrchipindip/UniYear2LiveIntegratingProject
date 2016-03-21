@@ -42,7 +42,7 @@
                         android:layout_width="125dp"
                         android:layout_height="125dp"
                         android:id="@+id/symptonsIcon"
-                        android:src="@drawable/cant_sleep"
+                        android:src="@drawable/placeholder"
                         android:padding="10dp"
                         />
 
@@ -57,14 +57,14 @@
                         android:layout_width="125dp"
                         android:layout_height="125dp"
                         android:id="@+id/asthmainterfereIcon"
-                        android:src="@drawable/cant_sleep"
+                        android:src="@drawable/placeholder"
                         android:padding="10dp"/>
 
                     <ImageView
                         android:layout_width="125dp"
                         android:layout_height="125dp"
                         android:id="@+id/peakflowdropIcon"
-                        android:src="@drawable/cant_sleep"
+                        android:src="@drawable/placeholder"
                         android:padding="10dp"/>
                 </GridLayout>
             </FrameLayout>
