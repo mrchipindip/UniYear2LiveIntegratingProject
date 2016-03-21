@@ -12,6 +12,7 @@
     <string name="title_activity_graph_and_calendar">Graph and Calendar</string>
     <string name="title_activity_med_ref">Medical Reference</string>
     <string name="title_activity_app_settings">App Settings</string>
+    <string name="title_activity_setup">Setup</string>
 
     <!-- Main menu controls -->
     <string name="daily_peak_flow">My Peak Flow Today Is...</string>
@@ -25,7 +26,6 @@
     <string name="button_app_settings">App Settings</string>
     <string name="button_med_ref">Medical Reference</string>
 
-
     <!-- Well page strings -->
     <string name="relief_symptoms">Relief Symptoms</string>
     <string name="peak_flow_personal_best">Your PB Peak Flow</string>
@@ -36,5 +36,38 @@
     <string name="textView3">Take reliever puffs as needed (up to 3 puffs every 4 hours)</string>
     <string name="textView4">If no improvement within 48 hours i should make an urgent appointment to see my GP or asthma nurse.</string>
 
->>>>>>> feature/View_Unwell_Info
+    <!-- Setup lables-->
+    <string name="setup_desc">Please enter your details</string>
+    <string name="setup_name">Name</string>
+    <string name="setup_age">Age</string>
+    <string name="setup_gender">Gender</string>
+    <string name="setup_max_peak_flow">Maximum peak flow</string>
+    <string name="setup_preventer">Select the preventer inhaler you use</string>
+    <string name="setup_reliever">Select the reliever inhaler you use</string>
+    <string name="setup_preventer_puffs">Recommended preventer puffs</string>
+    <string name="setup_reliever_puffs">Recommended preventer puffs</string>
+
+    <string-array name="stringArrayGender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Would rather not say</item>
+    </string-array>
+
+    <string-array name="stringArrayAge">
+        <item>0-10</item>
+        <item>11-20</item>
+        <item>21-30</item>
+        <item>31-40</item>
+        <item>41-50</item>
+        <item>51-60</item>
+        <item>61-70</item>
+        <item>70+</item>
+    </string-array>
+
+    <!-- My data labels-->
+    <string name="my_data_name">User\'s Data</string>
+    <string name="my_data_edit">Edit</string>
+    <string name="my_data_age_gender">21-30, Male</string>
+    <string name="my_data_peak">Peak Flow: - </string>
+
 </resources>
