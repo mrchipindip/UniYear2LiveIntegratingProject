@@ -37,7 +37,27 @@
     <string name="setup_preventer_puffs">Recommended preventer puffs</string>
     <string name="setup_reliever_puffs">Recommended preventer puffs</string>
 
-    <!-- My data lables-->
-    <string name="my_data_edit">Edit my data</string>
+    <string-array name="stringArrayGender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Would rather not say</item>
+    </string-array>
+
+    <string-array name="stringArrayAge">
+        <item>0-10</item>
+        <item>11-20</item>
+        <item>21-30</item>
+        <item>31-40</item>
+        <item>41-50</item>
+        <item>51-60</item>
+        <item>61-70</item>
+        <item>70+</item>
+    </string-array>
+
+    <!-- My data labels-->
+    <string name="my_data_name">User\'s Data</string>
+    <string name="my_data_edit">Edit</string>
+    <string name="my_data_age_gender">21-30, Male</string>
+    <string name="my_data_peak">Peak Flow: - </string>
 
 </resources>

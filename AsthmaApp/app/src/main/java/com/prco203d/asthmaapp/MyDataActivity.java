@@ -14,6 +14,8 @@ import android.widget.TextView;
 public class MyDataActivity extends AppCompatActivity {
 
     private TextView textTitle = null;
+    private TextView textPeak = null;
+    private TextView ageGender = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,25 +27,29 @@ public class MyDataActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         textTitle = (TextView) findViewById(R.id.textViewTitle);
+        textPeak = (TextView) findViewById(R.id.textViewPeak);
+        ageGender = (TextView) findViewById(R.id.textViewAgeGender);
 
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
-        String name = sharedPrefs.getString("Name", "");
 
+        String name = sharedPrefs.getString("Name", "User");
         textTitle.setText(name + "'s Data");
 
+        int peak = (sharedPrefs.getInt("Peak", 0));
+        String peakString = "Peak Flow: " + peak;
+        textPeak.setText(peakString);
+
+        String age = sharedPrefs.getString("Age", "User");
+        String gender = sharedPrefs.getString("Gender", "User");
+        ageGender.setText(age + gender);
 
     }
-
-  //  @Override
-//    protected void onStart() {
-//        super.onStart();
-
-//    }
-
 
     public void openSetup(View view) {
         Intent intent = new Intent(this, SetupActivity.class);
         startActivity(intent);
     }
+
+
 
 }

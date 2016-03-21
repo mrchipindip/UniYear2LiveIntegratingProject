@@ -59,10 +59,41 @@
  />
 
             <Spinner
-                android:layout_width="100dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/spinnerAge"
+                android:entries="@array/stringArrayAge"
  />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/setup_gender"
+                android:id="@+id/textViewGender"
+                android:layout_marginTop="20dp"
+                />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerGender"
+                android:entries="@array/stringArrayGender"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/setup_max_peak_flow"
+                android:id="@+id/textViewPeak" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editTextPeak" />
 
 
         </LinearLayout>
