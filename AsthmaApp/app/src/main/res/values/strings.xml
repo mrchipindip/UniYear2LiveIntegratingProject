@@ -24,4 +24,11 @@
     <string name="button_my_data">My Data</string>
     <string name="button_app_settings">App Settings</string>
     <string name="button_med_ref">Medical Reference</string>
+
+    <!-- Unwell Activity -->
+    <string name="textView1">This is what i can do to get on top of my asthma...</string>
+    <string name="textView2">Start using preventer inhaler reguarly</string>
+    <string name="textView3">Take reliever puffs as needed (up to 3 puffs every 4 hours)</string>
+    <string name="textView4">If no improvement within 48 hours i should make an urgent appointment to see my GP or asthma nurse.</string>
+
 </resources>
