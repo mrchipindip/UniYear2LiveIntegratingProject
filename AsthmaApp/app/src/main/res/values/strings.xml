@@ -39,6 +39,11 @@
     <string name="textView2">Start using preventer inhaler reguarly</string>
     <string name="textView3">Take reliever puffs as needed (up to 3 puffs every 4 hours)</string>
     <string name="textView4">If no improvement within 48 hours i should make an urgent appointment to see my GP or asthma nurse.</string>
+    <string name="symptoms_popup">PlaceHolder</string>
+    <string name="cant_sleep_popup">If you are struggling to sleep, take up to 3 reliever puffs every 4 hours.</string>
+    <string name="cant_talk_popup">If you are struggling to talk, take up to 3 reliever puffs every 4 hours.</string>
+    <string name="peakflow_drop_popup">If your peak flow has dropped significantly, take up to 3 reliever puffs every 4 hours.</string>
+
 
     <!--Emergency1 Activity-->
     <string name="emergency_notice">THIS IS AN EMERGENCY TAKE ACTION NOW</string>

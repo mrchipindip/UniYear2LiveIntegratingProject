@@ -33,39 +33,46 @@
                 <GridLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:columnCount="2"
-                    android:rowCount="2"
+                    android:columnCount="3"
+                    android:rowCount="3"
                     android:layout_gravity="center">
 
 
-                    <ImageView
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
-                        android:id="@+id/symptonsIcon"
-                        android:src="@drawable/coughing"
-                        android:padding="10dp"
-                        />
+                    <ImageButton
+                        android:layout_width="124dp"
+                        android:layout_height="103dp"
+                        android:id="@+id/symptomsImageButton"
+                        android:layout_row="1"
+                        android:layout_column="1"
+                        android:src="@drawable/placeholder"
+                        android:scaleType="fitCenter"/>
 
-                    <ImageView
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
-                        android:id="@+id/cantsleepIcon"
+                    <ImageButton
+                        android:layout_width="124dp"
+                        android:layout_height="103dp"
+                        android:id="@+id/cantSleepImageButton"
+                        android:layout_row="1"
+                        android:layout_column="2"
                         android:src="@drawable/cant_sleep"
-                        android:padding="10dp"/>
+                        android:scaleType="fitCenter"/>
 
-                    <ImageView
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
-                        android:id="@+id/asthmainterfereIcon"
+                    <ImageButton
+                        android:layout_width="124dp"
+                        android:layout_height="103dp"
+                        android:id="@+id/cantTalkImageButton"
+                        android:layout_row="2"
+                        android:layout_column="1"
                         android:src="@drawable/cant_talk"
-                        android:padding="10dp"/>
+                        android:scaleType="fitCenter"/>
 
-                    <ImageView
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
-                        android:id="@+id/peakflowdropIcon"
+                    <ImageButton
+                        android:layout_width="124dp"
+                        android:layout_height="103dp"
+                        android:id="@+id/peakFlowDropImageButton"
+                        android:layout_row="2"
+                        android:layout_column="2"
                         android:src="@drawable/peakflowdrop"
-                        android:padding="10dp"/>
+                        android:scaleType="fitCenter"/>
                 </GridLayout>
             </FrameLayout>
         </RelativeLayout>
