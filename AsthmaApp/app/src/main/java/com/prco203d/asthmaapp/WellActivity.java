@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class WellActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -42,22 +43,35 @@ public class WellActivity extends AppCompatActivity implements View.OnClickListe
        // wheezingImageButton.setOnClickListener(this);
 
         wheezingImageButton.setOnClickListener(new View.OnClickListener() {
-                                                   @Override
-                                                   public void onClick(View v) {
-                                                       startActivity(new Intent(WellActivity.this, Pop.class));
-                                                   }
-                                               });
+            @Override
+            public void onClick(View v) {
+                //startActivity(new Intent(WellActivity.this, Pop.class));
+                Toast.makeText(getApplicationContext(), R.string.wheezing_popup, Toast.LENGTH_LONG).show();
+            }
+        });
 
 
-        //wheezingImageButton.setOnClickListener(new View.OnClickListener() {
-         //   @Override
-          //  public void onClick(View v) {
-          //      startActivity(new Intent(WellActivity.this, Pop.class));
-          //  }
-       // });
-        chestTightnesImageButton.setOnClickListener(this);
-        breathlessImageButton.setOnClickListener(this);
-        coughingImageButton.setOnClickListener(this);
+        chestTightnesImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //startActivity(new Intent(WellActivity.this, Pop.class));
+                Toast.makeText(getApplicationContext(), R.string.chest_tightness_popup, Toast.LENGTH_LONG).show();
+            }
+        });
+        breathlessImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //startActivity(new Intent(WellActivity.this, Pop.class));
+                Toast.makeText(getApplicationContext(), R.string.breathless_popup, Toast.LENGTH_LONG).show();
+            }
+        });
+        coughingImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //startActivity(new Intent(WellActivity.this, Pop.class));
+                Toast.makeText(getApplicationContext(), R.string.coughing_popup, Toast.LENGTH_LONG).show();
+            }
+        });
 
 
         setSupportActionBar(toolbar);
