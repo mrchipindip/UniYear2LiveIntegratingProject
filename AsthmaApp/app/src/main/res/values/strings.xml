@@ -42,6 +42,9 @@
     <string name="emergency_procedure">Puff Reliever inhaler every time the bar fills</string>
     <string name="emergency_button_timer">Start Timer</string>
     <string name="emergency_button_not_better">I dont feel better</string>
+    <string name="emergency_countdown">Get Ready..</string>
+    <string name="emergency_countdown2">Puff!</string>
+
 
     <!-- Setup lables-->
     <string name="setup_desc">Please enter your details</string>
