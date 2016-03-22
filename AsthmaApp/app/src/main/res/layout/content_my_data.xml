@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Maybe other Asthma stuff"
+        android:text="Inhaler Info"
         android:id="@+id/textView2"
         android:layout_below="@+id/textViewPeak"
         android:layout_alignParentLeft="true"
@@ -116,5 +116,16 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Data"
+        android:id="@+id/buttonDelete"
+        android:layout_marginBottom="43dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/red"
+        android:onClick="deleteData"
+        />
 
 </RelativeLayout>
