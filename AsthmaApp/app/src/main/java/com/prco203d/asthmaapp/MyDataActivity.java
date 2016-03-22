@@ -39,7 +39,7 @@ public class MyDataActivity extends AppCompatActivity {
         String peakString = "Peak Flow: " + peak;
         textPeak.setText(peakString);
 
-        String age = sharedPrefs.getString("Age", "User Age");
+        String age = sharedPrefs.getString("Age", "User Age, ");
         String gender = sharedPrefs.getString("Gender", "User Gender");
         ageGender.setText(age + gender);
 
@@ -50,6 +50,15 @@ public class MyDataActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void deleteData(View view) {
+
+        SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+        sharedPrefs.edit().clear().commit();
+
+        finish();
+        startActivity(getIntent());
+
+    }
 
 
 }
