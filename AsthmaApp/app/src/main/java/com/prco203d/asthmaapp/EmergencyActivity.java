@@ -2,16 +2,12 @@ package com.prco203d.asthmaapp;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import java.util.concurrent.TimeUnit;
 
 public class EmergencyActivity extends AppCompatActivity implements View.OnClickListener {
     int i = 0;
@@ -34,15 +30,18 @@ public class EmergencyActivity extends AppCompatActivity implements View.OnClick
         btnStartTimer.setOnClickListener(this);
         txtEmergencyCountDown = (TextView)findViewById(R.id.emergencyCountdown);
         cwProgressBar.setProgress(i);
+
         cwCountDownTimer = new CountDownTimer(10000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
+                //every tick add to I and set the progress bar to i
                 i++;
                 cwProgressBar.setProgress(i);
             }
 
             @Override
             public void onFinish() {
+                //when timer finished change text and wait 2 seconds before begining again
                 i++;
                 cwProgressBar.setProgress(i);
                 numPuffs++;
@@ -67,7 +66,9 @@ public class EmergencyActivity extends AppCompatActivity implements View.OnClick
 
     void EmergencyPuffTimer()
     {
+        //disable the button to start timer again
         btnStartTimer.setEnabled(false);
+
         if(numPuffs < 10)
         {
             txtEmergencyCountDown.setText("Get Ready..");
