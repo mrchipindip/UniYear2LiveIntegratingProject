@@ -51,7 +51,14 @@ public class SetupActivity extends AppCompatActivity {
 
         int peak = (sharedPrefs.getInt("Peak", 0));
         editPeakFlow.setText("" + peak);
+
+        int spinnerAgeSavedInt = sharedPrefs.getInt("AgeInt", 0);
+        spinnerAge.setSelection(spinnerAgeSavedInt);
+
+        int spinnerGenderSavedInt = sharedPrefs.getInt("GenderInt", 0);
+        spinnerGender.setSelection(spinnerGenderSavedInt);
     }
+
 
     public void submitData(View view) {
 
@@ -83,6 +90,7 @@ public class SetupActivity extends AppCompatActivity {
 
         String genderString = "";
         int spinnerPosGender = spinnerGender.getSelectedItemPosition();
+        editor.putInt("GenderInt", spinnerPosGender);
         switch (spinnerPosGender)
         {
             case spinnerPosMALE:
@@ -100,8 +108,10 @@ public class SetupActivity extends AppCompatActivity {
 
         editor.putString("Gender", genderString) ;
 
+
         String ageString = "";
         int spinnerPosAge = spinnerAge.getSelectedItemPosition();
+        editor.putInt("AgeInt", spinnerPosAge);
         switch (spinnerPosAge)
         {
             case spinnerPos0_10:
