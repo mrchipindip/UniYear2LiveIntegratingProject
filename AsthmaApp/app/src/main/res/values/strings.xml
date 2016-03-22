@@ -33,6 +33,7 @@
     <string name="chest_tightness_popup">If your chest feels tight, take a puff of your reliever inhaler.</string>
     <string name="breathless_popup">If you feel breathless, take a puff of your reliever inhaler.</string>
     <string name="coughing_popup">If you a constantly coughing,  take a puff of your reliever inhaler.</string>
+    <string name="cant_walk_popup">If you are struggling to walk,  take a puff of your reliever inhaler.</string>
 
     <!-- Unwell Activity -->
     <string name="textView1">This is what i can do to get on top of my asthma...</string>

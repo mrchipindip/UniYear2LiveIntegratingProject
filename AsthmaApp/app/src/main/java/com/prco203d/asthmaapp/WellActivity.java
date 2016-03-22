@@ -55,7 +55,7 @@ public class WellActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 //startActivity(new Intent(WellActivity.this, Pop.class));
-                Toast.makeText(getApplicationContext(), R.string.chest_tightness_popup, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), R.string.cant_talk_popup, Toast.LENGTH_LONG).show();
             }
         });
         breathlessImageButton.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +69,7 @@ public class WellActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 //startActivity(new Intent(WellActivity.this, Pop.class));
-                Toast.makeText(getApplicationContext(), R.string.coughing_popup, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), R.string.cant_walk_popup, Toast.LENGTH_LONG).show();
             }
         });
 
