@@ -36,6 +36,13 @@
     <string name="textView3">Take reliever puffs as needed (up to 3 puffs every 4 hours)</string>
     <string name="textView4">If no improvement within 48 hours i should make an urgent appointment to see my GP or asthma nurse.</string>
 
+    <!--Emergency1 Activity-->
+    <string name="emergency_notice">THIS IS AN EMERGENCY TAKE ACTION NOW</string>
+    <string name="emergency_calm_instruction">Sit up straight. Try to keep calm.</string>
+    <string name="emergency_procedure">Puff Reliever inhaler every time the bar fills</string>
+    <string name="emergency_button_timer">Start Timer</string>
+    <string name="emergency_button_not_better">I dont feel better</string>
+
     <!-- Setup lables-->
     <string name="setup_desc">Please enter your details</string>
     <string name="setup_name">Name</string>

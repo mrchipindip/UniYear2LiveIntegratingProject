@@ -12,4 +12,96 @@
     tools:context="com.prco203d.asthmaapp.EmergencyActivity"
     tools:showIn="@layout/activity_emergency">
 
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" >
+
+    </ScrollView>
+
+    <FrameLayout
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_below="@+id/scrollView"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/frameLayout">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:layout_gravity="center" >
+
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:id="@+id/imageView5"
+                android:src="@drawable/placeholder"
+                android:padding="10dp" />
+
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:id="@+id/imageView6"
+                android:src="@drawable/cant_talk"
+                android:padding="10dp" />
+
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:id="@+id/imageView7"
+                android:src="@drawable/coughing"
+                android:padding="10dp" />
+
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:id="@+id/imageView8"
+                android:src="@drawable/placeholder"
+                android:padding="10dp" />
+        </GridLayout>
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/emergency_notice"
+        android:id="@+id/emergencyNotice"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_below="@+id/frameLayout"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/emergency_calm_instruction"
+        android:id="@+id/emergencyCalmInstruction"
+        android:background="@drawable/background_wide"
+        android:layout_below="@+id/emergencyNotice"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/emergency_procedure"
+        android:id="@+id/emergencyProcedure"
+        android:background="@drawable/background"
+        android:gravity="center"
+        android:layout_below="@+id/emergencyCalmInstruction"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp" />
+
 </RelativeLayout>
