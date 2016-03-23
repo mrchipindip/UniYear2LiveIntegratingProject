@@ -21,12 +21,14 @@ public class WellActivity extends AppCompatActivity implements View.OnClickListe
     ImageButton chestTightnesImageButton = null;
     ImageButton breathlessImageButton = null;
     ImageButton coughingImageButton = null;
-
+    Toast symptom = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_well);
+
+        symptom = Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG);
 
         Toolbar toolbar              = (Toolbar) findViewById(R.id.toolbar);
         topLeftButton                = (Button) findViewById(R.id.topLeftButton);
@@ -46,7 +48,9 @@ public class WellActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 //startActivity(new Intent(WellActivity.this, Pop.class));
-                Toast.makeText(getApplicationContext(), R.string.wheezing_popup, Toast.LENGTH_LONG).show();
+               // symptom.cancel();
+                symptom.setText(R.string.wheezing_popup);
+                symptom.show();
             }
         });
 
@@ -55,21 +59,27 @@ public class WellActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 //startActivity(new Intent(WellActivity.this, Pop.class));
-                Toast.makeText(getApplicationContext(), R.string.cant_talk_popup, Toast.LENGTH_LONG).show();
+                //symptom.cancel();
+                symptom.setText(R.string.cant_talk_popup);
+                symptom.show();
             }
         });
         breathlessImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //startActivity(new Intent(WellActivity.this, Pop.class));
-                Toast.makeText(getApplicationContext(), R.string.breathless_popup, Toast.LENGTH_LONG).show();
+               // symptom.cancel();
+                symptom.setText(R.string.breathless_popup);
+                symptom.show();
             }
         });
         coughingImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //startActivity(new Intent(WellActivity.this, Pop.class));
-                Toast.makeText(getApplicationContext(), R.string.cant_walk_popup, Toast.LENGTH_LONG).show();
+                //symptom.cancel();
+                symptom.setText(R.string.coughing_popup);
+                symptom.show();
             }
         });
 

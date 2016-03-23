@@ -16,7 +16,7 @@ public class UnwellActivity extends AppCompatActivity {
     ImageButton cantSleepImageButton = null;
     ImageButton cantTalkImageButton = null;
     ImageButton peakFlowDropImageButton = null;
-
+    Toast symptom = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,34 +26,39 @@ public class UnwellActivity extends AppCompatActivity {
         cantSleepImageButton = (ImageButton) findViewById(R.id.cantSleepImageButton);
         cantTalkImageButton = (ImageButton) findViewById(R.id.cantTalkImageButton);
         peakFlowDropImageButton = (ImageButton) findViewById(R.id.peakFlowDropImageButton);
+        symptom = Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG);
 
 
         symptomsImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //startActivity(new Intent(WellActivity.this, Pop.class));
-                Toast.makeText(getApplicationContext(), R.string.symptoms_popup, Toast.LENGTH_LONG).show();
+                symptom.setText("Placeholder");
+                symptom.show();
             }
         });
         cantSleepImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //startActivity(new Intent(WellActivity.this, Pop.class));
-                Toast.makeText(getApplicationContext(), R.string.cant_sleep_popup, Toast.LENGTH_LONG).show();
+                symptom.setText(R.string.cant_sleep_popup);
+                symptom.show();
             }
         });
         cantTalkImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //startActivity(new Intent(WellActivity.this, Pop.class));
-                Toast.makeText(getApplicationContext(), R.string.cant_talk_popup, Toast.LENGTH_LONG).show();
+                symptom.setText(R.string.cant_talk_popup);
+                symptom.show();
             }
         });
         peakFlowDropImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //startActivity(new Intent(WellActivity.this, Pop.class));
-                Toast.makeText(getApplicationContext(), R.string.peakflow_drop_popup, Toast.LENGTH_LONG).show();
+                symptom.setText(R.string.peakflow_drop_popup);
+                symptom.show();
             }
         });
 
