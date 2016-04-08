@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class SetupActivity extends AppCompatActivity {
 
@@ -77,7 +78,10 @@ public class SetupActivity extends AppCompatActivity {
         }
         editor.putString("Name", userName);
 
+
         int peak;
+        try
+        {
         if(editPeakFlow.getText().toString() != null && editPeakFlow.getText().toString() != ""){
             peak = Integer.parseInt(editPeakFlow.getText().toString());
         }
@@ -85,6 +89,12 @@ public class SetupActivity extends AppCompatActivity {
             peak = 0;
         }
         editor.putInt("Peak", peak);
+        }
+        catch (NumberFormatException ex)
+        {
+            Toast.makeText(this, R.string.no_value, Toast.LENGTH_SHORT).show();
+        }
+
 
         // Do the spinners
 

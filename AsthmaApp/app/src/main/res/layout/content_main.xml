@@ -15,37 +15,36 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_well"
+        android:text=""
         android:id="@+id/buttonWell"
-        android:layout_marginTop="154dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_marginTop="72dp"
         android:onClick="openWell"
-        android:background="@color/green"
-        />
+        android:background="@drawable/happyface_"
+        android:layout_below="@+id/peakFlowVariableEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_unwell"
+        android:text=""
         android:id="@+id/buttonUnwell"
         android:layout_alignBottom="@+id/buttonWell"
         android:layout_centerHorizontal="true"
         android:onClick="openUnwell"
-        android:background="@color/amber"
+        android:background="@drawable/sadface_"
         />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_emergency"
+        android:text=""
         android:id="@+id/buttonEmergency"
         android:layout_alignBottom="@+id/buttonUnwell"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:onClick="openEmergency"
-        android:background="@color/red"
+        android:background="@drawable/terribleface_"
         />
 
     <Button
@@ -132,5 +131,15 @@
         android:layout_toRightOf="@+id/peakFlowVariableEditText"
         android:layout_alignRight="@+id/buttonEmergency"
         android:layout_alignEnd="@+id/buttonEmergency" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="How do you feel today?"
+        android:id="@+id/textView6"
+        android:layout_above="@+id/buttonUnwell"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
