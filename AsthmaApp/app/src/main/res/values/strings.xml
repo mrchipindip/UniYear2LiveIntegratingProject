@@ -89,5 +89,6 @@
     <string name="my_data_edit">Edit</string>
     <string name="my_data_age_gender">21-30, Male</string>
     <string name="my_data_peak">Peak Flow: - </string>
+    <string name="title_activity_symptoms__list">Symptoms</string>
 
 </resources>
