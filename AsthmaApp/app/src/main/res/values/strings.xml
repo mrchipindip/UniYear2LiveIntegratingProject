@@ -45,7 +45,6 @@
     <string name="cant_talk_popup">If you are struggling to talk, take up to 3 reliever puffs every 4 hours.</string>
     <string name="peakflow_drop_popup">If your peak flow has dropped significantly, take up to 3 reliever puffs every 4 hours.</string>
 
-
     <!--Emergency1 Activity-->
     <string name="emergency_notice">THIS IS AN EMERGENCY TAKE ACTION NOW</string>
     <string name="emergency_calm_instruction">Sit up straight. Try to keep calm.</string>
@@ -55,8 +54,7 @@
     <string name="emergency_countdown">Get Ready..</string>
     <string name="emergency_countdown2">Puff!</string>
 
-
-    <!-- Setup lables-->
+    <!-- Setup labels-->
     <string name="setup_desc">Please enter your details</string>
     <string name="setup_name">Name</string>
     <string name="setup_age">Age</string>
@@ -67,12 +65,14 @@
     <string name="setup_preventer_puffs">Recommended preventer puffs</string>
     <string name="setup_reliever_puffs">Recommended preventer puffs</string>
 
+    <!-- Gender spinner labels-->
     <string-array name="stringArrayGender">
         <item>Male</item>
         <item>Female</item>
         <item>Would rather not say</item>
     </string-array>
 
+    <!-- Age spinner labels-->
     <string-array name="stringArrayAge">
         <item>0-10</item>
         <item>11-20</item>
@@ -83,6 +83,38 @@
         <item>61-70</item>
         <item>70+</item>
     </string-array>
+
+    <!-- Preventer inhaler spinner labels-->
+    <string-array name="stringArrayPreventers">
+        <item>Beclomethasone</item>
+        <item>Clenil Modulate</item>
+        <item>Qvar</item>
+        <item>Fluticasone (Flixotide)</item>
+        <item>Symbicort</item>
+        <item>Seretide</item>
+        <item>Fostair</item>
+        <item>Flutiform</item>
+    </string-array>
+
+    <!-- Relievers inhaler spinner labels-->
+    <string-array name="stringArrayRelievers">
+        <item>Salbutamol (Ventolin)</item>
+        <item>Salbutamol (Generic)</item>
+        <item>Turbutaline (Bricanyl)</item>
+    </string-array>
+
+    <!-- Trigger labels-->
+    <string name="trigger_exercise">Exercise</string>
+    <string name="trigger_dust">Dust or Dust Mites</string>
+    <string name="trigger_odour">Strong Odours</string>
+    <string name="trigger_pollen">Pollen</string>
+    <string name="trigger_emotion">Emotional Responses</string>
+    <string name="trigger_virus">Viral Infections</string>
+    <string name="trigger_smoke">Smoke</string>
+    <string name="trigger_weather">Weather or Temperature Change</string>
+    <string name="trigger_foods">Foods</string>
+    <string name="trigger_animals">Animals</string>
+    <string name="setup_stress">Stress</string>
 
     <!-- My data labels-->
     <string name="my_data_name">User\'s Data</string>
