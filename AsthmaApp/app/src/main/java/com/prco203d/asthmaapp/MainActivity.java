@@ -1,5 +1,6 @@
 package com.prco203d.asthmaapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button submitButton = null;
 
     public float peakFlowToday;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
+
     public void openUnwell(View view) {
         Intent intent = new Intent(this, UnwellActivity.class);
         startActivity(intent);
@@ -111,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             peakFlowToday = Float.valueOf(peakFlowVariableEditText.getText().toString());
 
-            Calendar c = Calendar.getInstance();            //Not sure if this bit actually does anything Nick?
+            Calendar c = Calendar.getInstance();            //This bit isn't actually doing anything
             int dateTime = c.get(Calendar.SECOND);
 
 

@@ -1,10 +1,12 @@
 package com.prco203d.asthmaapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -14,7 +16,7 @@ import android.widget.Toast;
 
 public class WellActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button topLeftButton = null;
+    public static Button topLeftButton = null;
     Button bottomLeftButton = null;
     Button bottomRightButton = null;
     ImageButton wheezingImageButton = null;
@@ -22,6 +24,7 @@ public class WellActivity extends AppCompatActivity implements View.OnClickListe
     ImageButton breathlessImageButton = null;
     ImageButton coughingImageButton = null;
     Toast symptom = null;
+    int peak;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,9 @@ public class WellActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_well);
 
         symptom = Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG);
+
+        //String MaxPeakFlow = getIntent().getStringExtra("MaxPeakFlow"); //SORT THIS OUT
+        SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
         Toolbar toolbar              = (Toolbar) findViewById(R.id.toolbar);
         topLeftButton                = (Button) findViewById(R.id.topLeftButton);
@@ -43,6 +49,14 @@ public class WellActivity extends AppCompatActivity implements View.OnClickListe
         bottomLeftButton.setOnClickListener(this);
         bottomRightButton.setOnClickListener(this);
        // wheezingImageButton.setOnClickListener(this);
+
+
+
+        //topLeftButton.setText(getIntent().getExtras().getString("MaxPeakFlow"));
+        //topLeftButton.setText(MaxPeakFlow); // SORT THIS OUT
+
+        peak = (sharedPrefs.getInt("Peak", 0));
+        topLeftButton.setText("" + peak);
 
         wheezingImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,4 +107,6 @@ public class WellActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
     }
+
+
 }
