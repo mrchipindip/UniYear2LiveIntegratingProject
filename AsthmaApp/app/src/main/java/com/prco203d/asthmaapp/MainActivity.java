@@ -9,6 +9,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
@@ -25,8 +26,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private EditText peakFlowVariableEditText = null;
     private Button submitButton = null;
+    private Button EditButton = null;
 
-    public float peakFlowToday;
+    public int peakFlowToday;
 
 
 
@@ -40,9 +42,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar          = (Toolbar) findViewById(R.id.toolbar);
         submitButton             = (Button) findViewById(R.id.submitButton);
         peakFlowVariableEditText = (EditText) findViewById(R.id.peakFlowVariableEditText);
+        EditButton               = (Button) findViewById(R.id.EditButton);
 
         submitButton.setOnClickListener(this);
         peakFlowVariableEditText.setOnKeyListener(this);
+        EditButton.setOnClickListener(this);
 
 
         setSupportActionBar(toolbar);
@@ -110,21 +114,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.submitButton:
 
-        try
-        {
-            peakFlowToday = Float.valueOf(peakFlowVariableEditText.getText().toString());
+            try {
+                peakFlowToday = Integer.valueOf(peakFlowVariableEditText.getText().toString());
+                submitButton.setEnabled(false);
+                Toast submitToast = Toast.makeText(this, "Peak flow submitted: " + peakFlowToday , Toast.LENGTH_LONG);
+                submitToast.setGravity(Gravity.TOP, -430, 430);
+                submitToast.show();
 
-            Calendar c = Calendar.getInstance();            //This bit isn't actually doing anything
-            int dateTime = c.get(Calendar.SECOND);
+            } catch (NumberFormatException ex) {
+                //Toast.makeText(this, R.string.no_value, Toast.LENGTH_SHORT).show();
+                Toast noValueToast = Toast.makeText(this, R.string.no_value, Toast.LENGTH_LONG);
+                noValueToast.setGravity(Gravity.TOP, -430, 430);
+                noValueToast.show();
+            }
+                break;
 
+            case R.id.EditButton:
+                try {
+                    peakFlowToday = Integer.valueOf(peakFlowVariableEditText.getText().toString());
+                    Toast editToast = Toast.makeText(this, "Todays peak flow has been changed to: " + peakFlowToday, Toast.LENGTH_LONG);
+                    editToast.setGravity(Gravity.TOP, -430, 430);
+                    editToast.show();
+                } catch (NumberFormatException ex) {
+                    Toast noValueToast = Toast.makeText(this, R.string.no_value, Toast.LENGTH_LONG);
+                    noValueToast.setGravity(Gravity.TOP, -430, 430);
+                    noValueToast.show();
+                }
+                break;
 
         }
-        catch (NumberFormatException ex)
-        {
-            Toast.makeText(this, R.string.no_value, Toast.LENGTH_SHORT).show();
-        }
-
     }
 
     @Override

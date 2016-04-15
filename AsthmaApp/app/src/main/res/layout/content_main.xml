@@ -142,4 +142,33 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignRight="@+id/image"
+        android:layout_alignEnd="@+id/image"
+        android:layout_above="@+id/textView6"
+        android:layout_below="@+id/peakFlowVariableEditText"
+        android:layout_alignLeft="@+id/submitButton"
+        android:layout_alignStart="@+id/submitButton">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/EditButton"
+            android:id="@+id/EditButton"
+            android:layout_below="@+id/dailyPeakFlowTextView"
+            android:layout_alignBottom="@+id/peakFlowVariableEditText"
+            android:layout_toRightOf="@+id/peakFlowVariableEditText"
+            android:layout_alignRight="@+id/buttonEmergency"
+            android:layout_alignEnd="@+id/buttonEmergency" />
+    </LinearLayout>
+
 </RelativeLayout>

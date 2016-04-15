@@ -25,6 +25,10 @@
     <string name="button_my_data">My Data</string>
     <string name="button_app_settings">App Settings</string>
     <string name="button_med_ref">Medical Reference</string>
+    <string name="EditButton">Edit</string>
+    <string name="editButton">Todays peak flow has been changed to: </string>
+    <string name="submitButton">Peak flow submitted: </string>
+
 
     <!-- Well page strings -->
     <string name="relief_symptoms">Relief Symptoms</string>
