@@ -1,6 +1,8 @@
 package com.prco203d.asthmaapp;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -52,12 +54,35 @@ public class MyDataActivity extends AppCompatActivity {
 
     public void deleteData(View view) {
 
-        SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
-        sharedPrefs.edit().clear().commit();
+        AlertDialog alertDialog = new AlertDialog.Builder(MyDataActivity.this).create();
+        alertDialog.setTitle("Hard Reset Alert");
+        alertDialog.setMessage("Are you sure you want to reset your data?");
 
-        finish();
-        startActivity(getIntent());
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
 
+                        dialog.dismiss();
+                    }
+                });
+
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        // Delete everything
+                        SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+                        sharedPrefs.edit().clear().commit();
+                        finish();
+                        startActivity(getIntent());
+
+
+                        dialog.dismiss();
+                    }
+                });
+
+        alertDialog.show();
+        
     }
 
 
