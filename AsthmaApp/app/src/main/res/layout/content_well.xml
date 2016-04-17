@@ -72,8 +72,8 @@
                 android:layout_column="0">
 
                 <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="113dp"
+                    android:layout_height="112dp"
                     android:id="@+id/wheezingImageButton"
                     android:layout_gravity="center"
                     android:src="@drawable/coughing"
@@ -87,8 +87,8 @@
                 android:layout_column="6" >
 
                 <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="107dp"
+                    android:layout_height="106dp"
                     android:id="@+id/chestTightnesImageButton"
                     android:layout_gravity="center"
                     android:src="@drawable/cant_talk"
@@ -102,8 +102,8 @@
                 android:layout_column="0" >
 
                 <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="106dp"
+                    android:layout_height="105dp"
                     android:id="@+id/breathlessImageButton"
                     android:layout_gravity="center"
                     android:src="@drawable/hard_to_breathe"
@@ -117,8 +117,8 @@
                 android:layout_column="6" >
 
                 <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="103dp"
+                    android:layout_height="102dp"
                     android:id="@+id/coughingImageButton"
                     android:layout_gravity="center"
                     android:src="@drawable/cant_walk"

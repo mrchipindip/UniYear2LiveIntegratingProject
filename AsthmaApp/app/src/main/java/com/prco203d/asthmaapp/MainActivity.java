@@ -1,5 +1,7 @@
 package com.prco203d.asthmaapp;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
@@ -8,8 +10,10 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -24,8 +28,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private EditText peakFlowVariableEditText = null;
     private Button submitButton = null;
+    private Button EditButton = null;
+    private TextView FeelingTodayTextView = null;
+    public int peakFlowToday;
+    private String name;
 
-    public float peakFlowToday;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +41,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setContentView(R.layout.activity_main);
 
+        SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+
         Toolbar toolbar          = (Toolbar) findViewById(R.id.toolbar);
         submitButton             = (Button) findViewById(R.id.submitButton);
         peakFlowVariableEditText = (EditText) findViewById(R.id.peakFlowVariableEditText);
+        EditButton               = (Button) findViewById(R.id.EditButton);
+        FeelingTodayTextView = (TextView) findViewById(R.id.FeelingTodayTextView);
 
         submitButton.setOnClickListener(this);
         peakFlowVariableEditText.setOnKeyListener(this);
+        EditButton.setOnClickListener(this);
 
 
         setSupportActionBar(toolbar);
 
+        String name = sharedPrefs.getString("Name", "User");
+        FeelingTodayTextView.setText("How are you feeling today " + name + "?");
+
+
+        EditButton.setEnabled(false);
     }
 
     @Override
@@ -73,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(this, WellActivity.class);
         startActivity(intent);
     }
+
 
     public void openUnwell(View view) {
         Intent intent = new Intent(this, UnwellActivity.class);
@@ -111,21 +129,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.submitButton:
 
-        try
-        {
-            peakFlowToday = Float.valueOf(peakFlowVariableEditText.getText().toString());
+            try {
+                peakFlowToday = Integer.valueOf(peakFlowVariableEditText.getText().toString());
+                submitButton.setEnabled(false);
+                EditButton.setEnabled(true);
+                Toast submitToast = Toast.makeText(this, "Peak flow submitted: " + peakFlowToday , Toast.LENGTH_LONG);
+                submitToast.setGravity(Gravity.TOP, -430, 430);
+                submitToast.show();
 
-            Calendar c = Calendar.getInstance();            //Not sure if this bit actually does anything Nick?
-            int dateTime = c.get(Calendar.SECOND);
+            } catch (NumberFormatException ex) {
+                //Toast.makeText(this, R.string.no_value, Toast.LENGTH_SHORT).show();
+                Toast noValueToast = Toast.makeText(this, R.string.no_value, Toast.LENGTH_LONG);
+                noValueToast.setGravity(Gravity.TOP, -430, 430);
+                noValueToast.show();
+            }
+                break;
 
+            case R.id.EditButton:
+                try {
+                    peakFlowToday = Integer.valueOf(peakFlowVariableEditText.getText().toString());
+                    Toast editToast = Toast.makeText(this, "Todays peak flow has been changed to: " + peakFlowToday, Toast.LENGTH_LONG);
+                    editToast.setGravity(Gravity.TOP, -430, 430);
+                    editToast.show();
+                } catch (NumberFormatException ex) {
+                    Toast noValueToast = Toast.makeText(this, R.string.no_value, Toast.LENGTH_LONG);
+                    noValueToast.setGravity(Gravity.TOP, -430, 430);
+                    noValueToast.show();
+                }
+                break;
 
         }
-        catch (NumberFormatException ex)
-        {
-            Toast.makeText(this, R.string.no_value, Toast.LENGTH_SHORT).show();
-        }
-
     }
 
     @Override
