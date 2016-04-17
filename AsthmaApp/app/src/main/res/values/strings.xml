@@ -32,7 +32,7 @@
 
     <!-- Well page strings -->
     <string name="relief_symptoms">Relief Symptoms</string>
-    <string name="peak_flow_personal_best">Your PB Peak Flow</string>
+    <string name="peak_flow_personal_best">Your PB Peak Flow (PEF)</string>
     <string name="wheezing_popup">If you are wheezing, take a puff of your reliever inhaler.</string>
     <string name="chest_tightness_popup">If your chest feels tight, take a puff of your reliever inhaler.</string>
     <string name="breathless_popup">If you feel breathless, take a puff of your reliever inhaler.</string>

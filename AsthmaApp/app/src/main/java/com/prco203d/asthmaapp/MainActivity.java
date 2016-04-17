@@ -1,6 +1,7 @@
 package com.prco203d.asthmaapp;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -27,9 +29,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText peakFlowVariableEditText = null;
     private Button submitButton = null;
     private Button EditButton = null;
-
+    private TextView FeelingTodayTextView = null;
     public int peakFlowToday;
-
+    private String name;
 
 
     @Override
@@ -39,10 +41,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setContentView(R.layout.activity_main);
 
+        SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+
         Toolbar toolbar          = (Toolbar) findViewById(R.id.toolbar);
         submitButton             = (Button) findViewById(R.id.submitButton);
         peakFlowVariableEditText = (EditText) findViewById(R.id.peakFlowVariableEditText);
         EditButton               = (Button) findViewById(R.id.EditButton);
+        FeelingTodayTextView = (TextView) findViewById(R.id.FeelingTodayTextView);
 
         submitButton.setOnClickListener(this);
         peakFlowVariableEditText.setOnKeyListener(this);
@@ -50,6 +55,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         setSupportActionBar(toolbar);
+
+        String name = sharedPrefs.getString("Name", "User");
+        FeelingTodayTextView.setText("How are you feeling today " + name + "?");
 
 
         EditButton.setEnabled(false);

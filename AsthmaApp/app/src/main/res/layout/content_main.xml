@@ -137,7 +137,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="How do you feel today?"
-        android:id="@+id/textView6"
+        android:id="@+id/FeelingTodayTextView"
         android:layout_above="@+id/buttonUnwell"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
