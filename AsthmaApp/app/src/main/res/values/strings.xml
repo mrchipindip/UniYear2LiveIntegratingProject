@@ -13,6 +13,7 @@
     <string name="title_activity_med_ref">Medical Reference</string>
     <string name="title_activity_app_settings">App Settings</string>
     <string name="title_activity_setup">Setup</string>
+    <string name="title_activity_symptoms_list">Symptoms</string>
 
     <!-- Main menu controls -->
     <string name="daily_peak_flow">My Peak Flow Today Is...</string>
@@ -25,10 +26,14 @@
     <string name="button_my_data">My Data</string>
     <string name="button_app_settings">App Settings</string>
     <string name="button_med_ref">Medical Reference</string>
+<<<<<<< HEAD
     <string name="EditButton">Edit</string>
     <string name="editButton">Todays peak flow has been changed to: </string>
     <string name="submitButton">Peak flow submitted: </string>
 
+=======
+    <string name="button_symptoms">Symptoms</string>
+>>>>>>> feature/Symptoms_List
 
     <!-- Well page strings -->
     <string name="relief_symptoms">Relief Symptoms</string>
@@ -93,5 +98,6 @@
     <string name="my_data_edit">Edit</string>
     <string name="my_data_age_gender">21-30, Male</string>
     <string name="my_data_peak">Peak Flow: - </string>
+    <string name="title_activity_symptoms__list">Symptoms</string>
 
 </resources>
