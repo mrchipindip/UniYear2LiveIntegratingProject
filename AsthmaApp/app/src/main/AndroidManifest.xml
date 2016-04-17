@@ -89,7 +89,7 @@
             android:name=".Pop"
             android:theme="@style/AppTheme.PopupTheme"></activity>
         <activity
-            android:name=".Symptoms_List"
+            android:name=".SymptomsListActivity"
             android:label="@string/title_activity_symptoms__list"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

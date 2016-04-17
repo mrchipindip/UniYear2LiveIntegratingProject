@@ -104,6 +104,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
+    public void openSymptomsList(View view) {
+        Intent intent = new Intent(this, SymptomsListActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public void onClick(View v) {
 
