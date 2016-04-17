@@ -6,8 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -18,6 +16,10 @@ public class MyDataActivity extends AppCompatActivity {
     private TextView textTitle = null;
     private TextView textPeak = null;
     private TextView ageGender = null;
+
+    int peak = 0;
+    String age = "";
+    String gender = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +39,37 @@ public class MyDataActivity extends AppCompatActivity {
         String name = sharedPrefs.getString("Name", "User");
         textTitle.setText(name + "'s Data");
 
-        int peak = (sharedPrefs.getInt("Peak", 0));
+        peak = (sharedPrefs.getInt("Peak", 0));
         String peakString = "Peak Flow: " + peak;
         textPeak.setText(peakString);
 
-        String age = sharedPrefs.getString("Age", "User Age, ");
-        String gender = sharedPrefs.getString("Gender", "User Gender");
+        age = sharedPrefs.getString("Age", "User Age, ");
+        gender = sharedPrefs.getString("Gender", "User Gender");
+        ageGender.setText(age + gender);
+
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        syncDisplayValues();
+    }
+
+    public void syncDisplayValues(){
+
+        SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+
+
+        String name = sharedPrefs.getString("Name", "User");
+        textTitle.setText(name + "'s Data");
+
+        peak = (sharedPrefs.getInt("Peak", 0));
+        String peakString = "Peak Flow: " + peak;
+        textPeak.setText(peakString);
+
+        age = sharedPrefs.getString("Age", "User Age, ");
+        gender = sharedPrefs.getString("Gender", "User Gender");
         ageGender.setText(age + gender);
 
     }
