@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setSupportActionBar(toolbar);
 
+
+        EditButton.setEnabled(false);
     }
 
     @Override
@@ -120,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             try {
                 peakFlowToday = Integer.valueOf(peakFlowVariableEditText.getText().toString());
                 submitButton.setEnabled(false);
+                EditButton.setEnabled(true);
                 Toast submitToast = Toast.makeText(this, "Peak flow submitted: " + peakFlowToday , Toast.LENGTH_LONG);
                 submitToast.setGravity(Gravity.TOP, -430, 430);
                 submitToast.show();
