@@ -1,6 +1,8 @@
 package com.prco203d.asthmaapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -41,10 +43,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         submitButton.setOnClickListener(this);
         peakFlowVariableEditText.setOnKeyListener(this);
 
-
-
         setSupportActionBar(toolbar);
 
+        SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+
+        // Check if setup screen has been encountered
+        if((sharedPrefs.getBoolean("isSetup", false) == false)){
+            Intent intent = new Intent(this, SetupActivity.class);
+            startActivity(intent);
+        }
     }
 
     @Override

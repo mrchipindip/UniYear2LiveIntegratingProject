@@ -59,6 +59,26 @@ public class SetupActivity extends AppCompatActivity {
         spinnerGender.setSelection(spinnerGenderSavedInt);
     }
 
+    // Overriding the back key, for first-time setup
+    @Override
+    public void onBackPressed() {
+
+        SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+
+        // if the app isn't set up, exit it
+        if((sharedPrefs.getBoolean("isSetup", false) == false)){
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+        // otherwise just go back like normal
+        else{
+            super.onBackPressed();
+        }
+
+    }
+
 
     public void submitData(View view) {
 
@@ -148,11 +168,13 @@ public class SetupActivity extends AppCompatActivity {
         }
         editor.putString("Age", ageString) ;
 
+        // Set that the app is now setup for use
+        editor.putBoolean("isSetup", true);
+
         editor.apply();
 
-        // Move user to a different page
-        Intent intent = new Intent(this, MyDataActivity.class);
-        startActivity(intent);
+        // This is the same as "back" so should break the back loop situation
+        finish();
     }
 
 }
