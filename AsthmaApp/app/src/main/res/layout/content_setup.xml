@@ -21,7 +21,8 @@
         android:fillViewport="false"
         android:orientation="vertical"
         android:layout_marginTop="50dp"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:id="@+id/scrollView2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/setup_desc"
+                android:text="@string/setup1_desc"
                 android:id="@+id/textView" />
 
             <TextView
@@ -82,22 +83,6 @@
                 android:entries="@array/stringArrayGender"
                 />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/setup_max_peak_flow"
-                android:layout_marginTop="20dp"
-                android:id="@+id/textViewPeak" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
-                android:id="@+id/editTextPeak" />
-
-
         </LinearLayout>
     </ScrollView>
 
@@ -108,16 +93,35 @@
         android:layout_alignParentBottom="true"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/buttonSubmit"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:text="@string/submit"
-            android:layout_weight="0.5"
-            android:layout_gravity="center_horizontal"
-            android:onClick="submitData"/>
-
     </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+
+        android:onClick="submitData"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="72dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button2"
+        android:layout_alignTop="@+id/buttonSubmit"
+        android:layout_toLeftOf="@+id/buttonSubmit"
+        android:layout_toStartOf="@+id/buttonSubmit" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button3"
+        android:layout_alignTop="@+id/buttonSubmit"
+        android:layout_toRightOf="@+id/buttonSubmit" />
 
 
 </RelativeLayout>

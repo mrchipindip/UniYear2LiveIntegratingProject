@@ -45,7 +45,7 @@
     <string name="cant_talk_popup">If you are struggling to talk, take up to 3 reliever puffs every 4 hours.</string>
     <string name="peakflow_drop_popup">If your peak flow has dropped significantly, take up to 3 reliever puffs every 4 hours.</string>
 
-    <!--Emergency1 Activity-->
+    <!-- Emergency1 Activity -->
     <string name="emergency_notice">THIS IS AN EMERGENCY TAKE ACTION NOW</string>
     <string name="emergency_calm_instruction">Sit up straight. Try to keep calm.</string>
     <string name="emergency_procedure">Puff Reliever inhaler every time the bar fills</string>
@@ -54,25 +54,26 @@
     <string name="emergency_countdown">Get Ready..</string>
     <string name="emergency_countdown2">Puff!</string>
 
-    <!-- Setup labels-->
-    <string name="setup_desc">Please enter your details</string>
+    <!-- Common setup labels -->
+    <string name="setup_next">Next</string>
+    <string name="setup_update">Name</string>
+    <string name="setup_previous">Name</string>
+
+    <!-- Setup1 labels: general info-->
+    <string name="setup1_desc_welcome">Welcome to AsthmaAide. Please enter your some details to allow the app to help you more effectively. This information will not be provided to any third party.</string>
+    <string name="setup1_desc">Please enter your some details.</string>>
     <string name="setup_name">Name</string>
     <string name="setup_age">Age</string>
     <string name="setup_gender">Gender</string>
-    <string name="setup_max_peak_flow">Maximum peak flow</string>
-    <string name="setup_preventer">Select the preventer inhaler you use</string>
-    <string name="setup_reliever">Select the reliever inhaler you use</string>
-    <string name="setup_preventer_puffs">Recommended preventer puffs</string>
-    <string name="setup_reliever_puffs">Recommended preventer puffs</string>
 
-    <!-- Gender spinner labels-->
+    <!-- Gender spinner labels -->
     <string-array name="stringArrayGender">
         <item>Male</item>
         <item>Female</item>
         <item>Would rather not say</item>
     </string-array>
 
-    <!-- Age spinner labels-->
+    <!-- Age spinner labels -->
     <string-array name="stringArrayAge">
         <item>0-10</item>
         <item>11-20</item>
@@ -84,7 +85,28 @@
         <item>70+</item>
     </string-array>
 
-    <!-- Preventer inhaler spinner labels-->
+    <!-- Setup2 labels: peak flow and checkup -->
+    <string name="setup2_desc">Please enter your details</string>
+    <string name="setup2_max_peak_flow">Maximum peak flow</string>
+    <string name="setup2_annual">Please enter the date of your</string>
+
+    <!-- Setup3 labels: doctors details -->
+    <string name="setup3_desc">Please enter your details</string>
+
+    <!-- Setup4 labels: inhalers -->
+    <string name="setup4_desc">Please enter your details</string>
+    <string name="setup_preventer">Select the preventer inhaler you use</string>
+    <string name="setup_reliever">Select the reliever inhaler you use</string>
+    <string name="setup_preventer_puffs">Recommended preventer puffs</string>
+    <string name="setup_reliever_puffs">Recommended preventer puffs</string>
+
+    <!-- Setup5 labels: triggers -->
+
+    <!-- Setup6 labels: custome triggers? -->
+
+
+
+    <!-- Preventer inhaler spinner labels -->
     <string-array name="stringArrayPreventers">
         <item>Beclomethasone</item>
         <item>Clenil Modulate</item>
@@ -96,14 +118,14 @@
         <item>Flutiform</item>
     </string-array>
 
-    <!-- Relievers inhaler spinner labels-->
+    <!-- Relievers inhaler spinner labels -->
     <string-array name="stringArrayRelievers">
         <item>Salbutamol (Ventolin)</item>
         <item>Salbutamol (Generic)</item>
         <item>Turbutaline (Bricanyl)</item>
     </string-array>
 
-    <!-- Trigger labels-->
+    <!-- Trigger labels -->
     <string name="trigger_exercise">Exercise</string>
     <string name="trigger_dust">Dust or Dust Mites</string>
     <string name="trigger_odour">Strong Odours</string>
@@ -116,7 +138,7 @@
     <string name="trigger_animals">Animals</string>
     <string name="setup_stress">Stress</string>
 
-    <!-- My data labels-->
+    <!-- My data labels -->
     <string name="my_data_name">User\'s Data</string>
     <string name="my_data_edit">Edit</string>
     <string name="my_data_age_gender">21-30, Male</string>

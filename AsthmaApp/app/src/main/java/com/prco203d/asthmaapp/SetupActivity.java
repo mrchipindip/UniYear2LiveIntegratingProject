@@ -11,13 +11,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class SetupActivity extends AppCompatActivity {
 
     private EditText editTextName = null;
     private Spinner spinnerAge = null;
     private Spinner  spinnerGender = null;
-    private EditText  editPeakFlow   = null;
+    //private EditText  editPeakFlow   = null;
+    private TextView description = null;
 
     private final int   spinnerPosMALE    = 0;
     private final int   spinnerPosFEMALE  = 1;
@@ -42,15 +44,23 @@ public class SetupActivity extends AppCompatActivity {
         editTextName = (EditText) findViewById(R.id.editTextName);
         spinnerAge  = (Spinner) findViewById(R.id.spinnerAge);
         spinnerGender = (Spinner) findViewById(R.id.spinnerGender);
-        editPeakFlow = (EditText) findViewById(R.id.editTextPeak);
+        description = (TextView) findViewById(R.id.textView);
+        //editPeakFlow = (EditText) findViewById(R.id.editTextPeak);
 
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+
+        if((sharedPrefs.getBoolean("isSetup", false) == false)){
+            description.setText(getResources().getString(R.string.setup1_desc_welcome));
+        }
+        else{
+            description.setText(getResources().getString(R.string.setup1_desc));
+        }
 
         String name = sharedPrefs.getString("Name", "User");
         editTextName.setText(name);
 
-        int peak = (sharedPrefs.getInt("Peak", 0));
-        editPeakFlow.setText("" + peak);
+        //int peak = (sharedPrefs.getInt("Peak", 0));
+        //editPeakFlow.setText("" + peak);
 
         int spinnerAgeSavedInt = sharedPrefs.getInt("AgeInt", 0);
         spinnerAge.setSelection(spinnerAgeSavedInt);
@@ -76,9 +86,7 @@ public class SetupActivity extends AppCompatActivity {
         else{
             super.onBackPressed();
         }
-
     }
-
 
     public void submitData(View view) {
 
@@ -88,7 +96,6 @@ public class SetupActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPrefs.edit();
 
         // Do the textView ones
-
         String userName;
         if(editTextName.getText().toString() != null && editTextName.getText().toString() != "") {
             userName = editTextName.getText().toString();
@@ -97,17 +104,16 @@ public class SetupActivity extends AppCompatActivity {
         }
         editor.putString("Name", userName);
 
-        int peak;
-        if(editPeakFlow.getText().toString() != null && editPeakFlow.getText().toString() != ""){
-            peak = Integer.parseInt(editPeakFlow.getText().toString());
-        }
-        else {
-            peak = 0;
-        }
-        editor.putInt("Peak", peak);
+        //int peak;
+        //if(editPeakFlow.getText().toString() != null && editPeakFlow.getText().toString() != ""){
+        //    peak = Integer.parseInt(editPeakFlow.getText().toString());
+        //}
+        //else {
+        //    peak = 0;
+        //}
+        //editor.putInt("Peak", peak);
 
         // Do the spinners
-
         String genderString = "";
         int spinnerPosGender = spinnerGender.getSelectedItemPosition();
         editor.putInt("GenderInt", spinnerPosGender);
@@ -127,7 +133,6 @@ public class SetupActivity extends AppCompatActivity {
         }
 
         editor.putString("Gender", genderString) ;
-
 
         String ageString = "";
         int spinnerPosAge = spinnerAge.getSelectedItemPosition();
