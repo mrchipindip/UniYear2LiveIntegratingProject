@@ -55,23 +55,46 @@
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
+
+        <LinearLayout
         android:id="@+id/bottom_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="vertical">
 
+        </LinearLayout>
+
         <Button
-            android:id="@+id/buttonSubmit"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:text="@string/submit"
-            android:layout_weight="0.5"
-            android:layout_gravity="center_horizontal"
-            android:onClick="submitData"/>
+        android:id="@+id/buttonSubmit"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
 
-    </LinearLayout>
+        android:onClick="submitData"
+        android:layout_alignParentBottom="true"
+android:layout_centerHorizontal="true"
+android:layout_marginBottom="72dp" />
+
+<Button
+android:layout_width="120dp"
+android:layout_height="wrap_content"
+android:text="@string/setup_previous"
+android:id="@+id/buttonPrevious"
+android:layout_alignTop="@+id/buttonSubmit"
+android:layout_toLeftOf="@+id/buttonSubmit"
+android:layout_toStartOf="@+id/buttonSubmit"
+    android:onClick="previousPage"/>
+
+<Button
+android:layout_width="120dp"
+android:layout_height="wrap_content"
+android:text="@string/setup_next"
+android:id="@+id/buttonNext"
+android:layout_alignTop="@+id/buttonSubmit"
+android:layout_toRightOf="@+id/buttonSubmit"
+android:onClick="nextPage"
+    />
 
 
-</RelativeLayout>
+    </RelativeLayout>

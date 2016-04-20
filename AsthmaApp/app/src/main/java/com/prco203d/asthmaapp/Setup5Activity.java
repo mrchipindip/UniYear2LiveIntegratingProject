@@ -3,16 +3,18 @@ package com.prco203d.asthmaapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-public class Setup2Activity extends AppCompatActivity {
+public class Setup5Activity extends AppCompatActivity {
 
-    private EditText editPeakFlow   = null;
+    //private EditText editPeakFlow   = null;
     private Button buttonUpdate;
     private Button buttonNext;
     private Button buttonPrevious;
@@ -20,9 +22,14 @@ public class Setup2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setup2);
+        setContentView(R.layout.activity_setup5);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        editPeakFlow = (EditText) findViewById(R.id.editTextPeak);
+
+        // Change to triggers
+        //editPeakFlow = (EditText) findViewById(R.id.editTextPeak);
+
         buttonUpdate = (Button)findViewById(R.id.buttonSubmit);
         buttonNext = (Button)findViewById(R.id.buttonNext);
         buttonPrevious = (Button)findViewById(R.id.buttonPrevious);
@@ -42,9 +49,8 @@ public class Setup2Activity extends AppCompatActivity {
             buttonUpdate.setVisibility(View.INVISIBLE);
         }
 
-        int peak = (sharedPrefs.getInt("Peak", 0));
-        editPeakFlow.setText("" + peak);
-
+        //int peak = (sharedPrefs.getInt("Peak", 0));
+        //editPeakFlow.setText("" + peak);
     }
 
     // Overriding the back key, for first-time setup
@@ -79,7 +85,7 @@ public class Setup2Activity extends AppCompatActivity {
 
     // Go to next page
     public void nextPage(View view){
-        Intent intent = new Intent(this, Setup3Activity.class);
+        Intent intent = new Intent(this, Setup6Activity.class);
         startActivity(intent);
     }
 
@@ -103,21 +109,11 @@ public class Setup2Activity extends AppCompatActivity {
 
         SharedPreferences.Editor editor = sharedPrefs.edit();
 
-        int peak;
-        if(editPeakFlow.getText().toString() != null && editPeakFlow.getText().toString() != ""){
-            peak = Integer.parseInt(editPeakFlow.getText().toString());
-        }
-        else {
-            peak = 0;
-        }
-        editor.putInt("Peak", peak);
-
-        // Set that the app is now setup for use
-        //editor.putBoolean("isSetup", true);
+        // Save something
 
         editor.apply();
 
-        // This is the same as "back" so should break the back loop situation
-        finish();
+
     }
+
 }

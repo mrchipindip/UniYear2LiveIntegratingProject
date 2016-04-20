@@ -13,6 +13,11 @@
     <string name="title_activity_med_ref">Medical Reference</string>
     <string name="title_activity_app_settings">App Settings</string>
     <string name="title_activity_setup">Setup</string>
+    <string name="title_activity_setup2">Your Peak Flow</string>
+    <string name="title_activity_setup3">Health Professional Details</string>
+    <string name="title_activity_setup4">Your Inhalers</string>
+    <string name="title_activity_setup5">Asthma Triggers</string>
+    <string name="title_activity_setup6">Asthma Triggers</string>
 
     <!-- Main menu controls -->
     <string name="daily_peak_flow">My Peak Flow Today Is...</string>
@@ -56,8 +61,8 @@
 
     <!-- Common setup labels -->
     <string name="setup_next">Next</string>
-    <string name="setup_update">Name</string>
-    <string name="setup_previous">Name</string>
+    <string name="setup_update">Update</string>
+    <string name="setup_previous">Previous</string>
 
     <!-- Setup1 labels: general info-->
     <string name="setup1_desc_welcome">Welcome to AsthmaAide. Please enter your some details to allow the app to help you more effectively. This information will not be provided to any third party.</string>
@@ -85,12 +90,12 @@
         <item>70+</item>
     </string-array>
 
-    <!-- Setup2 labels: peak flow and checkup -->
-    <string name="setup2_desc">Please enter your details</string>
+    <!-- Setup2 labels: peak flow -->
+    <string name="setup2_desc">Your peak flow measurement can help predict how your asthma </string>
     <string name="setup2_max_peak_flow">Maximum peak flow</string>
-    <string name="setup2_annual">Please enter the date of your</string>
+    <string name="setup2_annual">Please enter the date of your </string>
 
-    <!-- Setup3 labels: doctors details -->
+    <!-- Setup3 labels: doctors details and checkup -->
     <string name="setup3_desc">Please enter your details</string>
 
     <!-- Setup4 labels: inhalers -->
@@ -102,8 +107,7 @@
 
     <!-- Setup5 labels: triggers -->
 
-    <!-- Setup6 labels: custome triggers? -->
-
+    <!-- Setup6 labels: custom triggers? -->
 
 
     <!-- Preventer inhaler spinner labels -->
