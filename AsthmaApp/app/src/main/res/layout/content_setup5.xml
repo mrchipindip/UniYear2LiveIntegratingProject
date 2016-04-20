@@ -21,7 +21,8 @@
         android:fillViewport="false"
         android:orientation="vertical"
         android:layout_marginTop="50dp"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:id="@+id/scrollView4">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,37 +34,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/setup2_desc"
+                android:text="@string/setup5_desc"
                 android:id="@+id/textView" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/setup2_max_peak_flow"
-                android:layout_marginTop="20dp"
-                android:id="@+id/textViewPeak" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
-                android:id="@+id/editTextPeak" />
-
-
         </LinearLayout>
+
+
     </ScrollView>
-
-
-    <LinearLayout
-        android:id="@+id/bottom_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical">
-
-    </LinearLayout>
 
     <Button
         android:id="@+id/buttonSubmit"
@@ -96,6 +73,74 @@
         android:layout_toRightOf="@+id/buttonSubmit"
         android:onClick="nextPage"
         />
+
+    <ToggleButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="New ToggleButton"
+        android:id="@+id/toggleButton"
+        android:layout_below="@+id/scrollView4"
+        android:layout_alignLeft="@+id/buttonPrevious"
+        android:layout_alignStart="@+id/buttonPrevious"
+        android:layout_marginTop="20dp" />
+
+    <ToggleButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="New ToggleButton"
+        android:id="@+id/toggleButton3"
+        android:layout_alignTop="@+id/toggleButton"
+        android:layout_centerHorizontal="true" />
+
+    <ToggleButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="New ToggleButton"
+        android:id="@+id/toggleButton4"
+        android:layout_alignTop="@+id/toggleButton3"
+        android:layout_alignRight="@+id/buttonNext"
+        android:layout_alignEnd="@+id/buttonNext" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/trigger_animals"
+        android:id="@+id/textView9"
+        android:layout_alignRight="@+id/toggleButton"
+        android:layout_alignEnd="@+id/toggleButton"
+        android:layout_below="@+id/toggleButton"
+        android:layout_alignLeft="@+id/toggleButton"
+        android:layout_alignStart="@+id/toggleButton"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/trigger_dust"
+        android:id="@+id/textView10"
+        android:layout_below="@+id/toggleButton3"
+        android:layout_alignLeft="@+id/toggleButton3"
+        android:layout_alignStart="@+id/toggleButton3"
+        android:layout_alignRight="@+id/toggleButton3"
+        android:layout_alignEnd="@+id/toggleButton3"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/trigger_pollen"
+        android:id="@+id/textView11"
+        android:layout_below="@+id/toggleButton4"
+        android:layout_alignLeft="@+id/toggleButton4"
+        android:layout_alignStart="@+id/toggleButton4"
+        android:layout_alignRight="@+id/buttonNext"
+        android:layout_alignEnd="@+id/buttonNext"
+
+        android:textAlignment="center"/>
 
 
 </RelativeLayout>

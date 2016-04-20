@@ -91,24 +91,24 @@
     </string-array>
 
     <!-- Setup2 labels: peak flow -->
-    <string name="setup2_desc">Your peak flow measurement can help predict how your asthma </string>
+    <string name="setup2_desc">Your peak flow measurement can help predict how your asthma is responding to treatment. Please enter your personal best below.</string>
     <string name="setup2_max_peak_flow">Maximum peak flow</string>
     <string name="setup2_annual">Please enter the date of your </string>
 
     <!-- Setup3 labels: doctors details and checkup -->
-    <string name="setup3_desc">Please enter your details</string>
+    <string name="setup3_desc">Having the details of your GP, asthma nurse and who to contact out of hours saved to your phone can help you in an emergency.</string>
+    <string name="setup3_gp_title">GP/Asthma Nurse</string>
+    <string name="setup3_ooh_title">Out of Hours Contact</string>
+    <string name="setup3_gp_ooh_name">Name:</string>
+    <string name="setup3_gp_ooh_number">Phone Number:</string>
 
     <!-- Setup4 labels: inhalers -->
-    <string name="setup4_desc">Please enter your details</string>
-    <string name="setup_preventer">Select the preventer inhaler you use</string>
-    <string name="setup_reliever">Select the reliever inhaler you use</string>
-    <string name="setup_preventer_puffs">Recommended preventer puffs</string>
-    <string name="setup_reliever_puffs">Recommended preventer puffs</string>
-
-    <!-- Setup5 labels: triggers -->
-
-    <!-- Setup6 labels: custom triggers? -->
-
+    <string name="setup4_desc">Please enter the details of your inhalers, and the usage you have been recommended. </string>
+    <string name="setup4_preventer">Your Preventer Inhaler:</string>
+    <string name="setup4_reliever">Your Reliever Inhaler:</string>
+    <string name="setup4_preventer_puffs_am">Recommended preventer puffs</string>
+    <string name="setup4_preventer_puffs_pm">Recommended preventer puffs</string>
+    <string name="setup4_reliever_puffs">Recommended reliever puffs</string>
 
     <!-- Preventer inhaler spinner labels -->
     <string-array name="stringArrayPreventers">
@@ -129,6 +129,9 @@
         <item>Turbutaline (Bricanyl)</item>
     </string-array>
 
+    <!-- Setup5 labels: triggers -->
+    <string name="setup5_desc">Select any from the following which trigger your asthma:</string>
+
     <!-- Trigger labels -->
     <string name="trigger_exercise">Exercise</string>
     <string name="trigger_dust">Dust or Dust Mites</string>
@@ -141,6 +144,13 @@
     <string name="trigger_foods">Foods</string>
     <string name="trigger_animals">Animals</string>
     <string name="setup_stress">Stress</string>
+
+    <!-- Setup6 labels: custom triggers? -->
+    <string name="setup6_desc">You can enter any other triggers you may know of here. </string>
+
+
+
+
 
     <!-- My data labels -->
     <string name="my_data_name">User\'s Data</string>

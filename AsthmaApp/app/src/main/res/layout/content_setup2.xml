@@ -42,7 +42,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/setup2_max_peak_flow"
                 android:layout_marginTop="20dp"
-                android:id="@+id/textViewPeak" />
+                android:id="@+id/textViewGpTitle" />
 
             <EditText
                 android:layout_width="match_parent"

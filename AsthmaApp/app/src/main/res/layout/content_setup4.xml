@@ -33,23 +33,38 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/setup2_desc"
+                android:text="@string/setup4_desc"
                 android:id="@+id/textView" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/setup2_max_peak_flow"
+                android:text="@string/setup4_preventer"
                 android:layout_marginTop="20dp"
-                android:id="@+id/textViewPeak" />
+                android:id="@+id/textViewRelieverTitle" />
 
-            <EditText
-                android:layout_width="match_parent"
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:id="@+id/spinnerPreventers"
+                android:entries="@array/stringArrayPreventers"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
-                android:id="@+id/editTextPeak" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/setup4_reliever"
+                android:layout_marginTop="20dp"
+                android:id="@+id/textViewPreventerTitle" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:id="@+id/spinnerAge"
+                android:entries="@array/stringArrayRelievers"
+                />
 
 
         </LinearLayout>

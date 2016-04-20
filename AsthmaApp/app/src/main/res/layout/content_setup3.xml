@@ -21,7 +21,8 @@
         android:fillViewport="false"
         android:orientation="vertical"
         android:layout_marginTop="50dp"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:id="@+id/scrollView3">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,23 +34,83 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/setup2_desc"
+                android:text="@string/setup3_desc"
                 android:id="@+id/textView" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/setup2_max_peak_flow"
+                android:text="@string/setup3_gp_title"
                 android:layout_marginTop="20dp"
-                android:id="@+id/textViewPeak" />
+                android:id="@+id/textViewGpTitle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/setup3_gp_ooh_name"
+                android:id="@+id/textViewGPName" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
+                android:id="@+id/editTextGPName"
+                android:inputType="text"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/setup3_gp_ooh_number"
+                android:id="@+id/textView7" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
                 android:ems="10"
-                android:id="@+id/editTextPeak" />
+                android:id="@+id/editTextGPPhone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/setup3_ooh_title"
+                android:id="@+id/textViewOoHTitle"
+                android:layout_marginTop="10dp"
+                android:layout_alignTop="@+id/scrollView3"
+                android:layout_alignLeft="@+id/buttonPrevious"
+                android:layout_alignStart="@+id/buttonPrevious" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/setup3_gp_ooh_name"
+                android:id="@+id/textView6" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextOoHName"
+                android:inputType="text"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/setup3_gp_ooh_number"
+                android:id="@+id/textView8" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:ems="10"
+                android:id="@+id/editTextOoHNumber" />
 
 
         </LinearLayout>
