@@ -43,7 +43,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/setup3_gp_title"
                 android:layout_marginTop="20dp"
-                android:id="@+id/textViewGpTitle" />
+                android:id="@+id/textViewPBPeakFlow" />
 
             <TextView
                 android:layout_width="wrap_content"

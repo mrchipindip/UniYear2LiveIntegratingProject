@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/my_data_peak"
-        android:id="@+id/textViewGpTitle"
+        android:id="@+id/textViewPBPeakFlow"
         android:layout_below="@+id/view"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -74,7 +74,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Inhaler Info"
         android:id="@+id/textView2"
-        android:layout_below="@+id/textViewGpTitle"
+        android:layout_below="@+id/textViewPBPeakFlow"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

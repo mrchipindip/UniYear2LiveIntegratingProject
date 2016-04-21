@@ -31,7 +31,7 @@ public class MyDataActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         textTitle = (TextView) findViewById(R.id.textViewTitle);
-        textPeak = (TextView) findViewById(R.id.textViewGpTitle);
+        textPeak = (TextView) findViewById(R.id.textViewPBPeakFlow);
         ageGender = (TextView) findViewById(R.id.textViewAgeGender);
 
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);

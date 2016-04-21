@@ -12,7 +12,9 @@ import android.widget.TextView;
 
 public class Setup2Activity extends AppCompatActivity {
 
-    private EditText editPeakFlow   = null;
+    private EditText editPeakFlowBest   = null;
+    private EditText editPeakFlowWarning   = null;
+    private EditText editPeakFlowCritical   = null;
     private Button buttonUpdate;
     private Button buttonNext;
     private Button buttonPrevious;
@@ -22,7 +24,7 @@ public class Setup2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setup2);
 
-        editPeakFlow = (EditText) findViewById(R.id.editTextPeak);
+        editPeakFlowBest = (EditText) findViewById(R.id.editTextPeak);
         buttonUpdate = (Button)findViewById(R.id.buttonSubmit);
         buttonNext = (Button)findViewById(R.id.buttonNext);
         buttonPrevious = (Button)findViewById(R.id.buttonPrevious);
@@ -43,7 +45,7 @@ public class Setup2Activity extends AppCompatActivity {
         }
 
         int peak = (sharedPrefs.getInt("Peak", 0));
-        editPeakFlow.setText("" + peak);
+        editPeakFlowBest.setText("" + peak);
 
     }
 
@@ -104,8 +106,8 @@ public class Setup2Activity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPrefs.edit();
 
         int peak;
-        if(editPeakFlow.getText().toString() != null && editPeakFlow.getText().toString() != ""){
-            peak = Integer.parseInt(editPeakFlow.getText().toString());
+        if(editPeakFlowBest.getText().toString() != null && editPeakFlowBest.getText().toString() != ""){
+            peak = Integer.parseInt(editPeakFlowBest.getText().toString());
         }
         else {
             peak = 0;
