@@ -134,24 +134,20 @@
     <string name="setup5_desc">Select any from the following which trigger your asthma:</string>
 
     <!-- Trigger labels -->
-    <string name="trigger_exercise">Exercise</string>
-    <string name="trigger_dust">Dust or Dust Mites</string>
-    <string name="trigger_odour">Strong Odours</string>
-    <string name="trigger_pollen">Pollen</string>
-    <string name="trigger_emotion">Emotional Responses</string>
-    <string name="trigger_virus">Viral Infections</string>
-    <string name="trigger_smoke">Smoke</string>
-    <string name="trigger_weather">Weather or Temperature Change</string>
-    <string name="trigger_foods">Foods</string>
     <string name="trigger_animals">Animals</string>
-    <string name="setup_stress">Stress</string>
+    <string name="trigger_dust">Dust or Dust Mites</string>
+    <string name="trigger_emotion">Emotional Responses</string>
+    <string name="trigger_exercise">Exercise</string>
+    <string name="trigger_foods">Foods</string>
+    <string name="trigger_pollen">Pollen</string>
+    <string name="trigger_smoke">Smoke</string>
+    <string name="trigger_stress">Stress</string>
+    <string name="trigger_odour">Strong Odours</string>
+    <string name="trigger_virus">Viral Infections</string>
+    <string name="trigger_weather">Weather or Temperature Change</string>
 
     <!-- Setup6 labels: custom triggers? -->
     <string name="setup6_desc">You can enter any other triggers you may know of here. </string>
-
-
-
-
 
     <!-- My data labels -->
     <string name="my_data_name">User\'s Data</string>
