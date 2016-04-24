@@ -12,4 +12,61 @@
     tools:context="com.prco203d.asthmaapp.MedRefActivity"
     tools:showIn="@layout/activity_med_ref">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Everyday Care"
+        android:id="@+id/everydayCareButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="41dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#8bc34a" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="When Feeling Worse"
+        android:id="@+id/whenFeelingWorseButton"
+        android:layout_below="@+id/everydayCareButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/everydayCareButton"
+        android:layout_alignEnd="@+id/everydayCareButton"
+        android:background="#ffc107" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="In An Asthma Attack"
+        android:id="@+id/inAnAsthmaAttackButton"
+        android:layout_below="@+id/whenFeelingWorseButton"
+        android:layout_alignRight="@+id/whenFeelingWorseButton"
+        android:layout_alignEnd="@+id/whenFeelingWorseButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#f44336" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remind me monthly to check in?"
+        android:id="@+id/monthlyCheck"
+        android:checked="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="136dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check in with this information regularly. How are you getting along with your day-today asthma medication? Are you having any asthma symptoms? Are you clear about what to do?"
+        android:id="@+id/medicalCheckText"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>

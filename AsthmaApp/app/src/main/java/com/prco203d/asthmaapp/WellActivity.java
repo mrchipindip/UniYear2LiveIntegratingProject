@@ -62,7 +62,7 @@ public class WellActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 //startActivity(new Intent(WellActivity.this, Pop.class));
-               // symptom.cancel();
+                // symptom.cancel();
                 symptom.setText(R.string.wheezing_popup);
                 symptom.show();
             }
