@@ -25,6 +25,8 @@ public class Setup2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_setup2);
 
         editPeakFlowBest = (EditText) findViewById(R.id.editTextPeak);
+        editPeakFlowWarning = (EditText) findViewById(R.id.editTextWarning);
+        editPeakFlowCritical = (EditText) findViewById(R.id.editTextCritical);
         buttonUpdate = (Button)findViewById(R.id.buttonSubmit);
         buttonNext = (Button)findViewById(R.id.buttonNext);
         buttonPrevious = (Button)findViewById(R.id.buttonPrevious);
@@ -33,6 +35,16 @@ public class Setup2Activity extends AppCompatActivity {
 
         // Editing setup mode
         if(isSetup()){
+
+            // if we're editing, get the current values
+            int peak = (sharedPrefs.getInt("Peak", 0));
+            editPeakFlowBest.setText("" + peak);
+
+            int warning = (sharedPrefs.getInt("Warning", 0));
+            editPeakFlowWarning.setText("" + warning);
+
+            int critical = (sharedPrefs.getInt("Critical", 0));
+            editPeakFlowCritical.setText("" + critical);
 
             // Show submit button only
             buttonNext.setVisibility(View.INVISIBLE);
@@ -43,9 +55,6 @@ public class Setup2Activity extends AppCompatActivity {
             // Show next + previous buttons only
             buttonUpdate.setVisibility(View.INVISIBLE);
         }
-
-        int peak = (sharedPrefs.getInt("Peak", 0));
-        editPeakFlowBest.setText("" + peak);
 
     }
 
@@ -113,6 +122,24 @@ public class Setup2Activity extends AppCompatActivity {
             peak = 0;
         }
         editor.putInt("Peak", peak);
+
+        int warn;
+        if(editPeakFlowWarning.getText().toString() != null && editPeakFlowWarning.getText().toString() != ""){
+            warn = Integer.parseInt(editPeakFlowWarning.getText().toString());
+        }
+        else {
+            warn = 0;
+        }
+        editor.putInt("Warning", warn);
+
+        int critical;
+        if(editPeakFlowCritical.getText().toString() != null && editPeakFlowCritical.getText().toString() != ""){
+            critical = Integer.parseInt(editPeakFlowCritical.getText().toString());
+        }
+        else {
+            critical = 0;
+        }
+        editor.putInt("Critical", critical);
 
         // Set that the app is now setup for use
         //editor.putBoolean("isSetup", true);

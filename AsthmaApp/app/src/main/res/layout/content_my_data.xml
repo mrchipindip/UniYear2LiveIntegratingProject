@@ -146,4 +146,24 @@
         android:onClick="deleteData"
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_data_edit"
+        android:id="@+id/button2"
+        android:onClick="openSetup"
+        android:layout_alignTop="@+id/view"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_data_edit"
+        android:id="@+id/button3"
+        android:onClick="openSetup"
+        android:layout_alignTop="@+id/view3"
+        android:layout_alignRight="@+id/view3"
+        android:layout_alignEnd="@+id/view3" />
+
 </RelativeLayout>

@@ -91,10 +91,12 @@
     </string-array>
 
     <!-- Setup2 labels: peak flow -->
-    <string name="setup2_desc">Your peak flow measurement can help predict how your asthma is responding to treatment. Please enter your personal best below.</string>
-    <string name="setup2_max_peak_flow">Personal Beak Peak Flow</string>
-    <string name="setup2_warning_desc">If your health professional has provided you with peak flow values that warn you when you are feeling worse, please enter these below. If you do not know these, the app can calculate them for you.</string>
-    <string name="setup2_annual">Please enter the date of your </string>
+    <string name="setup2_desc">Your peak flow measurement can indicate how your asthma is responding to treatment. Please enter your personal best below.</string>
+    <string name="setup2_max_peak_flow">Personal Best Peak Flow:</string>
+    <string name="setup2_warning_peak_flow">Warning Peak Flow:</string>
+    <string name="setup2_critical_peak_flow">Critical Peak Flow:</string>
+    <string name="setup2_warning_desc">If you have been provided with peak flow values that warn you when you need more treatment, or are having an asthma attack please enter these below.</string>
+    <string name="setup2_annual">Please enter the date of your annual checkup</string>
 
     <!-- Setup3 labels: doctors details and checkup -->
     <string name="setup3_desc">Having the details of your GP, asthma nurse and who to contact out of hours saved to your phone can help you in an emergency.</string>

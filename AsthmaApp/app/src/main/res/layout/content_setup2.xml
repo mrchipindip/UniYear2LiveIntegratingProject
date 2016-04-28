@@ -57,7 +57,37 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/setup2_warning_desc"
-                android:id="@+id/textViewWarningDesc" />
+                android:id="@+id/textView2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/setup2_warning_peak_flow"
+                android:layout_marginTop="20dp"
+                android:id="@+id/textViewWarningPeakFlow" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editTextWarning" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/setup2_critical_peak_flow"
+                android:layout_marginTop="20dp"
+                android:id="@+id/textViewCriticalPeakFlow" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editTextCritical" />
 
 
         </LinearLayout>
@@ -72,7 +102,6 @@
             android:layout_marginBottom="20dp"
             android:layout_alignTop="@+id/buttonPrevious"
             android:layout_centerHorizontal="true" />
-
 
         <Button
             android:layout_width="120dp"
