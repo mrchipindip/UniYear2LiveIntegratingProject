@@ -9,16 +9,25 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+<<<<<<< HEAD
 import android.widget.Toast;
+=======
+import android.widget.TextView;
+>>>>>>> feature/Complete_Profile
 
 public class SetupActivity extends AppCompatActivity {
 
     private EditText editTextName = null;
     private Spinner spinnerAge = null;
     private Spinner  spinnerGender = null;
-    private EditText  editPeakFlow   = null;
+    //private EditText  editPeakFlow   = null;
+    private TextView description = null;
+    private Button buttonUpdate;
+    private Button buttonNext;
+    private Button buttonPrevious;
 
     private final int   spinnerPosMALE    = 0;
     private final int   spinnerPosFEMALE  = 1;
@@ -43,15 +52,38 @@ public class SetupActivity extends AppCompatActivity {
         editTextName = (EditText) findViewById(R.id.editTextName);
         spinnerAge  = (Spinner) findViewById(R.id.spinnerAge);
         spinnerGender = (Spinner) findViewById(R.id.spinnerGender);
-        editPeakFlow = (EditText) findViewById(R.id.editTextPeak);
+        description = (TextView) findViewById(R.id.textView);
+        buttonUpdate = (Button)findViewById(R.id.buttonSubmit);
+        buttonNext = (Button)findViewById(R.id.buttonNext);
+        buttonPrevious = (Button)findViewById(R.id.buttonPrevious);
+        //editPeakFlow = (EditText) findViewById(R.id.editTextPeak);
 
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+
+        // Editing setup
+        if(isSetup()){
+            // Brief info
+            description.setText(getResources().getString(R.string.setup1_desc));
+
+            // Show submit button only
+            buttonNext.setVisibility(View.INVISIBLE);
+            buttonPrevious.setVisibility(View.INVISIBLE);
+        }
+        // First time setup
+        else{
+            // Welcome info
+            description.setText(getResources().getString(R.string.setup1_desc_welcome));
+
+            // Show next button
+            buttonUpdate.setVisibility(View.INVISIBLE);
+            buttonPrevious.setVisibility(View.INVISIBLE);
+        }
 
         String name = sharedPrefs.getString("Name", "User");
         editTextName.setText(name);
 
-        int peak = (sharedPrefs.getInt("Peak", 0));
-        editPeakFlow.setText("" + peak);
+        //int peak = (sharedPrefs.getInt("Peak", 0));
+        //editPeakFlow.setText("" + peak);
 
         int spinnerAgeSavedInt = sharedPrefs.getInt("AgeInt", 0);
         spinnerAge.setSelection(spinnerAgeSavedInt);
@@ -60,8 +92,59 @@ public class SetupActivity extends AppCompatActivity {
         spinnerGender.setSelection(spinnerGenderSavedInt);
     }
 
+    // Overriding the back key, for first-time setup
+    @Override
+    public void onBackPressed() {
+
+        // if the app is set up already, go back like normal
+        if(isSetup()){
+            super.onBackPressed();
+        }
+        // otherwise exit
+        else{
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+    }
+
+    // Function checks if the app is setup of not, by whether the final submit button has been pressed
+    public Boolean isSetup(){
+
+        Boolean result = false;
+        SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+
+        if((sharedPrefs.getBoolean("isSetup", false) == true)){
+            result = true;
+        }
+
+        return result;
+    }
+
+    // Go to next page
+    public void nextPage(View view){
+
+        saveData();
+
+        Intent intent = new Intent(this, Setup2Activity.class);
+        startActivity(intent);
+    }
+
+    // Go to previous page
+    public void previousPage(View view){
+        // No previous to go to!
+    }
 
     public void submitData(View view) {
+
+        saveData();
+
+        // This is the same as "back" so should break the back loop situation
+        finish();
+    }
+
+    public void saveData(){
 
         // write the data to a pref file
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
@@ -69,7 +152,6 @@ public class SetupActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPrefs.edit();
 
         // Do the textView ones
-
         String userName;
         if(editTextName.getText().toString() != null && editTextName.getText().toString() != "") {
             userName = editTextName.getText().toString();
@@ -78,6 +160,7 @@ public class SetupActivity extends AppCompatActivity {
         }
         editor.putString("Name", userName);
 
+<<<<<<< HEAD
 
         int peak;
         try
@@ -95,9 +178,18 @@ public class SetupActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.no_value, Toast.LENGTH_SHORT).show();
         }
 
+=======
+        //int peak;
+        //if(editPeakFlow.getText().toString() != null && editPeakFlow.getText().toString() != ""){
+        //    peak = Integer.parseInt(editPeakFlow.getText().toString());
+        //}
+        //else {
+        //    peak = 0;
+        //}
+        //editor.putInt("Peak", peak);
+>>>>>>> feature/Complete_Profile
 
         // Do the spinners
-
         String genderString = "";
         int spinnerPosGender = spinnerGender.getSelectedItemPosition();
         editor.putInt("GenderInt", spinnerPosGender);
@@ -117,7 +209,6 @@ public class SetupActivity extends AppCompatActivity {
         }
 
         editor.putString("Gender", genderString) ;
-
 
         String ageString = "";
         int spinnerPosAge = spinnerAge.getSelectedItemPosition();
@@ -160,9 +251,6 @@ public class SetupActivity extends AppCompatActivity {
 
         editor.apply();
 
-        // Move user to a different page
-        Intent intent = new Intent(this, MyDataActivity.class);
-        startActivity(intent);
     }
 
 }

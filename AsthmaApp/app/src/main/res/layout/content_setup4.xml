@@ -21,8 +21,7 @@
         android:fillViewport="false"
         android:orientation="vertical"
         android:layout_marginTop="50dp"
-        android:padding="10dp"
-        android:id="@+id/scrollView2">
+        android:padding="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,57 +33,52 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/setup1_desc"
+                android:text="@string/setup4_desc"
                 android:id="@+id/textView" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/setup_name"
-                android:id="@+id/textViewNameLabel"
-                android:layout_marginTop="20dp" />
+                android:text="@string/setup4_preventer"
+                android:layout_marginTop="20dp"
+                android:id="@+id/textViewRelieverTitle" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/editTextName"
-                android:inputType="text" />
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:id="@+id/spinnerPreventers"
+                android:entries="@array/stringArrayPreventers"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/setup_age"
-                android:id="@+id/textViewAge"
+                android:text="@string/setup4_reliever"
                 android:layout_marginTop="20dp"
-            />
+                android:id="@+id/textViewPreventerTitle" />
 
             <Spinner
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:id="@+id/spinnerAge"
-                android:entries="@array/stringArrayAge"
-            />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/setup_gender"
-                android:id="@+id/textViewGender"
-                android:layout_marginTop="20dp"
+                android:entries="@array/stringArrayRelievers"
                 />
 
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/spinnerGender"
-                android:entries="@array/stringArrayGender"
-                />
 
         </LinearLayout>
     </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonSubmit"
@@ -104,7 +98,9 @@
         android:id="@+id/buttonPrevious"
         android:layout_alignTop="@+id/buttonSubmit"
         android:layout_toLeftOf="@+id/buttonSubmit"
-        android:layout_toStartOf="@+id/buttonSubmit" />
+        android:layout_toStartOf="@+id/buttonSubmit"
+        android:onClick="previousPage"
+        />
 
     <Button
         android:layout_width="120dp"

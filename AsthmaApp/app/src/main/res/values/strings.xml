@@ -13,7 +13,15 @@
     <string name="title_activity_med_ref">Medical Reference</string>
     <string name="title_activity_app_settings">App Settings</string>
     <string name="title_activity_setup">Setup</string>
+<<<<<<< HEAD
     <string name="title_activity_symptoms_list">Symptoms</string>
+=======
+    <string name="title_activity_setup2">Your Peak Flow</string>
+    <string name="title_activity_setup3">Health Professional Details</string>
+    <string name="title_activity_setup4">Your Inhalers</string>
+    <string name="title_activity_setup5">Asthma Triggers</string>
+    <string name="title_activity_setup6">Asthma Triggers</string>
+>>>>>>> feature/Complete_Profile
 
     <!-- Main menu controls -->
     <string name="daily_peak_flow">My Peak Flow Today Is...</string>
@@ -51,8 +59,7 @@
     <string name="cant_talk_popup">If you are struggling to talk, take up to 3 reliever puffs every 4 hours.</string>
     <string name="peakflow_drop_popup">If your peak flow has dropped significantly, take up to 3 reliever puffs every 4 hours.</string>
 
-
-    <!--Emergency1 Activity-->
+    <!-- Emergency1 Activity -->
     <string name="emergency_notice">THIS IS AN EMERGENCY TAKE ACTION NOW</string>
     <string name="emergency_calm_instruction">Sit up straight. Try to keep calm.</string>
     <string name="emergency_procedure">Puff Reliever inhaler every time the bar fills</string>
@@ -61,24 +68,26 @@
     <string name="emergency_countdown">Get Ready..</string>
     <string name="emergency_countdown2">Puff!</string>
 
+    <!-- Common setup labels -->
+    <string name="setup_next">Next</string>
+    <string name="setup_update">Update</string>
+    <string name="setup_previous">Previous</string>
 
-    <!-- Setup lables-->
-    <string name="setup_desc">Please enter your details</string>
+    <!-- Setup1 labels: general info-->
+    <string name="setup1_desc_welcome">Welcome to AsthmaAide. Please enter your some details to allow the app to help you more effectively. This information will not be provided to any third party.</string>
+    <string name="setup1_desc">Please enter your some details.</string>>
     <string name="setup_name">Name</string>
     <string name="setup_age">Age</string>
     <string name="setup_gender">Gender</string>
-    <string name="setup_max_peak_flow">Maximum peak flow</string>
-    <string name="setup_preventer">Select the preventer inhaler you use</string>
-    <string name="setup_reliever">Select the reliever inhaler you use</string>
-    <string name="setup_preventer_puffs">Recommended preventer puffs</string>
-    <string name="setup_reliever_puffs">Recommended preventer puffs</string>
 
+    <!-- Gender spinner labels -->
     <string-array name="stringArrayGender">
         <item>Male</item>
         <item>Female</item>
         <item>Would rather not say</item>
     </string-array>
 
+    <!-- Age spinner labels -->
     <string-array name="stringArrayAge">
         <item>0-10</item>
         <item>11-20</item>
@@ -90,7 +99,68 @@
         <item>70+</item>
     </string-array>
 
-    <!-- My data labels-->
+    <!-- Setup2 labels: peak flow -->
+    <string name="setup2_desc">Your peak flow measurement can indicate how your asthma is responding to treatment. Please enter your personal best below.</string>
+    <string name="setup2_max_peak_flow">Personal Best Peak Flow:</string>
+    <string name="setup2_warning_peak_flow">Warning Peak Flow:</string>
+    <string name="setup2_critical_peak_flow">Critical Peak Flow:</string>
+    <string name="setup2_warning_desc">If you have been provided with peak flow values that warn you when you need more treatment, or are having an asthma attack please enter these below.</string>
+    <string name="setup2_annual">Please enter the date of your annual checkup</string>
+
+    <!-- Setup3 labels: doctors details and checkup -->
+    <string name="setup3_desc">Having the details of your GP, asthma nurse and who to contact out of hours saved to your phone can help you in an emergency.</string>
+    <string name="setup3_gp_title">GP/Asthma Nurse</string>
+    <string name="setup3_ooh_title">Out of Hours Contact</string>
+    <string name="setup3_gp_ooh_name">Name:</string>
+    <string name="setup3_gp_ooh_number">Phone Number:</string>
+
+    <!-- Setup4 labels: inhalers -->
+    <string name="setup4_desc">Please enter the details of your inhalers, and the usage you have been recommended. </string>
+    <string name="setup4_preventer">Your Preventer Inhaler:</string>
+    <string name="setup4_reliever">Your Reliever Inhaler:</string>
+    <string name="setup4_preventer_puffs_am">Recommended preventer puffs</string>
+    <string name="setup4_preventer_puffs_pm">Recommended preventer puffs</string>
+    <string name="setup4_reliever_puffs">Recommended reliever puffs</string>
+
+    <!-- Preventer inhaler spinner labels -->
+    <string-array name="stringArrayPreventers">
+        <item>Beclomethasone</item>
+        <item>Clenil Modulate</item>
+        <item>Qvar</item>
+        <item>Fluticasone (Flixotide)</item>
+        <item>Symbicort</item>
+        <item>Seretide</item>
+        <item>Fostair</item>
+        <item>Flutiform</item>
+    </string-array>
+
+    <!-- Relievers inhaler spinner labels -->
+    <string-array name="stringArrayRelievers">
+        <item>Salbutamol (Ventolin)</item>
+        <item>Salbutamol (Generic)</item>
+        <item>Turbutaline (Bricanyl)</item>
+    </string-array>
+
+    <!-- Setup5 labels: triggers -->
+    <string name="setup5_desc">Select any from the following which trigger your asthma:</string>
+
+    <!-- Trigger labels -->
+    <string name="trigger_animals">Animals</string>
+    <string name="trigger_dust">Dust or Dust Mites</string>
+    <string name="trigger_emotion">Emotional Responses</string>
+    <string name="trigger_exercise">Exercise</string>
+    <string name="trigger_foods">Foods</string>
+    <string name="trigger_pollen">Pollen</string>
+    <string name="trigger_smoke">Smoke</string>
+    <string name="trigger_stress">Stress</string>
+    <string name="trigger_odour">Strong Odours</string>
+    <string name="trigger_virus">Viral Infections</string>
+    <string name="trigger_weather">Weather or Temperature Change</string>
+
+    <!-- Setup6 labels: custom triggers? -->
+    <string name="setup6_desc">You can enter any other triggers you may know of here. </string>
+
+    <!-- My data labels -->
     <string name="my_data_name">User\'s Data</string>
     <string name="my_data_edit">Edit</string>
     <string name="my_data_age_gender">21-30, Male</string>

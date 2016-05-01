@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/title"
+        android:fillViewport="false"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:padding="10dp"
+        android:id="@+id/scrollView4"
+        android:layout_above="@+id/buttonNext">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewLeaveRemainingDescription"
+            android:stretchColumns="*"
+>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/setup5_desc"
+                    android:id="@+id/textView10"
+                    android:layout_span="3"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="@string/trigger_animals"
+                    android:id="@+id/buttonAnimal"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="buttonToggle"
+                    />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="@string/trigger_dust"
+                    android:id="@+id/buttonDust"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="buttonToggle"
+                    />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="@string/trigger_emotion"
+                    android:id="@+id/buttonEmotion"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="buttonToggle"
+                    />
+            </TableRow>
+
+            <!--
+            <TableRow>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:text="@string/trigger_animals"
+                    android:id="@+id/textViewAnimal"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:text="@string/trigger_dust"
+                    android:id="@+id/textViewDust"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:text="@string/trigger_emotion"
+                    android:id="@+id/textViewEmotion"
+                    />
+            </TableRow>
+            -->
+
+            <TableRow>
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text="@string/trigger_exercise"
+                android:id="@+id/buttonExercise"
+                android:layout_gravity="center_vertical"
+                android:onClick="buttonToggle"
+                />
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text="@string/trigger_foods"
+                android:id="@+id/buttonFoods"
+                android:layout_gravity="center_vertical"
+                android:onClick="buttonToggle"
+                />
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text="@string/trigger_pollen"
+                android:id="@+id/buttonPollen"
+                android:layout_gravity="center_vertical"
+                android:onClick="buttonToggle"
+                />
+            </TableRow>
+
+            <!--
+            <TableRow>
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="@string/trigger_exercise"
+                android:id="@+id/textViewExercise"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="@string/trigger_foods"
+                android:id="@+id/textViewFoods"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="@string/trigger_pollen"
+                android:id="@+id/textViewPollen"
+                />
+            </TableRow>
+            -->
+
+            <TableRow>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:text="@string/trigger_smoke"
+                    android:id="@+id/buttonSmoke"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="buttonToggle"
+                    />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="@string/trigger_stress"
+                    android:id="@+id/buttonStress"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="buttonToggle"
+                    />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="@string/trigger_odour"
+                    android:id="@+id/buttonOdours"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="buttonToggle"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="0dp"
+                    android:text="@string/trigger_smoke"
+                    android:id="@+id/textViewSmoke"
+                    />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="0dp"
+                    android:text="@string/trigger_stress"
+                    android:id="@+id/textViewStress"
+                    />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="0dp"
+                    android:text="@string/trigger_odour"
+                    android:id="@+id/textViewOdours"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="@string/trigger_virus"
+                    android:id="@+id/buttonVirus"
+                    android:layout_gravity="center_vertical" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="@string/trigger_weather"
+                    android:id="@+id/buttonWeather"
+                    android:layout_gravity="center_vertical" />
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="0dp"
+                    android:text="@string/trigger_virus"
+                    android:id="@+id/textViewVirus"
+                    android:onClick="buttonToggle"
+                    />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="0dp"
+                    android:text="@string/trigger_weather"
+                    android:id="@+id/textViewWeather"
+                    android:onClick="buttonToggle"
+                    />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="@string/setup_previous"
+        android:id="@+id/buttonPrevious"
+        android:onClick="previousPage"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="@string/setup_next"
+        android:id="@+id/buttonNext"
+        android:onClick="nextPage"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:onClick="submitData"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@+id/scrollView4"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
