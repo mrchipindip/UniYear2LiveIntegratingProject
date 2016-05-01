@@ -11,159 +11,192 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.prco203d.asthmaapp.MyDataActivity"
     tools:showIn="@layout/activity_my_data"
-    android:textAlignment="center">
+    >
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/my_data_edit"
-        android:id="@+id/buttonEdit"
-        android:onClick="openSetup"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/my_data_name"
-        android:id="@+id/textViewTitle"
-        android:textAlignment="textStart"
-        android:gravity="center"
-        android:layout_alignBottom="@+id/buttonEdit"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/buttonEdit"
-        android:layout_toStartOf="@+id/buttonEdit"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/my_data_age_gender"
-        android:id="@+id/textViewAgeGender"
-        android:layout_below="@+id/textViewTitle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <View
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="1dip"
-        android:background="@color/colorPrimaryDark"
-        android:layout_below="@+id/textViewAgeGender"
-        android:layout_marginTop="10dp"
-        android:id="@+id/view" />
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/bottom_container"
+        android:layout_below="@id/title"
+        android:fillViewport="false"
+        android:orientation="vertical"
+        android:id="@+id/scrollView2">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/my_data_peak"
-        android:id="@+id/textViewPBPeakFlow"
-        android:layout_below="@+id/view"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Inhaler Info"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/textViewPBPeakFlow"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/my_data_name"
+                android:id="@+id/textViewTitle"
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dip"
-        android:background="@color/colorPrimaryDark"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="10dp"
-        android:id="@+id/view3" />
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:textStyle="bold"
+                />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Next Appointment..."
-        android:layout_marginTop="10dp"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/view3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"
+                android:id="@+id/lineView1"
+                android:layout_below="@+id/textViewTitle"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dip"
-        android:background="@color/colorPrimaryDark"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="10dp"
-        android:id="@+id/view5" />
+            <!-- Section 1 -->
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text=""
+                android:id="@+id/buttonEdit"
+                android:onClick="openSetup"
+                android:foreground="@drawable/edit__more_padded"
+                android:layout_below="@+id/lineView1"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="GP Contact Details"
-        android:layout_marginTop="10dp"
-        android:id="@+id/textView4"
-        android:layout_below="@+id/view5"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/my_data_age_gender"
+                android:id="@+id/textViewName"
+                android:layout_below="@+id/lineView1"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dip"
-        android:background="@color/colorPrimaryDark"
-        android:id="@+id/view6"
-        android:layout_below="@+id/textView4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/my_data_age_gender"
+                android:id="@+id/textViewAge"
+                android:layout_below="@+id/textViewName"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dip"
-        android:background="@color/colorPrimaryDark"
-        android:id="@+id/view7"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/my_data_age_gender"
+                android:id="@+id/textViewGender"
+                android:layout_below="@+id/textViewAge"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/my_data_age_gender"
+                android:id="@+id/textViewHeight"
+                android:layout_below="@+id/textViewGender"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"
+                android:id="@+id/lineView2"
+                android:layout_below="@+id/textViewHeight"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
+
+            <!-- Section 2 -->
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text=""
+                android:id="@+id/buttonEdit2"
+                android:onClick="openSetup"
+                android:foreground="@drawable/edit__more_padded"
+                android:layout_below="@+id/lineView2"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/my_data_age_gender"
+                android:id="@+id/textViewPeakFlow"
+                android:layout_below="@+id/lineView2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/my_data_age_gender"
+                android:id="@+id/textViewWarningFlow"
+                android:layout_below="@+id/textViewPeakFlow"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/my_data_age_gender"
+                android:id="@+id/textViewCriticalFlow"
+                android:layout_below="@+id/textViewWarningFlow"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"
+                android:id="@+id/lineView3"
+                android:layout_below="@+id/textViewCriticalFlow"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Delete Data"
         android:id="@+id/buttonDelete"
-        android:layout_marginBottom="43dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="56dp"
         android:background="@color/red"
         android:onClick="deleteData"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/my_data_edit"
-        android:id="@+id/button2"
-        android:onClick="openSetup"
-        android:layout_alignTop="@+id/view"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/my_data_edit"
-        android:id="@+id/button3"
-        android:onClick="openSetup"
-        android:layout_alignTop="@+id/view3"
-        android:layout_alignRight="@+id/view3"
-        android:layout_alignEnd="@+id/view3" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

@@ -30,22 +30,22 @@ public class MyDataActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        textTitle = (TextView) findViewById(R.id.textViewTitle);
-        textPeak = (TextView) findViewById(R.id.textViewPBPeakFlow);
-        ageGender = (TextView) findViewById(R.id.textViewAgeGender);
+        //textTitle = (TextView) findViewById(R.id.textViewTitle);
+        //textPeak = (TextView) findViewById(R.id.textViewPBPeakFlow);
+        //ageGender = (TextView) findViewById(R.id.textViewName);
 
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
-        String name = sharedPrefs.getString("Name", "User");
-        textTitle.setText(name + "'s Data");
+        //String name = sharedPrefs.getString("Name", "User");
+        //textTitle.setText(name + "'s Data");
 
-        peak = (sharedPrefs.getInt("Peak", 0));
-        String peakString = "Peak Flow: " + peak;
-        textPeak.setText(peakString);
+        //peak = (sharedPrefs.getInt("Peak", 0));
+        //String peakString = "Peak Flow: " + peak;
+        //textPeak.setText(peakString);
 
-        age = sharedPrefs.getString("Age", "User Age, ");
-        gender = sharedPrefs.getString("Gender", "User Gender");
-        ageGender.setText(age + gender);
+        //age = sharedPrefs.getString("Age", "User Age, ");
+        //gender = sharedPrefs.getString("Gender", "User Gender");
+        //ageGender.setText(age + gender);
 
     }
 
@@ -61,16 +61,16 @@ public class MyDataActivity extends AppCompatActivity {
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
 
-        String name = sharedPrefs.getString("Name", "User");
-        textTitle.setText(name + "'s Data");
+        //String name = sharedPrefs.getString("Name", "User");
+        //textTitle.setText(name + "'s Data");
 
-        peak = (sharedPrefs.getInt("Peak", 0));
-        String peakString = "Peak Flow: " + peak;
-        textPeak.setText(peakString);
+        //peak = (sharedPrefs.getInt("Peak", 0));
+        //String peakString = "Peak Flow: " + peak;
+        //textPeak.setText(peakString);
 
-        age = sharedPrefs.getString("Age", "User Age, ");
-        gender = sharedPrefs.getString("Gender", "User Gender");
-        ageGender.setText(age + gender);
+        //age = sharedPrefs.getString("Age", "User Age, ");
+        //gender = sharedPrefs.getString("Gender", "User Gender");
+        //ageGender.setText(age + gender);
 
     }
 
@@ -111,6 +111,5 @@ public class MyDataActivity extends AppCompatActivity {
         alertDialog.show();
         
     }
-
-
+    
 }
