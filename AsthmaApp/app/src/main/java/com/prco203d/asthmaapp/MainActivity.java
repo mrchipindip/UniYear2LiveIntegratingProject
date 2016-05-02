@@ -1,9 +1,7 @@
 package com.prco203d.asthmaapp;
 
-<<<<<<< HEAD
+
 import android.app.Activity;
-=======
->>>>>>> feature/Complete_Profile
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -37,12 +35,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public int peakFlowToday;
     private String name;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
@@ -59,21 +55,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setSupportActionBar(toolbar);
 
-<<<<<<< HEAD
         String name = sharedPrefs.getString("Name", "User");
         FeelingTodayTextView.setText("How are you feeling today " + name + "?");
 
-
         EditButton.setEnabled(false);
-=======
-        SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
         // Check if setup screen has been encountered
         if((sharedPrefs.getBoolean("isSetup", false) == false)){
             Intent intent = new Intent(this, SetupActivity.class);
             startActivity(intent);
         }
->>>>>>> feature/Complete_Profile
+
     }
 
     @Override
@@ -173,7 +165,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     noValueToast.show();
                 }
                 break;
-
         }
     }
 
@@ -183,6 +174,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-
-    }
+}
 

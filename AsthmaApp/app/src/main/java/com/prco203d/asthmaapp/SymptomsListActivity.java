@@ -57,19 +57,19 @@ public class SymptomsListActivity extends AppCompatActivity {
         symptom3.add(getResources().getString(R.string.symptom_description_exercising_difficulty));
 
         List<String> symptom4 = new ArrayList<String>();
-        symptom3.add(getResources().getString(R.string.symptom_description_talking_difficulty));
+        symptom4.add(getResources().getString(R.string.symptom_description_talking_difficulty));
 
         List<String> symptom5 = new ArrayList<String>();
-        symptom3.add(getResources().getString(R.string.symptom_description_tight_chest));
+        symptom5.add(getResources().getString(R.string.symptom_description_tight_chest));
 
         List<String> symptom6 = new ArrayList<String>();
-        symptom3.add(getResources().getString(R.string.symptom_description_waking));
+        symptom6.add(getResources().getString(R.string.symptom_description_waking));
 
         List<String> symptom7 = new ArrayList<String>();
-        symptom3.add(getResources().getString(R.string.symptom_description_walking_difficulty));
+        symptom7.add(getResources().getString(R.string.symptom_description_walking_difficulty));
 
         List<String> symptom8 = new ArrayList<String>();
-        symptom3.add(getResources().getString(R.string.symptom_description_wheezing));
+        symptom8.add(getResources().getString(R.string.symptom_description_wheezing));
 
         listDataChild.put(listDataHeader.get(0), symptom1);
         listDataChild.put(listDataHeader.get(1), symptom2);
