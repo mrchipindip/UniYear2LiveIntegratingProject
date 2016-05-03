@@ -160,18 +160,31 @@
     <string name="setup6_desc">You can enter any other triggers you may know of here. </string>
 
     <!-- My data labels -->
-    <string name="my_data_title">Your Profile</string>
+
     <string name="my_data_edit">Edit</string>
 
-    <string name="my_data_name">Name:</string>
-    <string name="my_data_age">Age:</string>
-    <string name="my_data_gender">Gender:</string>
-    <string name="my_data_height">Height:</string>
+    <string name="my_data_title">Personal Info:</string>
+    <string name="my_data_name">Name</string>
+    <string name="my_data_age">Age</string>
+    <string name="my_data_gender">Gender</string>
+    <string name="my_data_height">Height</string>
 
-    <string name="my_data_peak">Best Peak Flow: - </string>
-    <string name="my_data_warning">Warning Peak Flow: - </string>
-    <string name="my_data_critical">Critical Peak Flow: - </string>
+    <string name="my_data_peak_title">Peak Flow Levels:</string>
+    <string name="my_data_peak">Personal Best</string>
+    <string name="my_data_warning">Warning</string>
+    <string name="my_data_critical">Critical</string>
     <string name="my_data_peak_notice">* values have been calculated based on your initial setup answers</string>
+
+    <string name="my_data_dr_title">Dr Details:</string>
+    <string name="my_data_appointment">Appointment</string>
+    <string name="my_data_dr">Doctor/GP</string>
+    <string name="my_data_ooh">Out of Hours</string>
+
+    <string name="my_data_inhaler_title">Medication:</string>
+    <string name="my_data_inhaler_preventer">Preventer</string>
+    <string name="my_data_inhaler_reliever">Reliever</string>
+
+    <string name="my_data_trigger_title">Triggers:</string>
 
     <!-- ? -->
     <string name="title_activity_symptoms__list">Symptoms</string>
