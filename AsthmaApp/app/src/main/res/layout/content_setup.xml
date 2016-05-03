@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/setup_name"
+                android:text="@string/setup1_name"
                 android:id="@+id/textViewNameLabel"
                 android:layout_marginTop="20dp" />
 
@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/setup_age"
+                android:text="@string/setup1_age"
                 android:id="@+id/textViewAge"
                 android:layout_marginTop="20dp"
             />
@@ -71,7 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/setup_gender"
+                android:text="@string/setup1_gender"
                 android:id="@+id/textViewGender"
                 android:layout_marginTop="20dp"
                 />

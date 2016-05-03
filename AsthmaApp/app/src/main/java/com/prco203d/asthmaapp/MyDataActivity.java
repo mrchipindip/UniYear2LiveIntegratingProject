@@ -13,9 +13,22 @@ import android.widget.TextView;
 
 public class MyDataActivity extends AppCompatActivity {
 
-    private TextView textTitle = null;
+    private TextView textName = null;
+    private TextView textAge = null;
+    private TextView textGender = null;
+    private TextView textHeight = null;
+
     private TextView textPeak = null;
-    private TextView ageGender = null;
+    private TextView textWarning = null;
+    private TextView textCritical = null;
+
+    private TextView textGPName = null;
+    private TextView textGPNumber = null;
+    private TextView textOoHName = null;
+    private TextView textPeakNumber = null;
+
+    private TextView textPreventerName = null;
+    private TextView textRelieverName = null;
 
     int peak = 0;
     String age = "";
@@ -60,7 +73,6 @@ public class MyDataActivity extends AppCompatActivity {
 
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
-
         //String name = sharedPrefs.getString("Name", "User");
         //textTitle.setText(name + "'s Data");
 
@@ -76,6 +88,26 @@ public class MyDataActivity extends AppCompatActivity {
 
     public void openSetup(View view) {
         Intent intent = new Intent(this, SetupActivity.class);
+        startActivity(intent);
+    }
+
+    public void openSetup2(View view) {
+        Intent intent = new Intent(this, Setup2Activity.class);
+        startActivity(intent);
+    }
+
+    public void openSetup3(View view) {
+        Intent intent = new Intent(this, Setup3Activity.class);
+        startActivity(intent);
+    }
+
+    public void openSetup4(View view) {
+        Intent intent = new Intent(this, Setup4Activity.class);
+        startActivity(intent);
+    }
+
+    public void openSetup5(View view) {
+        Intent intent = new Intent(this, Setup5Activity.class);
         startActivity(intent);
     }
 

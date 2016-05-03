@@ -12,16 +12,13 @@
     <string name="title_activity_graph_and_calendar">Graph and Calendar</string>
     <string name="title_activity_med_ref">Medical Reference</string>
     <string name="title_activity_app_settings">App Settings</string>
+    <string name="title_activity_symptoms_list">Symptoms A-Z</string>
     <string name="title_activity_setup">Setup</string>
-<<<<<<< HEAD
-    <string name="title_activity_symptoms_list">Symptoms</string>
-=======
     <string name="title_activity_setup2">Your Peak Flow</string>
     <string name="title_activity_setup3">Health Professional Details</string>
     <string name="title_activity_setup4">Your Inhalers</string>
     <string name="title_activity_setup5">Asthma Triggers</string>
     <string name="title_activity_setup6">Asthma Triggers</string>
->>>>>>> feature/Complete_Profile
 
     <!-- Main menu controls -->
     <string name="daily_peak_flow">My Peak Flow Today Is...</string>
@@ -35,10 +32,9 @@
     <string name="button_app_settings">App Settings</string>
     <string name="button_med_ref">Medical Reference</string>
     <string name="EditButton">Edit</string>
-    <string name="editButton">Todays peak flow has been changed to: </string>
+    <string name="editButton">Today\'s peak flow has been changed to: </string>
     <string name="submitButton">Peak flow submitted: </string>
     <string name="button_symptoms">Symptoms</string>
-
 
     <!-- Well page strings -->
     <string name="relief_symptoms">Relief Symptoms</string>
@@ -51,7 +47,7 @@
 
     <!-- Unwell Activity -->
     <string name="textView1">This is what i can do to get on top of my asthma...</string>
-    <string name="textView2">Start using preventer inhaler reguarly</string>
+    <string name="textView2">Start using preventer inhaler regularly</string>
     <string name="textView3">Take reliever puffs as needed (up to 3 puffs every 4 hours)</string>
     <string name="textView4">If no improvement within 48 hours i should make an urgent appointment to see my GP or asthma nurse.</string>
     <string name="symptoms_popup">PlaceHolder</string>
@@ -74,11 +70,14 @@
     <string name="setup_previous">Previous</string>
 
     <!-- Setup1 labels: general info-->
-    <string name="setup1_desc_welcome">Welcome to AsthmaAide. Please enter your some details to allow the app to help you more effectively. This information will not be provided to any third party.</string>
-    <string name="setup1_desc">Please enter your some details.</string>>
-    <string name="setup_name">Name</string>
-    <string name="setup_age">Age</string>
-    <string name="setup_gender">Gender</string>
+    <string name="setup1_desc_welcome">The information on this page is required for the app to help you effectively:</string>
+    <string name="setup1_desc">The information you enter on this page allows the app to help you effectively:</string>>
+    <string name="setup1_name">Name:</string>
+    <string name="setup1_age">Age:</string>
+    <string name="setup1_gender">Gender:</string>
+    <string name="setup1_height">Height:</string>
+
+    <string name="setup_disclaimer">Welcome to AsthmaAid! Though care has been taken to provide information as accurately as possible, this app should not be used to replace professional medical advice. Any information you provide to the app is used to provide more helpful information to you, and is not be shared with any third party.</string>
 
     <!-- Gender spinner labels -->
     <string-array name="stringArrayGender">
@@ -161,10 +160,59 @@
     <string name="setup6_desc">You can enter any other triggers you may know of here. </string>
 
     <!-- My data labels -->
-    <string name="my_data_name">User\'s Data</string>
+
     <string name="my_data_edit">Edit</string>
-    <string name="my_data_age_gender">21-30, Male</string>
-    <string name="my_data_peak">Peak Flow: - </string>
+
+    <string name="my_data_title">Personal Info:</string>
+    <string name="my_data_name">Name</string>
+    <string name="my_data_age">Age</string>
+    <string name="my_data_gender">Gender</string>
+    <string name="my_data_height">Height</string>
+
+    <string name="my_data_peak_title">Peak Flow Levels:</string>
+    <string name="my_data_peak">Personal Best</string>
+    <string name="my_data_warning">Warning</string>
+    <string name="my_data_critical">Critical</string>
+    <string name="my_data_peak_notice">* values have been calculated based on your initial setup answers</string>
+
+    <string name="my_data_dr_title">Dr Details:</string>
+    <string name="my_data_appointment">Appointment</string>
+    <string name="my_data_dr">Doctor/GP</string>
+    <string name="my_data_ooh">Out of Hours</string>
+
+    <string name="my_data_inhaler_title">Medication:</string>
+    <string name="my_data_inhaler_preventer">Preventer</string>
+    <string name="my_data_inhaler_reliever">Reliever</string>
+
+    <string name="my_data_trigger_title">Triggers:</string>
+
+    <!-- ? -->
     <string name="title_activity_symptoms__list">Symptoms</string>
+
+
+    <string name="symptom_heading_breathing_difficulty">Breathing Difficulty</string>
+    <string name="symptom_description_breathing_difficulty">Breathing Difficulty is...</string>
+
+    <string name="symptom_heading_coughing">Coughing</string>
+    <string name="symptom_description_coughing">Coughing is...</string>
+
+    <string name="symptom_heading_exercising_difficulty">Exercising Difficulty</string>
+    <string name="symptom_description_exercising_difficulty">Exercising Difficulty is...</string>
+
+    <string name="symptom_heading_talking_difficulty">Talking Difficulty</string>
+    <string name="symptom_description_talking_difficulty">Talking Difficulty is...</string>
+
+    <string name="symptom_heading_tight_chest">Tight Chest</string>
+    <string name="symptom_description_tight_chest">Tight Chest is...</string>
+
+    <string name="symptom_heading_walking_difficulty">Walking Difficulty</string>
+    <string name="symptom_description_walking_difficulty">Walking Difficulty is...</string>
+
+    <string name="symptom_heading_waking">Waking at Night</string>
+    <string name="symptom_description_waking">Waking is...</string>
+
+    <string name="symptom_heading_wheezing">Wheezing</string>
+    <string name="symptom_description_wheezing">Wheezing is...</string>
+
 
 </resources>

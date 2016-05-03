@@ -1,6 +1,8 @@
 package com.prco203d.asthmaapp;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,18 +14,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-<<<<<<< HEAD
 import android.widget.Toast;
-=======
 import android.widget.TextView;
->>>>>>> feature/Complete_Profile
 
 public class SetupActivity extends AppCompatActivity {
 
     private EditText editTextName = null;
     private Spinner spinnerAge = null;
     private Spinner  spinnerGender = null;
-    //private EditText  editPeakFlow   = null;
+    private EditText  editPeakFlow   = null;
     private TextView description = null;
     private Button buttonUpdate;
     private Button buttonNext;
@@ -77,6 +76,30 @@ public class SetupActivity extends AppCompatActivity {
             // Show next button
             buttonUpdate.setVisibility(View.INVISIBLE);
             buttonPrevious.setVisibility(View.INVISIBLE);
+
+            // Display disclaimer popup
+            AlertDialog alertDialog = new AlertDialog.Builder(SetupActivity.this).create();
+            alertDialog.setTitle("Welcome to AsthmaAid");
+            alertDialog.setMessage(getResources().getString(R.string.setup_disclaimer));
+
+            alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Exit",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            // quit app here?
+                            dialog.dismiss();
+                        }
+                    });
+
+            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            dialog.dismiss();
+                        }
+                    });
+
+            alertDialog.show();
         }
 
         String name = sharedPrefs.getString("Name", "User");
@@ -146,7 +169,7 @@ public class SetupActivity extends AppCompatActivity {
 
     public void saveData(){
 
-        // write the data to a pref file
+        // Write the data to a pref file
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
         SharedPreferences.Editor editor = sharedPrefs.edit();
@@ -160,34 +183,21 @@ public class SetupActivity extends AppCompatActivity {
         }
         editor.putString("Name", userName);
 
-<<<<<<< HEAD
 
-        int peak;
-        try
-        {
-        if(editPeakFlow.getText().toString() != null && editPeakFlow.getText().toString() != ""){
-            peak = Integer.parseInt(editPeakFlow.getText().toString());
-        }
-        else {
-            peak = 0;
-        }
-        editor.putInt("Peak", peak);
-        }
-        catch (NumberFormatException ex)
-        {
-            Toast.makeText(this, R.string.no_value, Toast.LENGTH_SHORT).show();
-        }
-
-=======
-        //int peak;
-        //if(editPeakFlow.getText().toString() != null && editPeakFlow.getText().toString() != ""){
-        //    peak = Integer.parseInt(editPeakFlow.getText().toString());
-        //}
-        //else {
-        //    peak = 0;
-        //}
-        //editor.putInt("Peak", peak);
->>>>>>> feature/Complete_Profile
+        // Peak Flow isn't here any more...
+//        int peak;
+//        try {
+//            if(editPeakFlow.getText().toString() != null && editPeakFlow.getText().toString() != ""){
+//                peak = Integer.parseInt(editPeakFlow.getText().toString());
+//            }
+//            else {
+//                peak = 0;
+//            }
+//
+//        editor.putInt("Peak", peak);
+//        }catch (NumberFormatException ex){
+//            Toast.makeText(this, R.string.no_value, Toast.LENGTH_SHORT).show();
+//        }
 
         // Do the spinners
         String genderString = "";
