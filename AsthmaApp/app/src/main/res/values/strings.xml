@@ -191,28 +191,28 @@
 
 
     <string name="symptom_heading_breathing_difficulty">Breathing Difficulty</string>
-    <string name="symptom_description_breathing_difficulty">Breathing Difficulty is...</string>
+    <string name="symptom_description_breathing_difficulty">If you are having difficulty breathing then you should start using your reliever inhaler.\n\nThis symptom could be a precursor to an asthma attack and you should refer to the emergency information.</string>
 
     <string name="symptom_heading_coughing">Coughing</string>
-    <string name="symptom_description_coughing">Coughing is...</string>
+    <string name="symptom_description_coughing">If you haven’t been using your preventer inhaler, start using it regularly again and take your reliever inhaler as needed.\n\nIf you don’t improve within 48 hours make an urgent appointment to see your GP or asthma nurse.\n\nIf this symptom worsens then it could be a precursor to an asthma attack and you should refer to the emergency information. </string>
 
     <string name="symptom_heading_exercising_difficulty">Exercising Difficulty</string>
-    <string name="symptom_description_exercising_difficulty">Exercising Difficulty is...</string>
+    <string name="symptom_description_exercising_difficulty">If you haven’t been using your preventer inhaler, start using it regularly again and take your reliever inhaler as needed.\n\nIf you don’t improve within 48 hours make an urgent appointment to see your GP or asthma nurse.</string>
 
     <string name="symptom_heading_talking_difficulty">Talking Difficulty</string>
-    <string name="symptom_description_talking_difficulty">Talking Difficulty is...</string>
+    <string name="symptom_description_talking_difficulty">If you are having difficulty talking then you should start using your reliever inhaler.\n\nThis symptom could be a precursor to an asthma attack and you should refer to the emergency information.</string>
 
     <string name="symptom_heading_tight_chest">Tight Chest</string>
-    <string name="symptom_description_tight_chest">Tight Chest is...</string>
+    <string name="symptom_description_tight_chest">If you haven’t been using your preventer inhaler, start using it regularly again and take your reliever inhaler as needed.\n\nIf you don’t improve within 48 hours make an urgent appointment to see your GP or asthma nurse.\n\nIf this symptom worsens then it could be a precursor to an asthma attack and you should refer to the emergency information.</string>
 
     <string name="symptom_heading_walking_difficulty">Walking Difficulty</string>
-    <string name="symptom_description_walking_difficulty">Walking Difficulty is...</string>
+    <string name="symptom_description_walking_difficulty">If you are having difficulty waliking then you should start using your reliever inhaler.\n\nThis symptom could be a precursor to an asthma attack and you should refer to the emergency information.</string>
 
     <string name="symptom_heading_waking">Waking at Night</string>
-    <string name="symptom_description_waking">Waking is...</string>
+    <string name="symptom_description_waking">If you haven’t been using your preventer inhaler, start using it regularly again and take your reliever inhaler as needed.\n\nIf you don’t improve within 48 hours make an urgent appointment to see your GP or asthma nurse.</string>
 
     <string name="symptom_heading_wheezing">Wheezing</string>
-    <string name="symptom_description_wheezing">Wheezing is...</string>
+    <string name="symptom_description_wheezing">If you haven’t been using your preventer inhaler, start using it regularly again and take your reliever inhaler as needed.\n\nIf you don’t improve within 48 hours make an urgent appointment to see your GP or asthma nurse.\n\nIf this symptom worsens then it could be a precursor to an asthma attack and you should refer to the emergency information.</string>
 
 
 </resources>
