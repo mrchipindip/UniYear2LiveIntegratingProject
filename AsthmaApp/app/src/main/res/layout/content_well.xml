@@ -44,7 +44,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="4 Puffs                          Am"
+            android:text="Take 2 of your preventer puffs in the morning"
             android:id="@+id/bottomLeftButton"
             android:layout_gravity="center" />
     </FrameLayout>
@@ -140,7 +140,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="2 Puffs                         Pm"
+            android:text="Take 2 of your preventerpuffs at night"
             android:id="@+id/bottomRightButton"
             android:layout_gravity="center" />
     </FrameLayout>

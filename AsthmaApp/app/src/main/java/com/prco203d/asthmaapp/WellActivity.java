@@ -33,15 +33,14 @@ public class WellActivity extends AppCompatActivity implements View.OnClickListe
 
         symptom = Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG);
 
-        //String MaxPeakFlow = getIntent().getStringExtra("MaxPeakFlow"); //SORT THIS OUT
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
         Toolbar toolbar              = (Toolbar) findViewById(R.id.toolbar);
         topLeftButton                = (Button) findViewById(R.id.topLeftButton);
         bottomLeftButton             = (Button) findViewById(R.id.bottomLeftButton);
         bottomRightButton            = (Button) findViewById(R.id.bottomRightButton);
-        wheezingImageButton           = (ImageButton) findViewById(R.id.wheezingImageButton);
-        chestTightnesImageButton    = (ImageButton) findViewById(R.id.chestTightnesImageButton);
+        wheezingImageButton          = (ImageButton) findViewById(R.id.wheezingImageButton);
+        chestTightnesImageButton     = (ImageButton) findViewById(R.id.chestTightnesImageButton);
         breathlessImageButton        = (ImageButton) findViewById(R.id.breathlessImageButton);
         coughingImageButton          = (ImageButton) findViewById(R.id.coughingImageButton);
 
@@ -57,6 +56,7 @@ public class WellActivity extends AppCompatActivity implements View.OnClickListe
 
         peak = (sharedPrefs.getInt("Peak", 0));
         topLeftButton.setText("" + peak);
+
 
         wheezingImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
