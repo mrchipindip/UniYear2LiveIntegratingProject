@@ -71,7 +71,8 @@
 
     <!-- Setup1 labels: general info-->
     <string name="setup1_desc_welcome">The information on this page is required for the app to help you effectively:</string>
-    <string name="setup1_desc">The information you enter on this page allows the app to help you effectively:</string>>
+    <string name="setup1_desc">The information you enter on this page allows the app to help you effectively:</string>
+    >
     <string name="setup1_name">Name:</string>
     <string name="setup1_age">Age:</string>
     <string name="setup1_gender">Gender:</string>
@@ -114,11 +115,11 @@
     <string name="setup3_gp_ooh_number">Phone Number:</string>
 
     <!-- Setup4 labels: inhalers -->
-    <string name="setup4_desc">Please enter the details of your inhalers, and the usage you have been recommended. </string>
+    <string name="setup4_desc">Please enter the details of your inhalers and other medication, and the usage you have been recommended. </string>
     <string name="setup4_preventer">Your Preventer Inhaler:</string>
     <string name="setup4_reliever">Your Reliever Inhaler:</string>
-    <string name="setup4_preventer_puffs_am">Recommended preventer puffs</string>
-    <string name="setup4_preventer_puffs_pm">Recommended preventer puffs</string>
+    <string name="setup4_preventer_puffs_am">Recommended morning preventer puffs</string>
+    <string name="setup4_preventer_puffs_pm">Recommended evening preventer puffs</string>
     <string name="setup4_reliever_puffs">Recommended reliever puffs</string>
 
     <!-- Preventer inhaler spinner labels -->

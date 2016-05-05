@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/setup4_preventer"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:id="@+id/textViewRelieverTitle" />
 
             <Spinner
@@ -55,8 +55,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/setup4_preventer_puffs_am"
+                android:id="@+id/textViewPreventerAMPuffs" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editTextPAM"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/setup4_preventer_puffs_pm"
+                android:id="@+id/textViewPreventerPMPuffs" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editTextPPM" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/setup4_reliever"
-                android:layout_marginTop="20dp"
                 android:id="@+id/textViewPreventerTitle" />
 
             <Spinner
@@ -65,6 +93,20 @@
                 android:id="@+id/spinnerAge"
                 android:entries="@array/stringArrayRelievers"
                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/setup4_reliever_puffs"
+                android:id="@+id/textViewReleiverPuffs" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editTextR" />
 
 
         </LinearLayout>
