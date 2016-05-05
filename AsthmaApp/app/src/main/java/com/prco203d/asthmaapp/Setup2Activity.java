@@ -15,6 +15,7 @@ public class Setup2Activity extends AppCompatActivity {
     private EditText editPeakFlowBest   = null;
     private EditText editPeakFlowWarning   = null;
     private EditText editPeakFlowCritical   = null;
+
     private Button buttonUpdate;
     private Button buttonNext;
     private Button buttonPrevious;
@@ -36,15 +37,44 @@ public class Setup2Activity extends AppCompatActivity {
         // Editing setup mode
         if(isSetup()){
 
-            // if we're editing, get the current values
+            // As we're editing, get the current values
             int peak = (sharedPrefs.getInt("Peak", 0));
-            editPeakFlowBest.setText("" + peak);
-
             int warning = (sharedPrefs.getInt("Warning", 0));
-            editPeakFlowWarning.setText("" + warning);
-
             int critical = (sharedPrefs.getInt("Critical", 0));
-            editPeakFlowCritical.setText("" + critical);
+
+            // If the value is zero it has come from the sharedPref defaults, and not been entered
+            // We can then try to locate an estimate, if enough info was entered in Setup1
+            Boolean peakCalcPossible = (sharedPrefs.getBoolean("peakCalcPossible", false));
+
+            // PB
+            if (peak != 0) {
+                editPeakFlowBest.setText("" + peak);
+            }
+            else {
+                editPeakFlowBest.setText("");
+                if (peakCalcPossible){
+
+                }
+            }
+
+            // Warning
+            if (warning != 0) {
+                editPeakFlowWarning.setText("" + warning);
+            }
+            else {
+                editPeakFlowWarning.setText("");
+            }
+
+            // Critical
+            if (critical != 0) {
+                editPeakFlowCritical.setText("" + critical);
+            }
+            else {
+                editPeakFlowCritical.setText("");
+            }
+
+            // it doesn't help to put a zeroes there though
+            // Also check if we can display estimated values
 
             // Show submit button only
             buttonNext.setVisibility(View.INVISIBLE);
@@ -90,6 +120,11 @@ public class Setup2Activity extends AppCompatActivity {
 
     // Go to next page
     public void nextPage(View view){
+
+        // Save the changes
+        saveData();
+
+        // Move to next screen
         Intent intent = new Intent(this, Setup3Activity.class);
         startActivity(intent);
     }
@@ -111,42 +146,66 @@ public class Setup2Activity extends AppCompatActivity {
 
         // write the data to a pref file
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
-
         SharedPreferences.Editor editor = sharedPrefs.edit();
 
+        // Peak Flow isn't here any more...
+//        int peak;
+//        try {
+//            if(editPeakFlow.getText().toString() != null && editPeakFlow.getText().toString() != ""){
+//                peak = Integer.parseInt(editPeakFlow.getText().toString());
+//            }
+//            else {
+//                peak = 0;
+//            }
+//
+//        editor.putInt("Peak", peak);
+//        }catch (NumberFormatException ex){
+//            Toast.makeText(this, R.string.no_value, Toast.LENGTH_SHORT).show();
+//        }
+
+
         int peak;
-        if(editPeakFlowBest.getText().toString() != null && editPeakFlowBest.getText().toString() != ""){
-            peak = Integer.parseInt(editPeakFlowBest.getText().toString());
+
+        try {
+            if (editPeakFlowBest.getText().toString() != null && editPeakFlowBest.getText().toString() != "") {
+                peak = Integer.parseInt(editPeakFlowBest.getText().toString());
+                editor.putInt("Peak", peak);
+            } else {
+                peak = 0;
+            }
+        }catch (NumberFormatException ex){
+
         }
-        else {
-            peak = 0;
-        }
-        editor.putInt("Peak", peak);
+
 
         int warn;
-        if(editPeakFlowWarning.getText().toString() != null && editPeakFlowWarning.getText().toString() != ""){
-            warn = Integer.parseInt(editPeakFlowWarning.getText().toString());
+        try {
+            if (editPeakFlowWarning.getText().toString() != null && editPeakFlowWarning.getText().toString() != "") {
+                warn = Integer.parseInt(editPeakFlowWarning.getText().toString());
+                editor.putInt("Warning", warn);
+            } else {
+                warn = 0;
+            }
+        }catch(NumberFormatException ex){
+
         }
-        else {
-            warn = 0;
-        }
-        editor.putInt("Warning", warn);
+
 
         int critical;
-        if(editPeakFlowCritical.getText().toString() != null && editPeakFlowCritical.getText().toString() != ""){
-            critical = Integer.parseInt(editPeakFlowCritical.getText().toString());
-        }
-        else {
-            critical = 0;
-        }
-        editor.putInt("Critical", critical);
+        try {
+            if (editPeakFlowCritical.getText().toString() != null && editPeakFlowCritical.getText().toString() != "") {
+                critical = Integer.parseInt(editPeakFlowCritical.getText().toString());
+            } else {
+                critical = 0;
+            }
+            editor.putInt("Critical", critical);
+        }catch(NumberFormatException ex){
 
-        // Set that the app is now setup for use
-        //editor.putBoolean("isSetup", true);
+        }
 
         editor.apply();
 
         // This is the same as "back" so should break the back loop situation
-        finish();
+        //finish();
     }
 }

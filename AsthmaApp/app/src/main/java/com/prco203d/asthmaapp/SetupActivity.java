@@ -183,22 +183,6 @@ public class SetupActivity extends AppCompatActivity {
         }
         editor.putString("Name", userName);
 
-
-        // Peak Flow isn't here any more...
-//        int peak;
-//        try {
-//            if(editPeakFlow.getText().toString() != null && editPeakFlow.getText().toString() != ""){
-//                peak = Integer.parseInt(editPeakFlow.getText().toString());
-//            }
-//            else {
-//                peak = 0;
-//            }
-//
-//        editor.putInt("Peak", peak);
-//        }catch (NumberFormatException ex){
-//            Toast.makeText(this, R.string.no_value, Toast.LENGTH_SHORT).show();
-//        }
-
         // Do the spinners
         String genderString = "";
         int spinnerPosGender = spinnerGender.getSelectedItemPosition();
