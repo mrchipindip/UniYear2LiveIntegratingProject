@@ -25,6 +25,9 @@ public class WellActivity extends AppCompatActivity implements View.OnClickListe
     ImageButton coughingImageButton = null;
     Toast symptom = null;
     int peak;
+    int preventerAm;
+    int preventerPM;
+    String preventerInhaler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +59,13 @@ public class WellActivity extends AppCompatActivity implements View.OnClickListe
 
         peak = (sharedPrefs.getInt("Peak", 0));
         topLeftButton.setText("" + peak);
+
+        preventerAm = (sharedPrefs.getInt("PreventerAm", 0));
+        preventerPM = (sharedPrefs.getInt("PreventerPm", 0));
+        preventerInhaler = sharedPrefs.getString("PreventerName", "Not Given");
+
+        bottomLeftButton.setText("In the morning you should take " + preventerAm + " puffs of your " + preventerInhaler + " inhaler.");
+        bottomRightButton.setText("In the evening you should take " + preventerPM + " puffs of your " + preventerInhaler + " inhaler.");
 
 
         wheezingImageButton.setOnClickListener(new View.OnClickListener() {
