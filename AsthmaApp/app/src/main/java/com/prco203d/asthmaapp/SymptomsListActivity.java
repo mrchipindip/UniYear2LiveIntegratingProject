@@ -24,6 +24,8 @@ public class SymptomsListActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         expListView = (ExpandableListView) findViewById(R.id.exp_Symptoms_List);
 
         prepareListData();
