@@ -38,7 +38,6 @@ public class MedRefActivity extends AppCompatActivity implements View.OnClickLis
         whenFeelingWorseButton = (Button) findViewById(R.id.whenFeelingWorseButton);
         inAnAsthmaAttackButton = (Button) findViewById(R.id.inAnAsthmaAttackButton);
 
-
         setSupportActionBar(toolbar);
 
         Intent alarmIntent = new Intent(MedRefActivity.this, AlarmReceiver.class);
