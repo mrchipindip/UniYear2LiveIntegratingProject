@@ -1,7 +1,7 @@
 <resources>
 
     <!-- General strings -->
-    <string name="app_name">Asthma App</string>
+    <string name="app_name">Asthma Aid</string>
     <string name="action_settings">Settings</string>
 
     <!-- Activity titles -->
@@ -19,6 +19,28 @@
     <string name="title_activity_setup4">Your Inhalers</string>
     <string name="title_activity_setup5">Asthma Triggers</string>
     <string name="title_activity_setup6">Asthma Triggers</string>
+    <string name="title_activity_calendar">Calendar</string>
+    <string name="title_activity_nav_drawer">Asthma Aid</string>
+
+    <!-- New Nav Menu -->
+    <string name="navmain_track_title">Log your peak flow for today:</string>
+    <string name="navmain_track_button">Enter</string>
+    <string name="navmain_well_title">EVERYDAY CARE</string>
+    <string name="navmain_well_desc">Your daily medication, and information to relieve mild symptoms.</string>
+    <string name="navmain_unwell_title">FEELING WORSE</string>
+    <string name="navmain_unwell_desc">Steps you can take if your symptoms are persistent and you need to control them.</string>
+    <string name="navmain_emergency_title">ASTHMA ATTACK</string>
+    <string name="navmain_emergency_desc">Urgent information for severe symptoms or if you are having an asthma attack.</string>
+
+    <!-- Nav menu titles -->
+    <string name="navmenu_title">Asthma Aid Main Menu</string>
+
+    <string name="navmenu_profile">Profile</string>
+    <string name="navmenu_cal">Calendar</string>
+    <string name="navmenu_graph">Graph</string>
+
+    <string name="navmenu_symptoms">Symptoms A-Z</string>
+    <string name="navmenu_other_info">Helpful Information</string>
 
     <!-- Main menu controls -->
     <string name="daily_peak_flow">My Peak Flow Today Is...</string>
@@ -214,6 +236,10 @@
 
     <string name="symptom_heading_wheezing">Wheezing</string>
     <string name="symptom_description_wheezing">If you haven’t been using your preventer inhaler, start using it regularly again and take your reliever inhaler as needed.\n\nIf you don’t improve within 48 hours make an urgent appointment to see your GP or asthma nurse.\n\nIf this symptom worsens then it could be a precursor to an asthma attack and you should refer to the emergency information.</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
 
 </resources>

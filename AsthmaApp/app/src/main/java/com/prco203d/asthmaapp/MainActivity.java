@@ -96,7 +96,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
-
     public void openUnwell(View view) {
         Intent intent = new Intent(this, UnwellActivity.class);
         startActivity(intent);
