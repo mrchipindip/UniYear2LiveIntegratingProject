@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.prco203d.asthmaapp.NavDrawerActivity"
+    tools:showIn="@layout/app_bar_nav_drawer"
+    android:background="#5e6367">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/imageViewTrackArea"
+        android:background="@color/other_grey"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+ />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:background="@color/white"
+        android:layout_alignBottom="@id/imageViewTrackArea"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="6dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:text="@string/navmain_well_title"
+        android:id="@+id/buttonWell"
+        android:drawableEnd="@drawable/happyface_"
+        android:drawableRight="@drawable/happyface_"
+        android:layout_below="@+id/imageViewTrackArea"
+        android:background="@color/green"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:textAlignment="textStart"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:gravity="start"
+        android:paddingTop="10dp"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:onClick="openWell"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:text="@string/navmain_unwell_title"
+        android:id="@+id/buttonUnwell"
+        android:background="@color/amber"
+        android:layout_below="@+id/buttonWell"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textAlignment="textStart"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:gravity="start"
+        android:paddingTop="10dp"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:drawableEnd="@drawable/sadface_"
+        android:drawableRight="@drawable/sadface_"
+        android:onClick="openUnwell"
+     />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:text="@string/navmain_emergency_title"
+        android:id="@+id/buttonEmergency"
+        android:layout_below="@+id/buttonUnwell"
+        android:background="@color/red"
+        android:layout_alignLeft="@+id/buttonUnwell"
+        android:layout_alignStart="@+id/buttonUnwell"
+        android:layout_marginTop="10dp"
+        android:textAlignment="textStart"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:gravity="start"
+        android:paddingTop="10dp"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:drawableEnd="@drawable/terribleface_"
+        android:drawableRight="@drawable/terribleface_"
+        android:onClick="openEmergency"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/navmain_track_button"
+        android:id="@+id/button2"
+        android:layout_above="@+id/buttonWell"
+        android:layout_toRightOf="@+id/editText"
+        android:layout_toEndOf="@+id/editText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/navmain_track_title"
+        android:id="@+id/textView12"
+        android:layout_alignTop="@+id/imageViewTrackArea"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#ffffff"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/navmain_well_desc"
+        android:id="@+id/textViewWellDesc"
+        android:layout_alignBottom="@id/buttonWell"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_marginBottom="20dp"
+        android:translationZ="10dp"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:shadowColor="#00ffffff" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/navmain_unwell_desc"
+        android:id="@+id/textViewUnwellDesc"
+        android:layout_alignBottom="@id/buttonUnwell"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_marginBottom="20dp"
+        android:translationZ="10dp"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:shadowColor="#00ffffff"/>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/navmain_emergency_desc"
+        android:id="@+id/textViewEmergencyDesc"
+        android:layout_alignBottom="@id/buttonEmergency"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_marginBottom="20dp"
+        android:translationZ="10dp"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:shadowColor="#00ffffff"/>
+
+
+</RelativeLayout>
