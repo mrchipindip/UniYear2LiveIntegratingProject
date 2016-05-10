@@ -184,6 +184,17 @@
 
     <!-- My data labels -->
 
+    <string name="my_data_s1_title">Personal Information</string>
+    <string name="my_data_s1_desc">Name, age, date of birth and height</string>
+    <string name="my_data_s2_title">Peak Flow</string>
+    <string name="my_data_s2_desc">Personal best, warning and critical levels</string>
+    <string name="my_data_s3_title">Contact Details</string>
+    <string name="my_data_s3_desc">GP and out of hours contact details, appointment date</string>
+    <string name="my_data_s4_title">Inhalers</string>
+    <string name="my_data_s4_desc">Preventer and reliever names and doses</string>
+    <string name="my_data_s5_title">Triggers</string>
+    <string name="my_data_s5_desc">Known triggers that make your asthma worse</string>
+
     <string name="my_data_edit">Edit</string>
 
     <string name="my_data_title">Personal Info:</string>

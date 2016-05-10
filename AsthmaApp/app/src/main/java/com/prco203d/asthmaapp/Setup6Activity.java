@@ -98,7 +98,7 @@ public class Setup6Activity extends AppCompatActivity {
         saveData();
 
         // Go to the main screen. Need to clear the back stack so users can't reverse into setup
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, NavDrawerActivity.class);
         startActivity(intent);
     }
 

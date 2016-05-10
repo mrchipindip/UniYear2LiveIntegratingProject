@@ -113,7 +113,7 @@
                 android:id="@+id/buttonFoods"
                 android:layout_gravity="center_vertical"
                 android:onClick="buttonToggle"
-                />
+            />
 
             <Button
                 android:layout_width="100dp"
@@ -122,7 +122,8 @@
                 android:id="@+id/buttonPollen"
                 android:layout_gravity="center_vertical"
                 android:onClick="buttonToggle"
-                />
+            />
+
             </TableRow>
 
             <!--

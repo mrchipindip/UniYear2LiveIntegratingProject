@@ -135,7 +135,6 @@ public class MyDataActivity extends AppCompatActivity {
                         finish();
                         startActivity(getIntent());
 
-
                         dialog.dismiss();
                     }
                 });

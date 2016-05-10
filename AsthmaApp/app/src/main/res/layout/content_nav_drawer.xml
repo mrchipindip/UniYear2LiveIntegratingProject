@@ -22,7 +22,7 @@
  />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="35dp"
         android:inputType="number"
         android:ems="10"
@@ -104,10 +104,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/navmain_track_button"
-        android:id="@+id/button2"
+        android:id="@+id/buttonEnter"
+        android:layout_marginLeft="5dp"
         android:layout_above="@+id/buttonWell"
         android:layout_toRightOf="@+id/editText"
-        android:layout_toEndOf="@+id/editText" />
+        android:layout_toEndOf="@+id/editText"
+        android:onClick="enterPressed"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/EditButton"
+        android:id="@+id/buttonEdit"
+        android:layout_above="@+id/buttonWell"
+        android:layout_toRightOf="@+id/buttonEnter"
+        android:onClick="editPressed"
+/>
 
     <TextView
         android:layout_width="wrap_content"
