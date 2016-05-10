@@ -49,17 +49,6 @@
         android:layout_alignParentStart="true"
         android:background="#f44336" />
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Remind me monthly to check in?"
-        android:id="@+id/monthlyCheck"
-        android:checked="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="136dp" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,5 +57,26 @@
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enable Monthly Alarm"
+        android:id="@+id/fiveSecondAlarm"
+        android:onClick="enableAlarm"
+        android:layout_below="@+id/medicalCheckText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="56dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disbale Monthly Alarm"
+        android:id="@+id/disableMonthlyAlarm"
+        android:onClick="disableAlarm"
+        android:layout_below="@+id/fiveSecondAlarm"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

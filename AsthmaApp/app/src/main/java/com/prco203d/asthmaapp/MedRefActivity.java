@@ -1,13 +1,18 @@
 package com.prco203d.asthmaapp;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -16,15 +21,21 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class MedRefActivity extends AppCompatActivity implements View.OnClickListener {
 
     private PendingIntent pendingIntent;
-    private CheckBox monthlyCheck;
+    private Button monthlyCheckEnabled;
+    private Button monthlyCheckDisbaled;
+    private Button fiveSecondAlarm;
     Button everydayCareButton = null;
     Button whenFeelingWorseButton = null;
     Button inAnAsthmaAttackButton = null;
 
+    NotificationManager notificationManager;
+    boolean isNotificActive = false;
+    int notifID = 33;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +44,21 @@ public class MedRefActivity extends AppCompatActivity implements View.OnClickLis
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        monthlyCheck = (CheckBox) findViewById(R.id.monthlyCheck);
         everydayCareButton = (Button) findViewById(R.id.everydayCareButton);
         whenFeelingWorseButton = (Button) findViewById(R.id.whenFeelingWorseButton);
         inAnAsthmaAttackButton = (Button) findViewById(R.id.inAnAsthmaAttackButton);
+        //remindMeMonthly = (CheckBox) findViewById(R.id.checkBoxMonthly);
+        //monthlyCheckEnabled = (Button) findViewById(R.id.monthlyCheckEnabled);
+        //monthlyCheckDisbaled = (Button) findViewById(R.id.monthlyCheckDisabled);
+        fiveSecondAlarm = (Button) findViewById(R.id.fiveSecondAlarm);
+
+
+
 
         setSupportActionBar(toolbar);
 
-        Intent alarmIntent = new Intent(MedRefActivity.this, AlarmReceiver.class);
-        pendingIntent = PendingIntent.getBroadcast(MedRefActivity.this, 0, alarmIntent, 0);
+        //Intent alarmIntent = new Intent(MedRefActivity.this, AlarmReceiver.class);
+       // pendingIntent = PendingIntent.getBroadcast(MedRefActivity.this, 0, alarmIntent, 0);
 
         everydayCareButton.setOnClickListener((new View.OnClickListener() {
             @Override
@@ -67,17 +84,9 @@ public class MedRefActivity extends AppCompatActivity implements View.OnClickLis
 
             }
         }));
-        monthlyCheck.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                boolean checked = ((CheckBox) view).isChecked();
-                if (checked) {
-                    start();
-                    startAt10();
-                } else
-                    cancel();
-            }
-        }));
+
+
+
 
 
 
@@ -85,35 +94,59 @@ public class MedRefActivity extends AppCompatActivity implements View.OnClickLis
     }
 
 
+//    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+//    public void enableAlarm(View view)
+//    {
+//        NotificationCompat.Builder notificBuilder = new NotificationCompat.Builder(this)
+//                .setContentTitle("Message")
+//                .setContentText("New Message")
+//                .setTicker("Alert New Message")
+//                .setSmallIcon(R.drawable.happyface_);
+//
+//        Intent moreInfoIntent = new Intent(this, MoreInfoNotification.class);
+//        TaskStackBuilder tStackBuilder = TaskStackBuilder.create(this);
+//        tStackBuilder.addParentStack(MoreInfoNotification.class);
+//        tStackBuilder.addNextIntent(moreInfoIntent);
+//        PendingIntent pendingIntent = tStackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+//        notificBuilder.setContentIntent(pendingIntent);
+//
+//        notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+//
+//        notificationManager.notify(notifID, notificBuilder.build());
+//
+//        isNotificActive = true;
+//    }
+//
 
-    public void start() {
-        AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        int interval = 8000;
+//    public void fiveSecondAlarm(View view)
+//    {
+//        Long alertTime = new GregorianCalendar().getTimeInMillis()+5*1000;
+//
+//        Intent alertIntent = new Intent(this, AlertReceiver.class);
+//
+//        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+//
+//        alarmManager.setRepeating
+//                (AlarmManager.RTC_WAKEUP, alertTime, AlarmManager.INTERVAL_DAY, PendingIntent.getBroadcast(this, 1, alertIntent, PendingIntent.FLAG_UPDATE_CURRENT));
+//
+//    }
 
-        manager.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), interval, pendingIntent);
-        Toast.makeText(this, "Alarm Set", Toast.LENGTH_SHORT).show();
+    public void enableAlarm(View view) {
+        Long alertTime = new GregorianCalendar().getTimeInMillis()+5*1000;
+
+        Intent alertIntent = new Intent(this, AlertReceiver.class);
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+        alarmManager.set(AlarmManager.RTC_WAKEUP, alertTime, PendingIntent.getBroadcast(this, 1, alertIntent, PendingIntent.FLAG_UPDATE_CURRENT));
+
     }
 
-    public void cancel() {
-        AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        manager.cancel(pendingIntent);
-        Toast.makeText(this, "Alarm Canceled", Toast.LENGTH_SHORT).show();
+    public void disableAlarm(View view)
+    {
+       //AlarmManager.cancel(this) ;
     }
 
-    public void startAt10() {
-        AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        int interval = 1000 * 60 * 20;
-
-        /* Set the alarm to start at 10:30 AM */
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(System.currentTimeMillis());
-        calendar.set(Calendar.HOUR_OF_DAY, 12);
-        calendar.set(Calendar.MINUTE, 0);
-
-        /* Repeating on every 20 minutes interval */
-        manager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-                1000 * 60 * 20, pendingIntent);
-    }
 
 
     @Override

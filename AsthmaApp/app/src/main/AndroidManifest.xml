@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.prco203d.asthmaapp">
 
+    <uses-permission android:name="com.android.alarm.permission.SET_AlARM"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -142,6 +144,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MoreInfoNotification"
+            android:label="More on Notification"
+            android:parentActivityName=".MedRefActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity"/>
+        </activity>
+        <receiver  android:process=":remote" android:name=".AlertReceiver"></receiver>
     </application>
 
 </manifest>
