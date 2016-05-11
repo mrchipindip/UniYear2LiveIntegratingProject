@@ -13,7 +13,7 @@ import android.support.v4.app.NotificationCompat;
 public class AlertReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        createNotification(context, "Athma App!", "Please check in to the app to review your info", "");
+        createNotification(context, "Asthma App!", "Please check in to the app to review your info", "");
     }
 
     public void createNotification(Context context, String msg, String msgText, String msgAlert) {
