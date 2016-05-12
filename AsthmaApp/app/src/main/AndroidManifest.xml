@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -19,23 +20,26 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             -->
         </activity>
+
         <activity
             android:name=".WellActivity"
             android:label="@string/title_activity_well"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.prco203d.asthmaapp.MainActivity" />
         </activity>
+
         <activity
             android:name=".UnwellActivity"
             android:label="@string/title_activity_unwell"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.prco203d.asthmaapp.MainActivity" />
@@ -44,104 +48,140 @@
             android:name=".EmergencyActivity"
             android:label="@string/title_activity_emergency"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.prco203d.asthmaapp.MainActivity" />
         </activity>
+
         <activity
             android:name=".MyDataActivity"
             android:label="@string/title_activity_my_data"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.prco203d.asthmaapp.MainActivity" />
         </activity>
+
         <activity
             android:name=".GraphAndCalendarActivity"
             android:label="@string/title_activity_graph_and_calendar"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.prco203d.asthmaapp.MainActivity" />
         </activity>
+
         <activity
             android:name=".MedRefActivity"
             android:label="@string/title_activity_med_ref"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.prco203d.asthmaapp.MainActivity" />
         </activity>
+
         <activity
             android:name=".AppSettingsActivity"
             android:label="@string/title_activity_app_settings"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.prco203d.asthmaapp.MainActivity" />
         </activity>
+
         <activity
             android:name=".Pop"
-            android:theme="@style/AppTheme.PopupTheme" />
+            android:theme="@style/AppTheme.PopupTheme"
+            />
+
         <activity
             android:name=".SymptomsListActivity"
             android:label="@string/title_activity_symptoms__list"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.prco203d.asthmaapp.MainActivity" />
         </activity>
+
         <activity
             android:name=".SetupActivity"
             android:label="@string/title_activity_setup"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"
+            />
+
         <activity
             android:name=".Setup2Activity"
             android:label="@string/title_activity_setup2"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"
+            />
+
         <activity
             android:name=".Setup3Activity"
             android:label="@string/title_activity_setup3"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"
+            />
+
         <activity
             android:name=".Setup4Activity"
             android:label="@string/title_activity_setup4"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"
+            />
+
         <activity
             android:name=".Setup5Activity"
             android:label="@string/title_activity_setup5"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"
+            />
+
         <activity
             android:name=".Setup6Activity"
             android:label="@string/title_activity_setup6"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"
+            />
+
         <activity
             android:name=".CalendarActivity"
             android:label="@string/title_activity_calendar"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            />
+
         <activity
             android:name=".NavDrawerActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
