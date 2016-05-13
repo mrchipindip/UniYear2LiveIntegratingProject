@@ -2,6 +2,7 @@ package com.prco203d.asthmaapp;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -37,6 +38,7 @@ public class EmergencyActivity extends AppCompatActivity implements View.OnClick
 
 
         final ProgressBar cwProgressBar = (ProgressBar) findViewById(R.id.emergencyProgressBar);
+        cwProgressBar.setMax(30);
         btnStartTimer = (Button)findViewById(R.id.emergencyStartTimer);
         imageView           = (ImageView) findViewById(R.id.imageView);
         imageView2    = (ImageView) findViewById(R.id.imageView2);
@@ -48,7 +50,7 @@ public class EmergencyActivity extends AppCompatActivity implements View.OnClick
 
 
 
-        cwCountDownTimer = new CountDownTimer(10000,1000) {
+        cwCountDownTimer = new CountDownTimer(30000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 //every tick add to I and set the progress bar to i
@@ -63,7 +65,8 @@ public class EmergencyActivity extends AppCompatActivity implements View.OnClick
                 cwProgressBar.setProgress(i);
                 numPuffs++;
                 txtEmergencyCountDown.setText("Puff!");
-                new CountDownTimer(2000, 1000) {
+
+                new CountDownTimer(3000, 1000) {
                     public void onFinish() {
                         EmergencyPuffTimer();
                     }
@@ -120,7 +123,7 @@ public class EmergencyActivity extends AppCompatActivity implements View.OnClick
         //disable the button to start timer again
         btnStartTimer.setEnabled(false);
 
-        if(numPuffs < 10)
+        if(numPuffs < 15)
         {
             txtEmergencyCountDown.setText("Get Ready..");
             i = 0;
