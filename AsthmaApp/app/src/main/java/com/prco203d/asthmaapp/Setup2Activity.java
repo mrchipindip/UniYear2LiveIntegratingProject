@@ -28,6 +28,7 @@ public class Setup2Activity extends AppCompatActivity {
         editPeakFlowBest = (EditText) findViewById(R.id.editTextPeak);
         editPeakFlowWarning = (EditText) findViewById(R.id.editTextWarning);
         editPeakFlowCritical = (EditText) findViewById(R.id.editTextCritical);
+
         buttonUpdate = (Button)findViewById(R.id.buttonSubmit);
         buttonNext = (Button)findViewById(R.id.buttonNext);
         buttonPrevious = (Button)findViewById(R.id.buttonPrevious);

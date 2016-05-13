@@ -22,8 +22,8 @@ public class SetupActivity extends AppCompatActivity {
     private EditText editTextName = null;
     private Spinner spinnerAge = null;
     private Spinner  spinnerGender = null;
-    private EditText  editPeakFlow   = null;
     private TextView description = null;
+
     private Button buttonUpdate;
     private Button buttonNext;
     private Button buttonPrevious;
@@ -52,10 +52,10 @@ public class SetupActivity extends AppCompatActivity {
         spinnerAge  = (Spinner) findViewById(R.id.spinnerAge);
         spinnerGender = (Spinner) findViewById(R.id.spinnerGender);
         description = (TextView) findViewById(R.id.textView);
+
         buttonUpdate = (Button)findViewById(R.id.buttonSubmit);
         buttonNext = (Button)findViewById(R.id.buttonNext);
         buttonPrevious = (Button)findViewById(R.id.buttonPrevious);
-        //editPeakFlow = (EditText) findViewById(R.id.editTextPeak);
 
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
 

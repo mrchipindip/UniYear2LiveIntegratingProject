@@ -87,34 +87,35 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/buttonSubmit"
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/submit"
-
+        android:id="@+id/buttonSubmit"
         android:onClick="submitData"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="72dp" />
+        />
 
     <Button
-        android:layout_width="120dp"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:text="@string/setup_previous"
         android:id="@+id/buttonPrevious"
-        android:layout_alignTop="@+id/buttonSubmit"
-        android:layout_toLeftOf="@+id/buttonSubmit"
-        android:layout_toStartOf="@+id/buttonSubmit" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:onClick="previousPage"
+        />
 
     <Button
-        android:layout_width="120dp"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:text="@string/setup_next"
         android:id="@+id/buttonNext"
-        android:layout_alignTop="@+id/buttonSubmit"
-        android:layout_toRightOf="@+id/buttonSubmit"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:onClick="nextPage"
         />
-
 
 </RelativeLayout>

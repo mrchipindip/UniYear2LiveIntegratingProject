@@ -40,18 +40,23 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:textStyle="bold"
+                android:onClick="openSetup"
                 />
 
-            <Button
+            <ImageButton
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:text=""
                 android:id="@+id/buttonEdit"
                 android:onClick="openSetup"
-                android:foreground="@drawable/edit__more_padded"
+                android:src="@drawable/ic_chevron_right"
+                android:scaleType="fitXY"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/lineView2"
+                android:backgroundTint="#00ffffff"
+                android:background="#00ffffff" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -63,7 +68,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/buttonEdit"
-                android:layout_toStartOf="@+id/buttonEdit" />
+                android:layout_toStartOf="@+id/buttonEdit"
+                android:onClick="openSetup"/>
 
             <View
                 android:layout_width="fill_parent"
@@ -78,16 +84,20 @@
                 android:layout_below="@+id/textViewS1Desc" />
 
             <!-- Section 2 -->
-            <Button
+            <ImageButton
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:text=""
                 android:id="@+id/buttonEdit2"
                 android:onClick="openSetup2"
-                android:foreground="@drawable/edit__more_padded"
+                android:src="@drawable/ic_chevron_right"
+                android:scaleType="fitXY"
                 android:layout_below="@+id/lineView2"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/lineView3"
+                android:backgroundTint="#00ffffff"
+                android:background="#00ffffff" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -99,6 +109,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:textStyle="bold"
+                android:onClick="openSetup2"
                 />
 
             <TextView
@@ -111,7 +122,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/buttonEdit2"
-                android:layout_toStartOf="@+id/buttonEdit2" />
+                android:layout_toStartOf="@+id/buttonEdit2"
+                android:onClick="openSetup2"/>
 
             <View
                 android:layout_width="fill_parent"
@@ -126,16 +138,20 @@
                 android:layout_below="@+id/textViewS2Desc" />
 
             <!-- Section 3 -->
-            <Button
+            <ImageButton
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:text=""
                 android:id="@+id/buttonEdit3"
                 android:onClick="openSetup3"
-                android:foreground="@drawable/edit__more_padded"
+                android:src="@drawable/ic_chevron_right"
+                android:scaleType="fitXY"
                 android:layout_below="@+id/lineView3"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/lineView4"
+                android:backgroundTint="#00ffffff"
+                android:background="#00ffffff" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -147,6 +163,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:textStyle="bold"
+                android:onClick="openSetup3"
                 />
 
             <TextView
@@ -159,7 +176,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/textViewS3Title"
                 android:layout_toLeftOf="@+id/buttonEdit3"
-                android:layout_toStartOf="@+id/buttonEdit3" />
+                android:layout_toStartOf="@+id/buttonEdit3"
+                android:onClick="openSetup3"
+                />
 
             <View
                 android:layout_width="fill_parent"
@@ -175,16 +194,20 @@
                 />
 
             <!-- Section 4 -->
-            <Button
+            <ImageButton
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:text=""
                 android:id="@+id/buttonEdit4"
                 android:onClick="openSetup4"
-                android:foreground="@drawable/edit__more_padded"
+                android:src="@drawable/ic_chevron_right"
+                android:scaleType="fitXY"
                 android:layout_below="@+id/lineView4"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/lineView5"
+                android:backgroundTint="#00ffffff"
+                android:background="#00ffffff" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -196,6 +219,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:textStyle="bold"
+                android:onClick="openSetup4"
                 />
 
             <TextView
@@ -208,7 +232,8 @@
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/textViewS4Title"
                 android:layout_toLeftOf="@+id/buttonEdit4"
-                android:layout_toStartOf="@+id/buttonEdit4" />
+                android:layout_toStartOf="@+id/buttonEdit4"
+                android:onClick="openSetup4"/>
 
             <View
                 android:layout_width="fill_parent"
@@ -224,16 +249,20 @@
                 />
 
             <!-- Section 5 -->
-            <Button
+            <ImageButton
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:text=""
                 android:id="@+id/buttonEdit5"
                 android:onClick="openSetup5"
-                android:foreground="@drawable/edit__more_padded"
+                android:src="@drawable/ic_chevron_right"
+                android:scaleType="fitXY"
                 android:layout_below="@+id/lineView5"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:layout_alignBottom="@+id/textViewS5Desc"
+                android:backgroundTint="#00ffffff"
+                android:background="#00ffffff" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -245,6 +274,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:textStyle="bold"
+                android:onClick="openSetup5"
                 />
 
             <TextView
@@ -257,7 +287,21 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/buttonEdit5"
-                android:layout_toStartOf="@+id/buttonEdit5" />
+                android:layout_toStartOf="@+id/buttonEdit5"
+                android:onClick="openSetup5"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"
+                android:id="@+id/lineView6"
+                android:layout_below="@+id/textViewS5Desc"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
 
 
         </RelativeLayout>
@@ -265,12 +309,11 @@
     </ScrollView>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Delete Data"
+        android:text="@string/my_data_delete"
         android:id="@+id/buttonDelete"
-        android:layout_marginBottom="30dp"
-        android:background="@color/red"
+        android:backgroundTint="@color/red"
         android:onClick="deleteData"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
