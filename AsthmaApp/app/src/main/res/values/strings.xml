@@ -33,7 +33,7 @@
     <string name="navmain_emergency_desc">Urgent information for severe symptoms or if you are having an asthma attack.</string>
 
     <!-- Nav menu titles -->
-    <string name="navmenu_title">Asthma Aid Main Menu</string>
+    <string name="navmenu_title">Main Menu</string>
 
     <string name="navmenu_profile">Profile</string>
     <string name="navmenu_cal">Calendar</string>
@@ -92,8 +92,8 @@
     <string name="setup_previous">Previous</string>
 
     <!-- Setup1 labels: general info-->
-    <string name="setup1_desc_welcome">The information on this page is required for the app to help you effectively:</string>
-    <string name="setup1_desc">The information you enter on this page allows the app to help you effectively:</string>
+    <string name="setup1_desc_welcome">The information on this page is required for the app to help you effectively.</string>
+    <string name="setup1_desc">The information you enter on this page allows the app to help you effectively.</string>
     >
     <string name="setup1_name">Name:</string>
     <string name="setup1_age">Age:</string>
@@ -185,15 +185,15 @@
     <!-- My data labels -->
 
     <string name="my_data_s1_title">Personal Information</string>
-    <string name="my_data_s1_desc">Your account name, age, date of birth and height</string>
+    <string name="my_data_s1_desc">Your account name, age, date of birth and height.</string>
     <string name="my_data_s2_title">Peak Flow</string>
-    <string name="my_data_s2_desc">Personal best, warning and critical levels</string>
+    <string name="my_data_s2_desc">Personal best, warning and critical levels.</string>
     <string name="my_data_s3_title">Contact Details</string>
-    <string name="my_data_s3_desc">GP and out of hours contact details, appointment date</string>
-    <string name="my_data_s4_title">Inhalers</string>
-    <string name="my_data_s4_desc">Preventer and reliever names and doses</string>
+    <string name="my_data_s3_desc">GP and out of hours contact details, appointment date.</string>
+    <string name="my_data_s4_title">Inhalers &amp; Medication</string>
+    <string name="my_data_s4_desc">Preventer and reliever names and doses.</string>
     <string name="my_data_s5_title">Triggers</string>
-    <string name="my_data_s5_desc">Known triggers that make your asthma worse</string>
+    <string name="my_data_s5_desc">Known triggers that make your asthma worse.</string>
 
     <string name="my_data_edit">Edit</string>
     <string name="my_data_delete">DELETE ALL DATA</string>
