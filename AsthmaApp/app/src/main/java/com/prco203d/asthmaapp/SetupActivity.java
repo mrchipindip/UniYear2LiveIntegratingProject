@@ -197,6 +197,7 @@ public class SetupActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, Setup2Activity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.push_right_in, R.anim.push_left_out);
     }
 
     // Go to previous page

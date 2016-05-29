@@ -128,6 +128,7 @@ public class Setup2Activity extends AppCompatActivity {
         // Move to next screen
         Intent intent = new Intent(this, Setup3Activity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.push_right_in, R.anim.push_left_out);
     }
 
     // Go to previous page

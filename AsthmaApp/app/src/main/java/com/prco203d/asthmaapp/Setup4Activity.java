@@ -131,6 +131,7 @@ public class Setup4Activity extends AppCompatActivity {
     public void nextPage(View view){
         Intent intent = new Intent(this, Setup5Activity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.push_right_in, R.anim.push_left_out);
     }
 
     // Go to previous page
