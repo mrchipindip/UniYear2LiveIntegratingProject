@@ -119,50 +119,74 @@
         <activity
             android:name=".SetupActivity"
             android:label="@string/title_activity_setup"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait">
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.prco203d.asthmaapp.MainActivity" />
+        </activity>
 
         <activity
             android:name=".Setup2Activity"
             android:label="@string/title_activity_setup2"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.prco203d.asthmaapp.MainActivity" />
+        </activity>
 
         <activity
             android:name=".Setup3Activity"
             android:label="@string/title_activity_setup3"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.prco203d.asthmaapp.MainActivity" />
+        </activity>
 
         <activity
             android:name=".Setup4Activity"
             android:label="@string/title_activity_setup4"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.prco203d.asthmaapp.MainActivity" />
+        </activity>
 
         <activity
             android:name=".Setup5Activity"
             android:label="@string/title_activity_setup5"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.prco203d.asthmaapp.MainActivity" />
+        </activity>
 
         <activity
             android:name=".Setup6Activity"
             android:label="@string/title_activity_setup6"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.prco203d.asthmaapp.MainActivity" />
+        </activity>
 
         <activity
             android:name=".CalendarActivity"

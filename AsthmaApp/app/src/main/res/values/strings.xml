@@ -13,14 +13,24 @@
     <string name="title_activity_med_ref">Medical Reference</string>
     <string name="title_activity_app_settings">App Settings</string>
     <string name="title_activity_symptoms_list">Symptoms A-Z</string>
-    <string name="title_activity_setup">Setup</string>
-    <string name="title_activity_setup2">Your Peak Flow</string>
-    <string name="title_activity_setup3">Health Professional Details</string>
-    <string name="title_activity_setup4">Your Inhalers</string>
-    <string name="title_activity_setup5">Asthma Triggers</string>
-    <string name="title_activity_setup6">Asthma Triggers</string>
     <string name="title_activity_calendar">Calendar</string>
     <string name="title_activity_nav_drawer">Asthma Aid</string>
+
+    <string name="title_activity_setup">Setup 1/5 - Basic Info</string>
+    <string name="title_activity_setup2">Setup 2/5 - Peak Flow</string>
+    <string name="title_activity_setup3">Setup 3/5 - GP Details</string>
+    <string name="title_activity_setup4">Setup 4/5 - Inhalers &amp; Medication</string>
+    <string name="title_activity_setup5">Setup 5/5 - Asthma Triggers</string>
+    <string name="title_activity_setup6">Asthma Triggers</string>
+
+    <string name="title_activity_setup_done">Basic Info</string>
+    <string name="title_activity_setup2_done">Peak Flow</string>
+    <string name="title_activity_setup3_done">GP Details</string>
+    <string name="title_activity_setup4_done">Inhalers &amp; Medication</string>
+    <string name="title_activity_setup5_done">Asthma Triggers</string>
+    <string name="title_activity_setup6_done">Asthma Triggers</string>
+
+
 
     <!-- New Nav Menu -->
     <string name="navmain_track_title">Log your peak flow for today:</string>

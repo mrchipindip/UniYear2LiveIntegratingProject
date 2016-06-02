@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,6 +25,8 @@ public class Setup2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setup2);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         editPeakFlowBest = (EditText) findViewById(R.id.editTextPeak);
         editPeakFlowWarning = (EditText) findViewById(R.id.editTextWarning);
@@ -37,6 +40,9 @@ public class Setup2Activity extends AppCompatActivity {
 
         // Editing setup mode
         if(isSetup()){
+            // Enable up button and use non-numbered activity title
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(getResources().getString(R.string.title_activity_setup2_done));
 
             // As we're editing, get the current values
             int peak = (sharedPrefs.getInt("Peak", 0));

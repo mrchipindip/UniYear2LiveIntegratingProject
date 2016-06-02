@@ -38,6 +38,9 @@ public class Setup3Activity extends AppCompatActivity {
 
         // Editing setup mode
         if(isSetup()){
+            // Enable up button and use non-numbered activity title
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(getResources().getString(R.string.title_activity_setup3_done));
 
             // Show submit button only
             buttonNext.setVisibility(View.INVISIBLE);

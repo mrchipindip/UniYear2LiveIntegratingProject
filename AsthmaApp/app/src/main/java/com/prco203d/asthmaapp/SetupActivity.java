@@ -87,6 +87,10 @@ public class SetupActivity extends AppCompatActivity {
 
         // Editing setup
         if(isSetup()){
+            // Enable up button and use non-numbered activity title
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(getResources().getString(R.string.title_activity_setup_done));
+
             // Brief info
             description.setText(getResources().getString(R.string.setup1_desc));
 
