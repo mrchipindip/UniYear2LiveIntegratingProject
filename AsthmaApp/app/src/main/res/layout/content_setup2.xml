@@ -152,6 +152,44 @@
                 android:layout_marginLeft="15dp"
                 />
 
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/textViewEstimatedPF"
+                android:layout_above="@+id/textViewWarningCriticalDesc"
+                android:layout_toRightOf="@+id/editTextPeak"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/textViewPeakEst"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/textViewEstimatedCPF"
+                android:layout_alignBottom="@+id/textViewCriticalEst"
+                android:layout_alignLeft="@+id/textViewEstimatedPF"
+                android:layout_alignStart="@+id/textViewEstimatedPF"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/textViewCriticalEst"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/textViewEstimatedWPF"
+                android:layout_alignBottom="@+id/textViewWarningEst"
+                android:layout_alignLeft="@+id/textViewEstimatedPF"
+                android:layout_alignStart="@+id/textViewEstimatedPF"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/textViewWarningEst"
+                android:gravity="center_horizontal" />
+
 
         </RelativeLayout>
     </ScrollView>

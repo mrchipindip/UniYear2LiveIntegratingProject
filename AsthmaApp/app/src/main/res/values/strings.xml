@@ -102,21 +102,25 @@
     <string name="setup_previous">Previous</string>
 
     <!-- Setup1 labels: general info-->
-    <string name="setup1_desc_welcome">The information on this page is required for the app to help you effectively.</string>
+    <string name="setup1_desc_welcome">The information on this page is required to use the app, and allows estimations of your lung output to be made.</string>
     <string name="setup1_desc">The information you enter on this page allows the app to help you effectively.</string>
-    >
+
     <string name="setup1_name">Name:</string>
-    <string name="setup1_age">Age:</string>
-    <string name="setup1_gender">Gender:</string>
+    <string name="setup1_age">Date of Birth:</string>
+    <string name="setup1_gender">Sex:</string>
     <string name="setup1_height">Height:</string>
 
-    <string name="setup_disclaimer">Welcome to AsthmaAid! Though care has been taken to provide information as accurately as possible, this app should not be used to replace professional medical advice. Any information you provide to the app is used to provide more helpful information to you, and is not be shared with any third party.</string>
+    <string name="setup_disclaimer">Welcome to Asthma Aid! Though care has been taken to provide information as accurately as possible, this app should not be used to replace professional medical advice. Any information you provide to the app is used to provide more helpful information to you, and is not be shared with any third party.</string>
+
+    <string name="setup1_female">Female</string>
+    <string name="setup1_male">Male</string>
+    <string name="setup1_prefer">Prefer not to say</string>
 
     <!-- Gender spinner labels -->
     <string-array name="stringArrayGender">
         <item>Male</item>
         <item>Female</item>
-        <item>Would rather not say</item>
+        <item>Prefer not to say</item>
     </string-array>
 
     <!-- Age spinner labels -->
@@ -193,9 +197,8 @@
     <string name="setup6_desc">You can enter any other triggers you may know of here. </string>
 
     <!-- My data labels -->
-
     <string name="my_data_s1_title">Personal Information</string>
-    <string name="my_data_s1_desc">Your account name, age, date of birth and height.</string>
+    <string name="my_data_s1_desc">Your account name, date of birth, sex and height.</string>
     <string name="my_data_s2_title">Peak Flow</string>
     <string name="my_data_s2_desc">Personal best, warning and critical levels.</string>
     <string name="my_data_s3_title">Contact Details</string>
