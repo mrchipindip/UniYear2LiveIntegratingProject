@@ -1,6 +1,8 @@
 package com.prco203d.asthmaapp;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,38 +10,54 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.InputFilter;
+import android.text.InputType;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.TextView;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class SetupActivity extends AppCompatActivity {
 
-    private EditText editTextName = null;
-    private Spinner spinnerAge = null;
-    private Spinner  spinnerGender = null;
-    private EditText  editPeakFlow   = null;
     private TextView description = null;
+
+    // Fillable TextViews
+    private TextView nameDisplay = null;
+    private TextView dobDisplay = null;
+    private TextView genderDisplay = null;
+    private TextView heightDisplay = null;
+
+    // DoB Variables
+    private int day;
+    private int month;
+    private int year;
+    private int age;
+
+    // Sex variables
+    private Boolean isMale;
+    private Boolean tempBool;
+    private String tempText;
+
+    private int heightInCM;
+
+    // Navigation
     private Button buttonUpdate;
     private Button buttonNext;
     private Button buttonPrevious;
-
-    private final int   spinnerPosMALE    = 0;
-    private final int   spinnerPosFEMALE  = 1;
-    private final int   spinnerPosNOT_SAY = 2;
-
-    private final int   spinnerPos0_10   = 0;
-    private final int   spinnerPos11_20  = 1;
-    private final int   spinnerPos21_30 = 2;
-    private final int   spinnerPos31_40 = 3;
-    private final int   spinnerPos41_50 = 4;
-    private final int   spinnerPos51_60 = 5;
-    private final int   spinnerPos61_70 = 6;
-    private final int   spinnerPos70plus = 7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,38 +66,90 @@ public class SetupActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        editTextName = (EditText) findViewById(R.id.editTextName);
-        spinnerAge  = (Spinner) findViewById(R.id.spinnerAge);
-        spinnerGender = (Spinner) findViewById(R.id.spinnerGender);
+        // Top of page description
         description = (TextView) findViewById(R.id.textView);
+
+        // The input fields
+        nameDisplay = (TextView) findViewById(R.id.textViewNameFilled);
+        dobDisplay = (TextView) findViewById(R.id.textViewAgeFilled);
+        genderDisplay = (TextView) findViewById(R.id.textViewGenderFilled);
+        heightDisplay = (TextView) findViewById(R.id.textViewHeightFilled);
+
+        // Navigation buttons
         buttonUpdate = (Button)findViewById(R.id.buttonSubmit);
         buttonNext = (Button)findViewById(R.id.buttonNext);
         buttonPrevious = (Button)findViewById(R.id.buttonPrevious);
-        //editPeakFlow = (EditText) findViewById(R.id.editTextPeak);
 
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
-        // Editing setup
+        // Editing mode
         if(isSetup()){
+            // Enable up button and use non-numbered activity title
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(getResources().getString(R.string.title_activity_setup_done));
+
             // Brief info
             description.setText(getResources().getString(R.string.setup1_desc));
 
             // Show submit button only
             buttonNext.setVisibility(View.INVISIBLE);
             buttonPrevious.setVisibility(View.INVISIBLE);
+
+            // Populate fields with user's info
+            String name = sharedPrefs.getString("Name", "--");
+            nameDisplay.setText(name);
+
+            day = sharedPrefs.getInt("dobD", 0);
+            month = sharedPrefs.getInt("dobM", 0);
+            year = sharedPrefs.getInt("dobY", 0);
+
+
+            // Make a Calendar object
+            Calendar displayCalendar = Calendar.getInstance();
+            displayCalendar.set(sharedPrefs.getInt("dobY", 0),sharedPrefs.getInt("dobM", 0),sharedPrefs.getInt("dobD", 0));
+
+            Calendar nowCalendar = Calendar.getInstance();
+            age = nowCalendar.get(Calendar.YEAR) - displayCalendar.get(Calendar.YEAR);
+
+            if (nowCalendar.get(Calendar.DAY_OF_YEAR) < displayCalendar.get(Calendar.DAY_OF_YEAR)){
+                age--;
+            }
+
+            // Format for display
+            java.text.DateFormat formatter = java.text.DateFormat.getDateInstance(java.text.DateFormat.LONG); // one of SHORT, MEDIUM, LONG, FULL, or DEFAULT
+            formatter.setTimeZone(displayCalendar.getTimeZone());
+            String formattedDoB = formatter.format(displayCalendar.getTime());
+            dobDisplay.setText(formattedDoB);
+
+            String gender = sharedPrefs.getString("Sex", "--");
+            Log.d("PF Debug", gender);
+            if(gender.equals("Male")) {
+                isMale = true;
+                Log.d("PF Debug", "gender set to male in oncreate");
+            }
+            else {
+                isMale = false;
+                Log.d("PF Debug", "gender set to female in oncreate");
+            }
+            genderDisplay.setText(gender);
+
+            heightInCM = sharedPrefs.getInt("HeightCM", 0);
+            String height = "" + sharedPrefs.getInt("HeightCM", 0) +"cm";
+            heightDisplay.setText(height);
         }
-        // First time setup
+
+        // First time setup mode
         else{
             // Welcome info
             description.setText(getResources().getString(R.string.setup1_desc_welcome));
 
-            // Show next button
+            // Show next button only
             buttonUpdate.setVisibility(View.INVISIBLE);
             buttonPrevious.setVisibility(View.INVISIBLE);
 
             // Display disclaimer popup
             AlertDialog alertDialog = new AlertDialog.Builder(SetupActivity.this).create();
-            alertDialog.setTitle("Welcome to AsthmaAid");
+            alertDialog.setTitle("Welcome to Asthma Aid");
             alertDialog.setMessage(getResources().getString(R.string.setup_disclaimer));
 
             alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Exit",
@@ -88,31 +158,19 @@ public class SetupActivity extends AppCompatActivity {
 
                             // quit app here?
                             dialog.dismiss();
+                            onBackPressed();
                         }
                     });
 
             alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-
                             dialog.dismiss();
                         }
                     });
 
             alertDialog.show();
         }
-
-        String name = sharedPrefs.getString("Name", "User");
-        editTextName.setText(name);
-
-        //int peak = (sharedPrefs.getInt("Peak", 0));
-        //editPeakFlow.setText("" + peak);
-
-        int spinnerAgeSavedInt = sharedPrefs.getInt("AgeInt", 0);
-        spinnerAge.setSelection(spinnerAgeSavedInt);
-
-        int spinnerGenderSavedInt = sharedPrefs.getInt("GenderInt", 0);
-        spinnerGender.setSelection(spinnerGenderSavedInt);
     }
 
     // Overriding the back key, for first-time setup
@@ -141,17 +199,16 @@ public class SetupActivity extends AppCompatActivity {
         if((sharedPrefs.getBoolean("isSetup", false) == true)){
             result = true;
         }
-
         return result;
     }
 
     // Go to next page
     public void nextPage(View view){
-
         saveData();
 
         Intent intent = new Intent(this, Setup2Activity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.push_right_in, R.anim.push_left_out);
     }
 
     // Go to previous page
@@ -160,91 +217,291 @@ public class SetupActivity extends AppCompatActivity {
     }
 
     public void submitData(View view) {
-
         saveData();
-
         // This is the same as "back" so should break the back loop situation
         finish();
     }
 
-    public void saveData(){
+    public void showNameDialog(View view) {
 
+        // Display name popup
+        final AlertDialog alertDialog = new AlertDialog.Builder(SetupActivity.this).create();
+        alertDialog.setTitle("Enter your name");
+
+        final EditText nameEdit = new EditText(SetupActivity.this);
+        nameEdit.setInputType(InputType.TYPE_TEXT_VARIATION_SHORT_MESSAGE);
+        nameEdit.setFilters(new InputFilter[] { new InputFilter.LengthFilter(20) });
+
+//        final EditText nameEdit2 = new EditText(SetupActivity.this);
+//        nameEdit.setInputType(InputType.TYPE_TEXT_VARIATION_SHORT_MESSAGE);
+//        nameEdit.setFilters(new InputFilter[] { new InputFilter.LengthFilter(5) });
+//
+//        LinearLayout doubleEditText = new LinearLayout(this);
+//        doubleEditText.setOrientation(LinearLayout.VERTICAL);
+//        doubleEditText.addView(nameEdit2);
+//        doubleEditText.addView(nameEdit);
+
+        alertDialog.setView(nameEdit);
+
+        // This code block allows the keyboard "done" button to dismiss the dialog
+        nameEdit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    Button okButton = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+                    okButton.performClick();
+                }
+                return false;
+            }
+        });
+
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        String editTextValue = nameEdit.getText().toString();
+                        nameDisplay.setText(editTextValue);
+                        dialog.dismiss();
+                    }
+                });
+
+        alertDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+
+        alertDialog.show();
+    }
+
+    public static class DatePickerFragment extends DialogFragment
+            implements DatePickerDialog.OnDateSetListener {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Use the current date as the default date in the picker
+            final Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+
+            // Create a new instance of DatePickerDialog and return it
+            return new DatePickerDialog(getActivity(), this, year, month, day);
+        }
+
+        public void onDateSet(DatePicker view, int year, int month, int day) {
+            // Do something with the date chosen by the user
+            ((SetupActivity)getActivity()).SetDob(year, month, day);
+        }
+    }
+
+    public void showDatePickerDialog(View v) {
+        DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getSupportFragmentManager(), "datePicker");
+    }
+
+    public void SetDob(int y, int m, int d){
+        // Set class variables
+        day = d;
+        month = m;
+        year = y;
+
+        // Make a Calendar object
+        Calendar dobCalendar = Calendar.getInstance();
+        dobCalendar.set(year,month,day);
+
+        // Format for display
+        java.text.DateFormat formatter = java.text.DateFormat.getDateInstance(java.text.DateFormat.LONG); // one of SHORT, MEDIUM, LONG, FULL, or DEFAULT
+        formatter.setTimeZone(dobCalendar.getTimeZone());
+        String formattedDoB = formatter.format(dobCalendar.getTime());
+        dobDisplay.setText(formattedDoB);
+
+        // Find out age
+        Calendar nowCalendar = Calendar.getInstance();
+
+        age = nowCalendar.get(Calendar.YEAR) - dobCalendar.get(Calendar.YEAR);
+
+        if (nowCalendar.get(Calendar.DAY_OF_YEAR) < dobCalendar.get(Calendar.DAY_OF_YEAR)){
+            age--;
+        }
+
+        //heightDisplay.setText(""+age);
+    }
+
+    public void showGenderDialog(View view) {
+
+        // The available options
+        final CharSequence[] items = {getResources().getString(R.string.setup1_female),
+                                      getResources().getString(R.string.setup1_male),
+                                      getResources().getString(R.string.setup1_prefer)};
+
+        // Display sex popup
+        final AlertDialog alertGenderDialog = new AlertDialog.Builder(SetupActivity.this).setSingleChoiceItems(items, -1,
+
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int item) {
+
+                        // Choose what to do
+                        switch (item) {
+                            case 0:
+                                tempBool = false;
+                                tempText = getResources().getString(R.string.setup1_female);
+                                break;
+                            case 1:
+                                tempBool = true;
+                                tempText = getResources().getString(R.string.setup1_male);
+                                break;
+                            case 2:
+                                tempBool = false;
+                                tempText = getResources().getString(R.string.setup1_prefer);
+                                break;
+                        }
+                    }
+                }).create();
+        alertGenderDialog.setTitle("Select your sex");
+
+        alertGenderDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        alertGenderDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Can set the temporary values into permanent ones on confirmation
+                        genderDisplay.setText(tempText);
+                        isMale = tempBool;
+
+                        dialog.dismiss();
+                    }
+                });
+
+        alertGenderDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+
+        alertGenderDialog.show();
+    }
+
+    public void showHeightDialog(View view) {
+
+        // Display height popup
+        final AlertDialog alertHeightDialog = new AlertDialog.Builder(SetupActivity.this).create();
+        alertHeightDialog.setTitle("Enter your height in cm");
+
+        final EditText heightEdit = new EditText(SetupActivity.this);
+        heightEdit.setInputType(InputType.TYPE_CLASS_NUMBER);
+        heightEdit.setFilters(new InputFilter[] { new InputFilter.LengthFilter(3) }); // you can't be over 1000 cm, sorry!
+
+        alertHeightDialog.setView(heightEdit);
+
+        // This code block allows the keyboard "done" button to dismiss the dialog
+        heightEdit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    Button okButton = alertHeightDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+                    okButton.performClick();
+                }
+                return false;
+            }
+        });
+
+        alertHeightDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        alertHeightDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        String editTextValue = heightEdit.getText().toString();
+                        heightDisplay.setText(editTextValue + "cm");
+                        heightInCM = Integer.parseInt(editTextValue);
+                        dialog.dismiss();
+                    }
+                });
+
+        alertHeightDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+
+        alertHeightDialog.show();
+    }
+
+    public void saveData(){
         // Write the data to a pref file
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
-
         SharedPreferences.Editor editor = sharedPrefs.edit();
 
-        // Do the textView ones
+        // Validate and save name
         String userName;
-        if(editTextName.getText().toString() != null && editTextName.getText().toString() != "") {
-            userName = editTextName.getText().toString();
+        if(nameDisplay.getText().toString() != null && nameDisplay.getText().toString() != "") {
+            userName = nameDisplay.getText().toString();
         } else{
             userName = "User";
         }
         editor.putString("Name", userName);
 
-        // Do the spinners
-        String genderString = "";
-        int spinnerPosGender = spinnerGender.getSelectedItemPosition();
-        editor.putInt("GenderInt", spinnerPosGender);
-        switch (spinnerPosGender)
-        {
-            case spinnerPosMALE:
-                genderString += ", Male";
-                break;
+        // Validate and save age
+        editor.putInt("dobD", day);
+        editor.putInt("dobM", month);
+        editor.putInt("dobY", year);
 
-            case spinnerPosFEMALE:
-                genderString += ", Female";
-                break;
+        // Save sex
+        String userSex;
+        if(genderDisplay.getText().toString() != null && genderDisplay.getText().toString() != "") {
+            userSex = genderDisplay.getText().toString();
+        } else{
+            userSex = "Unknown";
+        }
+        editor.putString("Sex", userSex);
+        Log.d("PF Debug", genderDisplay.getText().toString());
+        Log.d("PF Debug", userSex);
 
-            case spinnerPosNOT_SAY:
-                genderString += "";
-                break;
+        // Validate and save height
+        editor.putInt("HeightCM", heightInCM);
+
+        float heightInMeters = heightInCM / 100f;       // temp
+
+        int estimatedPFBest;
+        int estimatedPFWarning;
+        int estimatedPFCritical;
+
+        if(age >= 16){              // sources just say child and not an actual age?
+
+            // Use adult formula
+            if (isMale){
+                // Use male formula
+                Log.d("PF Debug", "Used Male");
+                estimatedPFBest = Math.round( ( ( (heightInMeters * 5.48f) + 1.58f) - (age * 0.041f) ) * 60f);
+
+            } else{
+                // Use female formula
+                Log.d("PF Debug", "Used Female");
+                estimatedPFBest = Math.round((((heightInMeters * 3.72f) + 2.24f) - (age * 0.03f)) * 60f);
+            }
+        }
+        else{
+            // Use child formula
+            Log.d("PF Debug", "Used Child");
+            estimatedPFBest = ((heightInCM - 100) * 5) + 100;
         }
 
-        editor.putString("Gender", genderString) ;
+        estimatedPFWarning = Math.round(estimatedPFBest * 0.75f);
+        estimatedPFCritical = Math.round(estimatedPFBest * 0.5f);
 
-        String ageString = "";
-        int spinnerPosAge = spinnerAge.getSelectedItemPosition();
-        editor.putInt("AgeInt", spinnerPosAge);
-        switch (spinnerPosAge)
-        {
-            case spinnerPos0_10:
-                ageString += "0-10";
-                break;
+        editor.putInt("EstimatedPF_Best", estimatedPFBest);
+        editor.putInt("EstimatedPF_Warning", estimatedPFWarning);
+        editor.putInt("EstimatedPF_Critical", estimatedPFCritical);
 
-            case spinnerPos11_20:
-                ageString += "11-20";
-                break;
-
-            case spinnerPos21_30:
-                ageString += "21-30";
-                break;
-
-            case spinnerPos31_40:
-                ageString += "31-40";
-                break;
-
-            case spinnerPos41_50:
-                ageString += "41-50";
-                break;
-
-            case spinnerPos51_60:
-                ageString += "51-60";
-                break;
-
-            case spinnerPos61_70:
-                ageString += "61-70";
-                break;
-
-            case spinnerPos70plus:
-                ageString += "70+";
-                break;
-        }
-        editor.putString("Age", ageString) ;
+        Log.d("PF Debug", "" + estimatedPFBest);
+        Log.d("PF Debug", "" + estimatedPFWarning);
+        Log.d("PF Debug", "" + estimatedPFCritical);
 
         editor.apply();
-
     }
 
 }

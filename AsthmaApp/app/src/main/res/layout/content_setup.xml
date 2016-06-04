@@ -1,120 +1,304 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.prco203d.asthmaapp.SetupActivity"
+    tools:showIn="@layout/activity_setup"
     android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_alignParentTop="true"
-        android:gravity="center_vertical"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        />
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bottom_container"
-        android:layout_below="@id/title"
-        android:fillViewport="false"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
         android:orientation="vertical"
-        android:layout_marginTop="50dp"
-        android:padding="10dp"
         android:id="@+id/scrollView2">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:weightSum="1">
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/setup1_desc"
-                android:id="@+id/textView" />
+                android:id="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                />
 
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"
+                android:id="@+id/lineView1"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView" />
+
+            <!-- Name -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/setup1_name"
-                android:id="@+id/textViewNameLabel"
-                android:layout_marginTop="20dp" />
+                android:id="@+id/textViewName"
+                android:layout_below="@id/lineView1"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                android:onClick="showNameDialog"
+                />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/editTextName"
-                android:inputType="text" />
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text=""
+                android:id="@+id/buttonEdit"
+                android:onClick="showNameDialog"
+                android:src="@drawable/ic_chevron_right"
+                android:scaleType="fitXY"
+                android:layout_below="@id/lineView1"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/lineView2"
+                android:backgroundTint="#00ffffff"
+                android:background="#00ffffff" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/setup1_age"
-                android:id="@+id/textViewAge"
-                android:layout_marginTop="20dp"
-            />
+                android:text="-"
+                android:id="@+id/textViewNameFilled"
+                android:layout_below="@+id/textViewName"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/buttonEdit"
+                android:layout_toStartOf="@+id/buttonEdit"
+                android:onClick="showNameDialog"/>
 
-            <Spinner
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"
+                android:id="@+id/lineView2"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textViewNameFilled" />
+
+            <!-- DoB -->
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:id="@+id/spinnerAge"
-                android:entries="@array/stringArrayAge"
-            />
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/setup1_age"
+                android:id="@+id/textViewDoB"
+                android:layout_below="@id/lineView2"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                android:onClick="showDatePickerDialog"
+                />
 
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text=""
+                android:id="@+id/buttonEdit2"
+                android:onClick="showDatePickerDialog"
+                android:src="@drawable/ic_chevron_right"
+                android:scaleType="fitXY"
+                android:layout_below="@id/lineView2"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/lineView3"
+                android:backgroundTint="#00ffffff"
+                android:background="#00ffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="-"
+                android:id="@+id/textViewAgeFilled"
+                android:layout_below="@+id/textViewDoB"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/buttonEdit"
+                android:layout_toStartOf="@+id/buttonEdit"
+                android:onClick="showDatePickerDialog"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"
+                android:id="@+id/lineView3"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textViewAgeFilled" />
+
+            <!-- Gender -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/setup1_gender"
                 android:id="@+id/textViewGender"
-                android:layout_marginTop="20dp"
+                android:layout_below="@id/lineView3"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                android:onClick="showGenderDialog"
                 />
 
-            <Spinner
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text=""
+                android:id="@+id/buttonEdit3"
+                android:onClick="showGenderDialog"
+                android:src="@drawable/ic_chevron_right"
+                android:scaleType="fitXY"
+                android:layout_below="@id/lineView3"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/lineView4"
+                android:backgroundTint="#00ffffff"
+                android:background="#00ffffff" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinnerGender"
-                android:entries="@array/stringArrayGender"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="-"
+                android:id="@+id/textViewGenderFilled"
+                android:layout_below="@+id/textViewGender"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/buttonEdit"
+                android:layout_toStartOf="@+id/buttonEdit"
+                android:onClick="showGenderDialog"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"
+                android:id="@+id/lineView4"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textViewGenderFilled" />
+
+            <!-- Height -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/setup1_height"
+                android:id="@+id/textViewHeight"
+                android:layout_below="@id/lineView4"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                android:onClick="showHeightDialog"
                 />
 
-        </LinearLayout>
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text=""
+                android:id="@+id/buttonEdit4"
+                android:onClick="showHeightDialog"
+                android:src="@drawable/ic_chevron_right"
+                android:scaleType="fitXY"
+                android:layout_below="@id/lineView4"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/lineView5"
+                android:backgroundTint="#00ffffff"
+                android:background="#00ffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="-"
+                android:id="@+id/textViewHeightFilled"
+                android:layout_below="@+id/textViewHeight"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/buttonEdit"
+                android:layout_toStartOf="@+id/buttonEdit"
+                android:onClick="showHeightDialog"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"
+                android:id="@+id/lineView5"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textViewHeightFilled" />
+
+        </RelativeLayout>
     </ScrollView>
 
     <Button
-        android:id="@+id/buttonSubmit"
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/submit"
-
+        android:id="@+id/buttonSubmit"
         android:onClick="submitData"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="72dp" />
+        />
 
     <Button
-        android:layout_width="120dp"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:text="@string/setup_previous"
         android:id="@+id/buttonPrevious"
-        android:layout_alignTop="@+id/buttonSubmit"
-        android:layout_toLeftOf="@+id/buttonSubmit"
-        android:layout_toStartOf="@+id/buttonSubmit" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:onClick="previousPage"
+        />
 
     <Button
-        android:layout_width="120dp"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:text="@string/setup_next"
         android:id="@+id/buttonNext"
-        android:layout_alignTop="@+id/buttonSubmit"
-        android:layout_toRightOf="@+id/buttonSubmit"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:onClick="nextPage"
         />
-
 
 </RelativeLayout>

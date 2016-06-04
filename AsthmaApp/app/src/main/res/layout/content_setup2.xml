@@ -152,39 +152,78 @@
                 android:layout_marginLeft="15dp"
                 />
 
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/textViewEstimatedPF"
+                android:layout_above="@+id/textViewWarningCriticalDesc"
+                android:layout_toRightOf="@+id/editTextPeak"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/textViewPeakEst"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/textViewEstimatedCPF"
+                android:layout_alignBottom="@+id/textViewCriticalEst"
+                android:layout_alignLeft="@+id/textViewEstimatedPF"
+                android:layout_alignStart="@+id/textViewEstimatedPF"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/textViewCriticalEst"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/textViewEstimatedWPF"
+                android:layout_alignBottom="@+id/textViewWarningEst"
+                android:layout_alignLeft="@+id/textViewEstimatedPF"
+                android:layout_alignStart="@+id/textViewEstimatedPF"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/textViewWarningEst"
+                android:gravity="center_horizontal" />
+
 
         </RelativeLayout>
     </ScrollView>
 
-        <Button
-            android:id="@+id/buttonSubmit"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="@string/submit"
-            android:onClick="submitData"
-            android:layout_marginBottom="20dp"
-            android:layout_alignTop="@+id/buttonPrevious"
-            android:layout_centerHorizontal="true" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:id="@+id/buttonSubmit"
+        android:onClick="submitData"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        />
 
-        <Button
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="@string/setup_previous"
-            android:id="@+id/buttonPrevious"
-            android:onClick="previousPage"
-            android:layout_marginBottom="20dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="@string/setup_previous"
+        android:id="@+id/buttonPrevious"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:onClick="previousPage"
+        />
 
-        <Button
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="@string/setup_next"
-            android:id="@+id/buttonNext"
-            android:onClick="nextPage"
-            android:layout_alignBottom="@+id/buttonSubmit"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="@string/setup_next"
+        android:id="@+id/buttonNext"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:onClick="nextPage"
+        />
 
     </RelativeLayout>

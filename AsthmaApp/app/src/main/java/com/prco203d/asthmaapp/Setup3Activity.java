@@ -38,6 +38,9 @@ public class Setup3Activity extends AppCompatActivity {
 
         // Editing setup mode
         if(isSetup()){
+            // Enable up button and use non-numbered activity title
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(getResources().getString(R.string.title_activity_setup3_done));
 
             // Show submit button only
             buttonNext.setVisibility(View.INVISIBLE);
@@ -88,6 +91,7 @@ public class Setup3Activity extends AppCompatActivity {
     public void nextPage(View view){
         Intent intent = new Intent(this, Setup4Activity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.push_right_in, R.anim.push_left_out);
     }
 
     // Go to previous page

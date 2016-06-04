@@ -66,6 +66,9 @@ public class Setup4Activity extends AppCompatActivity {
 
         // Editing setup mode
         if(isSetup()){
+            // Enable up button and use non-numbered activity title
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(getResources().getString(R.string.title_activity_setup4_done));
 
             int pam = (sharedPrefs.getInt("PreventerAM", 0));
             int ppm = (sharedPrefs.getInt("PreventerPM", 0));
@@ -131,6 +134,7 @@ public class Setup4Activity extends AppCompatActivity {
     public void nextPage(View view){
         Intent intent = new Intent(this, Setup5Activity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.push_right_in, R.anim.push_left_out);
     }
 
     // Go to previous page

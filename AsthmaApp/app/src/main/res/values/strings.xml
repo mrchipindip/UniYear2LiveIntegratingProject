@@ -13,14 +13,24 @@
     <string name="title_activity_med_ref">Medical Reference</string>
     <string name="title_activity_app_settings">App Settings</string>
     <string name="title_activity_symptoms_list">Symptoms A-Z</string>
-    <string name="title_activity_setup">Setup</string>
-    <string name="title_activity_setup2">Your Peak Flow</string>
-    <string name="title_activity_setup3">Health Professional Details</string>
-    <string name="title_activity_setup4">Your Inhalers</string>
-    <string name="title_activity_setup5">Asthma Triggers</string>
-    <string name="title_activity_setup6">Asthma Triggers</string>
     <string name="title_activity_calendar">Calendar</string>
     <string name="title_activity_nav_drawer">Asthma Aid</string>
+
+    <string name="title_activity_setup">Setup 1/5 - Basic Info</string>
+    <string name="title_activity_setup2">Setup 2/5 - Peak Flow</string>
+    <string name="title_activity_setup3">Setup 3/5 - GP Details</string>
+    <string name="title_activity_setup4">Setup 4/5 - Inhalers &amp; Medication</string>
+    <string name="title_activity_setup5">Setup 5/5 - Asthma Triggers</string>
+    <string name="title_activity_setup6">Asthma Triggers</string>
+
+    <string name="title_activity_setup_done">Basic Info</string>
+    <string name="title_activity_setup2_done">Peak Flow</string>
+    <string name="title_activity_setup3_done">GP Details</string>
+    <string name="title_activity_setup4_done">Inhalers &amp; Medication</string>
+    <string name="title_activity_setup5_done">Asthma Triggers</string>
+    <string name="title_activity_setup6_done">Asthma Triggers</string>
+
+
 
     <!-- New Nav Menu -->
     <string name="navmain_track_title">Log your peak flow for today:</string>
@@ -33,7 +43,7 @@
     <string name="navmain_emergency_desc">Urgent information for severe symptoms or if you are having an asthma attack.</string>
 
     <!-- Nav menu titles -->
-    <string name="navmenu_title">Asthma Aid Main Menu</string>
+    <string name="navmenu_title">Main Menu</string>
 
     <string name="navmenu_profile">Profile</string>
     <string name="navmenu_cal">Calendar</string>
@@ -92,21 +102,25 @@
     <string name="setup_previous">Previous</string>
 
     <!-- Setup1 labels: general info-->
-    <string name="setup1_desc_welcome">The information on this page is required for the app to help you effectively:</string>
-    <string name="setup1_desc">The information you enter on this page allows the app to help you effectively:</string>
-    >
+    <string name="setup1_desc_welcome">The information on this page is required to use the app, and allows estimations of your lung output to be made.</string>
+    <string name="setup1_desc">The information you enter on this page allows the app to help you effectively.</string>
+
     <string name="setup1_name">Name:</string>
-    <string name="setup1_age">Age:</string>
-    <string name="setup1_gender">Gender:</string>
+    <string name="setup1_age">Date of Birth:</string>
+    <string name="setup1_gender">Sex:</string>
     <string name="setup1_height">Height:</string>
 
-    <string name="setup_disclaimer">Welcome to AsthmaAid! Though care has been taken to provide information as accurately as possible, this app should not be used to replace professional medical advice. Any information you provide to the app is used to provide more helpful information to you, and is not be shared with any third party.</string>
+    <string name="setup_disclaimer">Welcome to Asthma Aid! Though care has been taken to provide information as accurately as possible, this app should not be used to replace professional medical advice. Any information you provide to the app is used to provide more helpful information to you, and is not be shared with any third party.</string>
+
+    <string name="setup1_female">Female</string>
+    <string name="setup1_male">Male</string>
+    <string name="setup1_prefer">Prefer not to say</string>
 
     <!-- Gender spinner labels -->
     <string-array name="stringArrayGender">
         <item>Male</item>
         <item>Female</item>
-        <item>Would rather not say</item>
+        <item>Prefer not to say</item>
     </string-array>
 
     <!-- Age spinner labels -->
@@ -183,8 +197,19 @@
     <string name="setup6_desc">You can enter any other triggers you may know of here. </string>
 
     <!-- My data labels -->
+    <string name="my_data_s1_title">Personal Information</string>
+    <string name="my_data_s1_desc">Your account name, date of birth, sex and height.</string>
+    <string name="my_data_s2_title">Peak Flow</string>
+    <string name="my_data_s2_desc">Personal best, warning and critical levels.</string>
+    <string name="my_data_s3_title">Contact Details</string>
+    <string name="my_data_s3_desc">GP and out of hours contact details, appointment date.</string>
+    <string name="my_data_s4_title">Inhalers &amp; Medication</string>
+    <string name="my_data_s4_desc">Preventer and reliever names and doses.</string>
+    <string name="my_data_s5_title">Triggers</string>
+    <string name="my_data_s5_desc">Known triggers that make your asthma worse.</string>
 
     <string name="my_data_edit">Edit</string>
+    <string name="my_data_delete">DELETE ALL DATA</string>
 
     <string name="my_data_title">Personal Info:</string>
     <string name="my_data_name">Name</string>

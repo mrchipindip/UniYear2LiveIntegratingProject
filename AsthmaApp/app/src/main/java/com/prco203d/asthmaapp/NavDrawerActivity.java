@@ -1,9 +1,13 @@
 package com.prco203d.asthmaapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,9 +17,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class NavDrawerActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, View.OnKeyListener {
+
+    private EditText peakFlowVariableEditText = null;
+    private Button submitButton = null;
+    private Button EditButton = null;
+    //private TextView FeelingTodayTextView = null;
+    public int peakFlowToday;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +47,64 @@ public class NavDrawerActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+
+        submitButton             = (Button) findViewById(R.id.buttonEnter);
+        peakFlowVariableEditText = (EditText) findViewById(R.id.editText);
+        EditButton               = (Button) findViewById(R.id.buttonEdit);
+        //FeelingTodayTextView = (TextView) findViewById(R.id.FeelingTodayTextView);
+
+//        submitButton.setOnClickListener(this);
+//        peakFlowVariableEditText.setOnKeyListener(this);
+//        EditButton.setOnClickListener(this);
+
+        //String name = sharedPrefs.getString("Name", "User");
+        //FeelingTodayTextView.setText("How are you feeling today " + name + "?");
+
+        EditButton.setEnabled(false);
+
+        // Check if setup screen has been encountered
+        if((sharedPrefs.getBoolean("isSetup", false) == false)){
+            Intent intent = new Intent(this, SetupActivity.class);
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+//        switch (v.getId()) {
+//            case R.id.submitButton:
+//
+//                try {
+//                    peakFlowToday = Integer.valueOf(peakFlowVariableEditText.getText().toString());
+//                    submitButton.setEnabled(false);
+//                    EditButton.setEnabled(true);
+//                    Toast submitToast = Toast.makeText(this, "Peak flow submitted: " + peakFlowToday , Toast.LENGTH_LONG);
+//                    submitToast.setGravity(Gravity.TOP, -430, 430);
+//                    submitToast.show();
+//
+//                } catch (NumberFormatException ex) {
+//                    //Toast.makeText(this, R.string.no_value, Toast.LENGTH_SHORT).show();
+//                    Toast noValueToast = Toast.makeText(this, R.string.no_value, Toast.LENGTH_LONG);
+//                    noValueToast.setGravity(Gravity.TOP, -430, 430);
+//                    noValueToast.show();
+//                }
+//                break;
+//
+//            case R.id.EditButton:
+//                try {
+//                    peakFlowToday = Integer.valueOf(peakFlowVariableEditText.getText().toString());
+//                    Toast editToast = Toast.makeText(this, "Todays peak flow has been changed to: " + peakFlowToday, Toast.LENGTH_LONG);
+//                    editToast.setGravity(Gravity.TOP, -430, 430);
+//                    editToast.show();
+//                } catch (NumberFormatException ex) {
+//                    Toast noValueToast = Toast.makeText(this, R.string.no_value, Toast.LENGTH_LONG);
+//                    noValueToast.setGravity(Gravity.TOP, -430, 430);
+//                    noValueToast.show();
+//                }
+//                break;
+//        }
     }
 
     @Override
@@ -113,4 +186,40 @@ public class NavDrawerActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    public void enterPressed(View view) {
+        try {
+            peakFlowToday = Integer.valueOf(peakFlowVariableEditText.getText().toString());
+            submitButton.setEnabled(false);
+            EditButton.setEnabled(true);
+            Toast submitToast = Toast.makeText(this, "Peak flow submitted: " + peakFlowToday , Toast.LENGTH_LONG);
+            submitToast.setGravity(Gravity.TOP, -430, 430);
+            submitToast.show();
+
+        } catch (NumberFormatException ex) {
+            //Toast.makeText(this, R.string.no_value, Toast.LENGTH_SHORT).show();
+            Toast noValueToast = Toast.makeText(this, R.string.no_value, Toast.LENGTH_LONG);
+            noValueToast.setGravity(Gravity.TOP, -430, 430);
+            noValueToast.show();
+        }
+    }
+
+    public void editPressed(View view) {
+        try {
+            peakFlowToday = Integer.valueOf(peakFlowVariableEditText.getText().toString());
+            Toast editToast = Toast.makeText(this, "Todays peak flow has been changed to: " + peakFlowToday, Toast.LENGTH_LONG);
+            editToast.setGravity(Gravity.TOP, -430, 430);
+            editToast.show();
+        } catch (NumberFormatException ex) {
+            Toast noValueToast = Toast.makeText(this, R.string.no_value, Toast.LENGTH_LONG);
+            noValueToast.setGravity(Gravity.TOP, -430, 430);
+            noValueToast.show();
+        }
+    }
+
+
+
+    @Override
+    public boolean onKey(View v, int keyCode, KeyEvent event) {
+        return false;
+    }
 }

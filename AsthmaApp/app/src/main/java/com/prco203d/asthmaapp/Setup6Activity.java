@@ -86,6 +86,7 @@ public class Setup6Activity extends AppCompatActivity {
     public void nextPage(View view){
         Intent intent = new Intent(this, Setup6Activity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.push_right_in, R.anim.push_left_out);
     }
 
     // Go to previous page
@@ -98,7 +99,7 @@ public class Setup6Activity extends AppCompatActivity {
         saveData();
 
         // Go to the main screen. Need to clear the back stack so users can't reverse into setup
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, NavDrawerActivity.class);
         startActivity(intent);
     }
 

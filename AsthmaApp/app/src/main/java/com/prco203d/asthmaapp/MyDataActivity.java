@@ -132,9 +132,11 @@ public class MyDataActivity extends AppCompatActivity {
                         // Delete everything
                         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
                         sharedPrefs.edit().clear().commit();
-                        finish();
-                        startActivity(getIntent());
+//                        finish();
+//                        startActivity(getIntent());
 
+                        Intent intent = new Intent(MyDataActivity.this, SetupActivity.class);
+                        startActivity(intent);
 
                         dialog.dismiss();
                     }
