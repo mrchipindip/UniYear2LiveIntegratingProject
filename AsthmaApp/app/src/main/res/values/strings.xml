@@ -10,7 +10,7 @@
     <string name="title_activity_emergency">In an Emergency</string>
     <string name="title_activity_my_data">My Data</string>
     <string name="title_activity_graph_and_calendar">Graph and Calendar</string>
-    <string name="title_activity_med_ref">Medical Reference</string>
+    <string name="title_activity_med_ref">Helpful Information</string>
     <string name="title_activity_app_settings">App Settings</string>
     <string name="title_activity_symptoms_list">Symptoms A-Z</string>
     <string name="title_activity_calendar">Calendar</string>
@@ -30,8 +30,6 @@
     <string name="title_activity_setup5_done">Asthma Triggers</string>
     <string name="title_activity_setup6_done">Asthma Triggers</string>
 
-
-
     <!-- New Nav Menu -->
     <string name="navmain_track_title">Log your peak flow for today:</string>
     <string name="navmain_track_button">Enter</string>
@@ -45,7 +43,7 @@
     <!-- Nav menu titles -->
     <string name="navmenu_title">Main Menu</string>
 
-    <string name="navmenu_profile">Profile</string>
+    <string name="navmenu_profile">My Data</string>
     <string name="navmenu_cal">Calendar</string>
     <string name="navmenu_graph">Graph</string>
 
