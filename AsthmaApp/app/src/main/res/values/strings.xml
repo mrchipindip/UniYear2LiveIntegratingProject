@@ -154,7 +154,7 @@
     <string name="setup4_reliever">Reliever Inhaler:</string>
     <string name="setup4_preventer_puffs_am">puffs in the morning</string>
     <string name="setup4_preventer_puffs_pm">puffs in the evening</string>
-    <string name="setup4_reliever_puffs">puffs when feeling less well</string>
+    <string name="setup4_reliever_puffs">puffs when I\'m unwell</string>
 
     <!-- Preventer inhaler spinner labels -->
     <string-array name="stringArrayPreventers">

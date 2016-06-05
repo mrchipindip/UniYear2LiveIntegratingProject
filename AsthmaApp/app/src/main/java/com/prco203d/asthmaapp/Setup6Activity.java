@@ -98,6 +98,7 @@ public class Setup6Activity extends AppCompatActivity {
 
         // Go to the main screen. Need to clear the back stack so users can't reverse into setup
         Intent intent = new Intent(this, NavDrawerActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 

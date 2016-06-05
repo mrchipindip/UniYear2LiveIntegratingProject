@@ -20,6 +20,16 @@ public class Setup3Activity extends AppCompatActivity {
     private Button buttonNext;
     private Button buttonPrevious;
 
+    private EditText editDrName;
+    private EditText editDrNo;
+    private EditText editOutOfHoursName;
+    private EditText editOutOfHoursNo;
+
+    private String drName;
+    private String drNo; // James Bond lol
+    private String outOfHoursName;
+    private String outOfHoursNo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +44,11 @@ public class Setup3Activity extends AppCompatActivity {
         buttonNext = (Button)findViewById(R.id.buttonNext);
         buttonPrevious = (Button)findViewById(R.id.buttonPrevious);
 
+        editDrName = (EditText) findViewById(R.id.editTextGPName);
+        editDrNo = (EditText) findViewById(R.id.editTextGPPhone);
+        editOutOfHoursName = (EditText) findViewById(R.id.editTextOoHName);
+        editOutOfHoursNo = (EditText) findViewById(R.id.editTextOoHNumber);
+
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
         // Editing setup mode
@@ -41,6 +56,11 @@ public class Setup3Activity extends AppCompatActivity {
             // Enable up button and use non-numbered activity title
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle(getResources().getString(R.string.title_activity_setup3_done));
+
+            editDrName.setText(sharedPrefs.getString("DrName",""));
+            editDrNo.setText(sharedPrefs.getString("DrNo",""));
+            editOutOfHoursName.setText(sharedPrefs.getString("OutOfHoursName",""));
+            editOutOfHoursNo.setText(sharedPrefs.getString("OutOfHoursNo",""));
 
             // Show submit button only
             buttonNext.setVisibility(View.INVISIBLE);
@@ -51,9 +71,6 @@ public class Setup3Activity extends AppCompatActivity {
             // Show next + previous buttons only
             buttonUpdate.setVisibility(View.INVISIBLE);
         }
-
-        //int peak = (sharedPrefs.getInt("Peak", 0));
-        //editPeakFlow.setText("" + peak);
 
     }
 
@@ -116,10 +133,45 @@ public class Setup3Activity extends AppCompatActivity {
 
         SharedPreferences.Editor editor = sharedPrefs.edit();
 
-        // Save something
+        // Validate and save Dr name
+        String tempDrName;
+        if(editDrName.getText().toString() != null && editDrName.getText().toString() != "") {
+            tempDrName = editDrName.getText().toString();
+        } else{
+            tempDrName = "";
+        }
+        editor.putString("DrName", tempDrName);
+
+        // Validate and save Dr no
+        String tempDrNo;
+        if(editDrNo.getText().toString() != null && editDrNo.getText().toString() != "") {
+            tempDrNo = editDrNo.getText().toString();
+        } else{
+            tempDrNo = "";
+        }
+        editor.putString("DrNo", tempDrNo);
+
+
+        // Validate and save OoH name
+        String tempOName;
+        if(editOutOfHoursName.getText().toString() != null && editOutOfHoursName.getText().toString() != "") {
+            tempOName = editOutOfHoursName.getText().toString();
+        } else{
+            tempOName = "";
+        }
+        editor.putString("OutOfHoursName", tempOName);
+
+        // Validate and save OoH no
+        String tempONo;
+        if(editOutOfHoursNo.getText().toString() != null && editOutOfHoursNo.getText().toString() != "") {
+            tempONo = editOutOfHoursNo.getText().toString();
+        } else{
+            tempONo = "";
+        }
+        editor.putString("OutOfHoursNo", tempONo);
+
 
         editor.apply();
-
     }
 
 }
