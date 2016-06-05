@@ -69,7 +69,8 @@
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/buttonEdit"
                 android:layout_toStartOf="@+id/buttonEdit"
-                android:onClick="openSetup"/>
+                android:onClick="openSetup"
+                android:textSize="15sp" />
 
             <View
                 android:layout_width="fill_parent"
@@ -123,7 +124,8 @@
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/buttonEdit2"
                 android:layout_toStartOf="@+id/buttonEdit2"
-                android:onClick="openSetup2"/>
+                android:onClick="openSetup2"
+                android:textSize="15sp" />
 
             <View
                 android:layout_width="fill_parent"
@@ -178,7 +180,8 @@
                 android:layout_toLeftOf="@+id/buttonEdit3"
                 android:layout_toStartOf="@+id/buttonEdit3"
                 android:onClick="openSetup3"
-                />
+                android:textSize="15sp
+                " />
 
             <View
                 android:layout_width="fill_parent"
@@ -233,7 +236,8 @@
                 android:layout_below="@+id/textViewS4Title"
                 android:layout_toLeftOf="@+id/buttonEdit4"
                 android:layout_toStartOf="@+id/buttonEdit4"
-                android:onClick="openSetup4"/>
+                android:textSize="15sp"
+                android:onClick="openSetup4" />
 
             <View
                 android:layout_width="fill_parent"
@@ -288,7 +292,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_toLeftOf="@+id/buttonEdit5"
                 android:layout_toStartOf="@+id/buttonEdit5"
-                android:onClick="openSetup5"/>
+                android:onClick="openSetup5"
+                android:textSize="15sp"
+                />
 
             <View
                 android:layout_width="fill_parent"
@@ -297,6 +303,63 @@
                 android:layout_marginBottom="8dp"
                 android:background="@color/colorPrimaryDark"
                 android:id="@+id/lineView6"
+                android:layout_below="@+id/textViewS5Desc"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
+
+            <!-- Section 6 -->
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text=""
+                android:id="@+id/buttonEdit6"
+                android:onClick="openSetup6"
+                android:src="@drawable/ic_chevron_right"
+                android:scaleType="fitXY"
+                android:layout_below="@+id/lineView6"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignBottom="@+id/textViewS6Desc"
+                android:backgroundTint="#00ffffff"
+                android:background="#00ffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/my_data_s6_title"
+                android:id="@+id/textViewS6Title"
+                android:layout_below="@+id/lineView6"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:onClick="openSetup6"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/my_data_s6_desc"
+                android:id="@+id/textViewS6Desc"
+                android:layout_below="@+id/textViewS6Title"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/buttonEdit6"
+                android:layout_toStartOf="@+id/buttonEdit6"
+                android:onClick="openSetup6"
+                android:textSize="15sp"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"
+                android:id="@+id/lineView7"
                 android:layout_below="@+id/textViewS5Desc"
                 android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"

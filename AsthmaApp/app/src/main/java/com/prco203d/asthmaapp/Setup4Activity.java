@@ -1,6 +1,8 @@
 package com.prco203d.asthmaapp;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,10 +10,17 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.InputFilter;
+import android.text.InputType;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class Setup4Activity extends AppCompatActivity {
 
@@ -27,18 +36,28 @@ public class Setup4Activity extends AppCompatActivity {
     private EditText editPPM   = null;
     private EditText editR   = null;
 
-    private final int   spinnerPreventerBeclomethasone = 0;
-    private final int   spinnerPreventerClenilModulate = 1;
-    private final int   spinnerPreventerQvar = 2;
-    private final int   spinnerPreventerFluticasone = 3;
-    private final int   spinnerPreventerSymbicort = 4;
-    private final int   spinnerPreventerSeretide = 5;
-    private final int   spinnerPreventerFostair = 6;
-    private final int   spinnerPreventerFlutiform = 7;
+    private TextView rescueYesNo;
+    private TextView rescueDose;
+    private TextView rescueDays;
 
-    private final int   spinnerRelieverSalbutamolV = 0;
-    private final int   spinnerRelieverSalbutamolG = 1;
-    private final int   spinnerRelieverTurbutalineB = 2;
+    private Boolean rescueBool;
+    private Integer tempRescueDose;
+    private Integer tempRescueDays;
+
+    private final int   spinnerPreventerNone = 0;
+    private final int   spinnerPreventerBeclomethasone = 1;
+    private final int   spinnerPreventerClenilModulate = 2;
+    private final int   spinnerPreventerQvar = 3;
+    private final int   spinnerPreventerFluticasone = 4;
+    private final int   spinnerPreventerSymbicort = 5;
+    private final int   spinnerPreventerSeretide = 6;
+    private final int   spinnerPreventerFostair = 7;
+    private final int   spinnerPreventerFlutiform = 8;
+
+    private final int   spinnerRelieverNone = 0;
+    private final int   spinnerRelieverSalbutamolV = 1;
+    private final int   spinnerRelieverSalbutamolG = 2;
+    private final int   spinnerRelieverTurbutalineB = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +81,10 @@ public class Setup4Activity extends AppCompatActivity {
         editPPM = (EditText) findViewById(R.id.editTextPPM);
         editR = (EditText) findViewById(R.id.editTextR);
 
+        rescueYesNo = (TextView) findViewById(R.id.textViewRescueYesNo);
+        rescueDose = (TextView) findViewById(R.id.textViewTabletNumber);
+        rescueDays = (TextView) findViewById(R.id.textViewTabletDays);
+
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
         // Editing setup mode
@@ -78,6 +101,20 @@ public class Setup4Activity extends AppCompatActivity {
             editPPM.setText("" + ppm);
             editR.setText("" + r);
 
+            if(sharedPrefs.getBoolean("RescuePack", false)){
+                int rescueDoseNum = (sharedPrefs.getInt("PrednisoloneMg", 0));
+                int rescueDaysNum = (sharedPrefs.getInt("PrednisoloneDays", 0));
+
+                rescueYesNo.setText("I have a prednisolone rescue pack.");
+                rescueDose.setText("I should take " + rescueDoseNum + " x 5mg tablets when my symptoms are worse.");
+                rescueDays.setText("I should continue taking this dose every morning for " + rescueDaysNum + " days");
+            }
+            else{
+                rescueYesNo.setText("No rescue pack.");
+                rescueDose.setText("-");
+                rescueDays.setText("-");
+            }
+
             // Show submit button only
             buttonNext.setVisibility(View.INVISIBLE);
             buttonPrevious.setVisibility(View.INVISIBLE);
@@ -92,11 +129,11 @@ public class Setup4Activity extends AppCompatActivity {
         //editPeakFlow.setText("" + peak);
 
         // ADD THIS BACK IN LATER
-//        int spinnerPSavedInt = sharedPrefs.getInt("PreventerInt", 0);
-//        spinnerP.setSelection(spinnerPSavedInt);
-//
-//        int spinnerRSavedInt = sharedPrefs.getInt("RelieverInt", 0);
-//        spinnerR.setSelection(spinnerRSavedInt);
+        int spinnerPSavedInt = sharedPrefs.getInt("PreventerInt", 0);
+        spinnerP.setSelection(spinnerPSavedInt);
+
+        int spinnerRSavedInt = sharedPrefs.getInt("RelieverInt", 0);
+        spinnerR.setSelection(spinnerRSavedInt);
 
     }
 
@@ -105,16 +142,16 @@ public class Setup4Activity extends AppCompatActivity {
     public void onBackPressed() {
 
         // if the app is set up already, go back like normal
-        if(isSetup()){
-            super.onBackPressed();
-        }
-        // otherwise exit
-        else{
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-        }
+//        if(isSetup()){
+//            super.onBackPressed();
+//        }
+//        // otherwise exit
+//        else{
+//            Intent intent = new Intent(Intent.ACTION_MAIN);
+//            intent.addCategory(Intent.CATEGORY_HOME);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(intent);
+//        }
     }
 
     // Function checks if the app is setup of not, by whether the final submit button has been pressed
@@ -132,6 +169,8 @@ public class Setup4Activity extends AppCompatActivity {
 
     // Go to next page
     public void nextPage(View view){
+        saveData();
+
         Intent intent = new Intent(this, Setup5Activity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.push_right_in, R.anim.push_left_out);
@@ -150,11 +189,117 @@ public class Setup4Activity extends AppCompatActivity {
         finish();
     }
 
+
+    public void showRescueDialog(View view){
+
+        // Display rescue popup
+        final AlertDialog alertDialog = new AlertDialog.Builder(Setup4Activity.this).create();
+        alertDialog.setTitle("Do you have a rescue pack?");
+
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        rescueBool = false;
+                        rescueYesNo.setText("No rescue pack.");
+                        rescueDose.setText("-");
+                        rescueDays.setText("-");
+                        dialog.dismiss();
+                    }
+                });
+
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+
+                        dialog.dismiss();
+
+                        // Display second rescue popup
+                        final AlertDialog alertDialog2 = new AlertDialog.Builder(Setup4Activity.this).create();
+                        alertDialog2.setTitle("Rescue Pack Details");
+
+                        final TextView rescueDesc = new TextView(Setup4Activity.this);
+                        rescueDesc.setText("  Number of 5mg prednisolone tablets to take\n  when feeling worse:");
+
+                        final EditText editTabletNumber = new EditText(Setup4Activity.this);
+                        editTabletNumber.setInputType(InputType.TYPE_CLASS_NUMBER);
+                        editTabletNumber.setFilters(new InputFilter[] { new InputFilter.LengthFilter(1) });
+
+                        final TextView rescueDesc2 = new TextView(Setup4Activity.this);
+                        rescueDesc2.setText("  Number of days to continue taking this dose\n  for every morning:");
+
+                        final EditText editTabletDays = new EditText(Setup4Activity.this);
+                        editTabletDays.setInputType(InputType.TYPE_CLASS_NUMBER);
+                        editTabletDays.setFilters(new InputFilter[] { new InputFilter.LengthFilter(2) });
+
+                        LinearLayout rescueLayout = new LinearLayout(getBaseContext());
+                        rescueLayout.setOrientation(LinearLayout.VERTICAL);
+                        rescueLayout.addView(rescueDesc);
+                        rescueLayout.addView(editTabletNumber);
+                        rescueLayout.addView(rescueDesc2);
+                        rescueLayout.addView(editTabletDays);
+
+                        alertDialog2.setView(rescueLayout);
+
+                        alertDialog2.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                });
+
+                        alertDialog2.setButton(AlertDialog.BUTTON_POSITIVE, "Confirm",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                        rescueBool = true;
+
+                                        rescueYesNo.setText("I have a prednisolone rescue pack.");
+
+                                        try {
+                                            if (editTabletNumber.getText().toString() != null && editTabletNumber.getText().toString() != "") {
+                                                tempRescueDose = Integer.parseInt(editTabletNumber.getText().toString());
+                                                rescueDose.setText("I should take " + tempRescueDose + " x5mg tablets when symptoms are worse.");
+                                            } else {
+                                            }
+                                        }catch(NumberFormatException ex){
+
+                                        }
+
+                                        try {
+                                            if (editTabletDays.getText().toString() != null && editTabletDays.getText().toString() != "") {
+                                                tempRescueDays = Integer.parseInt(editTabletDays.getText().toString());
+                                                rescueDays.setText("I should continue taking this dose every morning for " + tempRescueDays + " days");
+                                            } else {
+                                            }
+                                        }catch(NumberFormatException ex){
+
+                                        }
+
+                                        dialog.dismiss();
+                                    }
+                                });
+
+                        alertDialog2.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+
+                        alertDialog2.show();
+
+
+                    }
+                });
+
+        alertDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+
+        alertDialog.show();
+
+
+    }
+
+
     public void saveData() {
 
         // write the data to a pref file
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
-
         SharedPreferences.Editor editor = sharedPrefs.edit();
 
         // Save something
@@ -164,6 +309,11 @@ public class Setup4Activity extends AppCompatActivity {
         editor.putInt("PreventerInt", spinnerPosP);
         switch (spinnerPosP)
         {
+            case spinnerPreventerNone:
+                pString += "None";
+                editor.putString("PreventerName", pString);
+                break;
+
             case spinnerPreventerBeclomethasone:
                 pString += "Beclomethasone";
                 editor.putString("PreventerName", pString);
@@ -210,6 +360,11 @@ public class Setup4Activity extends AppCompatActivity {
         editor.putInt("RelieverInt", spinnerPosR);
         switch (spinnerPosR)
         {
+            case spinnerRelieverNone:
+                rString += "None";
+                editor.putString("RelieverName", rString);
+                break;
+
             case spinnerRelieverSalbutamolV:
                 rString += "Salbutamol (Ventolin)";
                 editor.putString("RelieverName", rString);
@@ -265,19 +420,40 @@ public class Setup4Activity extends AppCompatActivity {
 
         }
 
+        // if it's been defined, set it
+        if(rescueBool != null){
+            editor.putBoolean("RescuePack", rescueBool);
+        }
+
+        try {
+            if (tempRescueDose != null) {
+                editor.putInt("PrednisoloneMg", tempRescueDose);
+            }
+        }catch(Exception ex){
+
+        }
+
+        try {
+            if (tempRescueDays != null) {
+                editor.putInt("PrednisoloneDays", tempRescueDays);
+            }
+        }catch(Exception ex){
+
+        }
+
 
         // Everything to save is:
-        sharedPrefs.getInt("PreventerAM", 0);
-        sharedPrefs.getInt("PreventerPM", 0);
-        sharedPrefs.getInt("RelieverWell", 0);
-        sharedPrefs.getInt("RelieverWarningLevel", 0);
-        sharedPrefs.getInt("PreventerWarningPuffs", 0);
-        sharedPrefs.getInt("PreventerWarningDoses", 0);
-        sharedPrefs.getInt("RelieverWarningMaxPuffsPer4Hours", 0);
-        sharedPrefs.getString("RelieverName", "Not Given");
-        sharedPrefs.getString("PreventerName", "Not Given");
-        sharedPrefs.getInt("PrednisoloneMg", 0);
-        sharedPrefs.getInt("PrednisoloneDays", 0);
+//        sharedPrefs.getInt("PreventerAM", 0);
+//        sharedPrefs.getInt("PreventerPM", 0);
+//        sharedPrefs.getInt("RelieverWell", 0);
+//        sharedPrefs.getInt("RelieverWarningLevel", 0);
+//        sharedPrefs.getInt("PreventerWarningPuffs", 0);
+//        sharedPrefs.getInt("PreventerWarningDoses", 0);
+//        sharedPrefs.getInt("RelieverWarningMaxPuffsPer4Hours", 0);
+//        sharedPrefs.getString("RelieverName", "Not Given");
+//        sharedPrefs.getString("PreventerName", "Not Given");
+//        sharedPrefs.getInt("PrednisoloneMg", 0);
+//        sharedPrefs.getInt("PrednisoloneDays", 0);
 
         editor.apply();
 

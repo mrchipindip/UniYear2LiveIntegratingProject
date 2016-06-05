@@ -111,6 +111,11 @@ public class MyDataActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openSetup6(View view) {
+        Intent intent = new Intent(this, Setup6Activity.class);
+        startActivity(intent);
+    }
+
     public void deleteData(View view) {
 
         AlertDialog alertDialog = new AlertDialog.Builder(MyDataActivity.this).create();

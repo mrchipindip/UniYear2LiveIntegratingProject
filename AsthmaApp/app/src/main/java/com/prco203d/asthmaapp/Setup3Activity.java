@@ -14,7 +14,7 @@ import android.widget.EditText;
 
 public class Setup3Activity extends AppCompatActivity {
 
-    // Change
+
     //private EditText editPeakFlow   = null;
     private Button buttonUpdate;
     private Button buttonNext;
@@ -89,6 +89,8 @@ public class Setup3Activity extends AppCompatActivity {
 
     // Go to next page
     public void nextPage(View view){
+        saveData();
+
         Intent intent = new Intent(this, Setup4Activity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.push_right_in, R.anim.push_left_out);
