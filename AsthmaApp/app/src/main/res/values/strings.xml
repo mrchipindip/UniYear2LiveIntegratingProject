@@ -108,7 +108,7 @@
     <string name="setup1_gender">Sex:</string>
     <string name="setup1_height">Height:</string>
 
-    <string name="setup_disclaimer">Welcome to Asthma Aid! Though care has been taken to provide information as accurately as possible, this app should not be used to replace professional medical advice. Any information you provide to the app is used to provide more helpful information to you, and is not be shared with any third party.</string>
+    <string name="setup_disclaimer">Welcome to Asthma Aid! Though care has been taken to provide information as accurately as possible, this app should not be used to replace professional medical advice. \nInformation you provide to the app is not shared with any third party, and can be edited or deleted at any time from My Data on the main menu.</string>
 
     <string name="setup1_female">Female</string>
     <string name="setup1_male">Male</string>
@@ -178,7 +178,7 @@
     </string-array>
 
     <!-- Setup5 labels: triggers -->
-    <string name="setup5_desc">Select any from the following which trigger your asthma:</string>
+    <string name="setup5_desc">Tap below to mark an item as a mild (green) trigger. Keep tapping to mark the trigger as medium (amber), severe (red), or unselected.</string>
 
     <!-- Trigger labels -->
     <string name="trigger_animals">Animals</string>
@@ -192,6 +192,12 @@
     <string name="trigger_odour">Strong Odours</string>
     <string name="trigger_virus">Viral Infections</string>
     <string name="trigger_weather">Weather or Temperature Change</string>
+    <string name="trigger_custom">+ add trigger</string>
+
+    <string name="trigger_unselected">Unselected</string>
+    <string name="trigger_mild">Mild</string>
+    <string name="trigger_medium">Medium</string>
+    <string name="trigger_severe">Severe</string>
 
     <!-- Setup6 labels: custom triggers? -->
     <string name="setup6_desc">You can enter any other information about your asthma here. </string>

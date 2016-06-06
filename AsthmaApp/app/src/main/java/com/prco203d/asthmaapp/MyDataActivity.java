@@ -5,10 +5,15 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MyDataActivity extends AppCompatActivity {
@@ -42,6 +47,12 @@ public class MyDataActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
+        AppCompatButton v = (AppCompatButton) findViewById(R.id.buttonDelete);
+        ColorStateList red = new ColorStateList(new int[][]{new int[0]}, new int[]{0xfff44336});
+        v.setSupportBackgroundTintList(red);
 
         //textTitle = (TextView) findViewById(R.id.textViewTitle);
         //textPeak = (TextView) findViewById(R.id.textViewPBPeakFlow);

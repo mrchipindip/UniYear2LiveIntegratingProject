@@ -56,6 +56,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editTextGPName"
                 android:inputType="text"
+                android:maxLength="30"
                 />
 
             <TextView
@@ -70,6 +71,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="phone"
                 android:ems="10"
+                android:maxLength="15"
                 android:id="@+id/editTextGPPhone" />
 
             <TextView
@@ -94,6 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/editTextOoHName"
+                android:maxLength="30"
                 android:inputType="text"
                 />
 
@@ -109,6 +112,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="phone"
                 android:ems="10"
+                android:maxLength="15"
                 android:id="@+id/editTextOoHNumber" />
 
 
