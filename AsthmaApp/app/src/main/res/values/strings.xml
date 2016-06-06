@@ -10,27 +10,25 @@
     <string name="title_activity_emergency">In an Emergency</string>
     <string name="title_activity_my_data">My Data</string>
     <string name="title_activity_graph_and_calendar">Graph and Calendar</string>
-    <string name="title_activity_med_ref">Medical Reference</string>
+    <string name="title_activity_med_ref">Helpful Information</string>
     <string name="title_activity_app_settings">App Settings</string>
     <string name="title_activity_symptoms_list">Symptoms A-Z</string>
     <string name="title_activity_calendar">Calendar</string>
     <string name="title_activity_nav_drawer">Asthma Aid</string>
 
-    <string name="title_activity_setup">Setup 1/5 - Basic Info</string>
-    <string name="title_activity_setup2">Setup 2/5 - Peak Flow</string>
-    <string name="title_activity_setup3">Setup 3/5 - GP Details</string>
-    <string name="title_activity_setup4">Setup 4/5 - Inhalers &amp; Medication</string>
-    <string name="title_activity_setup5">Setup 5/5 - Asthma Triggers</string>
-    <string name="title_activity_setup6">Asthma Triggers</string>
+    <string name="title_activity_setup">Setup 1/6 - Personal Info</string>
+    <string name="title_activity_setup2">Setup 2/6 - Peak Flow</string>
+    <string name="title_activity_setup3">Setup 3/6 - GP Details</string>
+    <string name="title_activity_setup4">Setup 4/6 - Inhalers &amp; Medication</string>
+    <string name="title_activity_setup5">Setup 5/6 - Asthma Triggers</string>
+    <string name="title_activity_setup6">Setup 6/6 - Notes</string>
 
     <string name="title_activity_setup_done">Basic Info</string>
     <string name="title_activity_setup2_done">Peak Flow</string>
     <string name="title_activity_setup3_done">GP Details</string>
     <string name="title_activity_setup4_done">Inhalers &amp; Medication</string>
     <string name="title_activity_setup5_done">Asthma Triggers</string>
-    <string name="title_activity_setup6_done">Asthma Triggers</string>
-
-
+    <string name="title_activity_setup6_done">Notes</string>
 
     <!-- New Nav Menu -->
     <string name="navmain_track_title">Log your peak flow for today:</string>
@@ -45,7 +43,7 @@
     <!-- Nav menu titles -->
     <string name="navmenu_title">Main Menu</string>
 
-    <string name="navmenu_profile">Profile</string>
+    <string name="navmenu_profile">My Data</string>
     <string name="navmenu_cal">Calendar</string>
     <string name="navmenu_graph">Graph</string>
 
@@ -110,7 +108,7 @@
     <string name="setup1_gender">Sex:</string>
     <string name="setup1_height">Height:</string>
 
-    <string name="setup_disclaimer">Welcome to Asthma Aid! Though care has been taken to provide information as accurately as possible, this app should not be used to replace professional medical advice. Any information you provide to the app is used to provide more helpful information to you, and is not be shared with any third party.</string>
+    <string name="setup_disclaimer">Welcome to Asthma Aid! Though care has been taken to provide information as accurately as possible, this app should not be used to replace professional medical advice. \nInformation you provide to the app is not shared with any third party, and can be edited or deleted at any time from My Data on the main menu.</string>
 
     <string name="setup1_female">Female</string>
     <string name="setup1_male">Male</string>
@@ -152,14 +150,15 @@
 
     <!-- Setup4 labels: inhalers -->
     <string name="setup4_desc">Please enter the details of your inhalers and other medication, and the usage you have been recommended. </string>
-    <string name="setup4_preventer">Your Preventer Inhaler:</string>
-    <string name="setup4_reliever">Your Reliever Inhaler:</string>
-    <string name="setup4_preventer_puffs_am">Recommended morning preventer puffs</string>
-    <string name="setup4_preventer_puffs_pm">Recommended evening preventer puffs</string>
-    <string name="setup4_reliever_puffs">Recommended reliever puffs</string>
+    <string name="setup4_preventer">Preventer Inhaler:</string>
+    <string name="setup4_reliever">Reliever Inhaler:</string>
+    <string name="setup4_preventer_puffs_am">puffs in the morning</string>
+    <string name="setup4_preventer_puffs_pm">puffs in the evening</string>
+    <string name="setup4_reliever_puffs">puffs when I\'m unwell</string>
 
     <!-- Preventer inhaler spinner labels -->
     <string-array name="stringArrayPreventers">
+        <item>None</item>
         <item>Beclomethasone</item>
         <item>Clenil Modulate</item>
         <item>Qvar</item>
@@ -172,13 +171,14 @@
 
     <!-- Relievers inhaler spinner labels -->
     <string-array name="stringArrayRelievers">
+        <item>None</item>
         <item>Salbutamol (Ventolin)</item>
         <item>Salbutamol (Generic)</item>
         <item>Turbutaline (Bricanyl)</item>
     </string-array>
 
     <!-- Setup5 labels: triggers -->
-    <string name="setup5_desc">Select any from the following which trigger your asthma:</string>
+    <string name="setup5_desc">Tap below to mark an item as a mild (green) trigger. Keep tapping to mark the trigger as medium (amber), severe (red), or unselected.</string>
 
     <!-- Trigger labels -->
     <string name="trigger_animals">Animals</string>
@@ -192,21 +192,29 @@
     <string name="trigger_odour">Strong Odours</string>
     <string name="trigger_virus">Viral Infections</string>
     <string name="trigger_weather">Weather or Temperature Change</string>
+    <string name="trigger_custom">+ add trigger</string>
+
+    <string name="trigger_unselected">Unselected</string>
+    <string name="trigger_mild">Mild</string>
+    <string name="trigger_medium">Medium</string>
+    <string name="trigger_severe">Severe</string>
 
     <!-- Setup6 labels: custom triggers? -->
-    <string name="setup6_desc">You can enter any other triggers you may know of here. </string>
+    <string name="setup6_desc">You can enter any other information about your asthma here. </string>
 
     <!-- My data labels -->
     <string name="my_data_s1_title">Personal Information</string>
     <string name="my_data_s1_desc">Your account name, date of birth, sex and height.</string>
     <string name="my_data_s2_title">Peak Flow</string>
-    <string name="my_data_s2_desc">Personal best, warning and critical levels.</string>
+    <string name="my_data_s2_desc">Personal best, warning and critical peak flow levels.</string>
     <string name="my_data_s3_title">Contact Details</string>
     <string name="my_data_s3_desc">GP and out of hours contact details, appointment date.</string>
     <string name="my_data_s4_title">Inhalers &amp; Medication</string>
-    <string name="my_data_s4_desc">Preventer and reliever names and doses.</string>
+    <string name="my_data_s4_desc">Preventer and reliever names, doses and rescue pack.</string>
     <string name="my_data_s5_title">Triggers</string>
     <string name="my_data_s5_desc">Known triggers that make your asthma worse.</string>
+    <string name="my_data_s6_title">Notes</string>
+    <string name="my_data_s6_desc">Free area to add any additional details about your asthma.</string>
 
     <string name="my_data_edit">Edit</string>
     <string name="my_data_delete">DELETE ALL DATA</string>

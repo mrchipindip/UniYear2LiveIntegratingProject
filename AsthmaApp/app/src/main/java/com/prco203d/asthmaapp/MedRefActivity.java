@@ -8,6 +8,7 @@ import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -73,7 +74,6 @@ public class MedRefActivity extends AppCompatActivity implements View.OnClickLis
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), UnwellActivity.class);
                 startActivity(intent);
-
             }
         }));
         inAnAsthmaAttackButton.setOnClickListener((new View.OnClickListener() {
@@ -81,7 +81,6 @@ public class MedRefActivity extends AppCompatActivity implements View.OnClickLis
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), EmergencyActivity.class);
                 startActivity(intent);
-
             }
         }));
 
@@ -109,10 +108,28 @@ public class MedRefActivity extends AppCompatActivity implements View.OnClickLis
        //AlarmManager.cancel(this) ;
     }
 
-
-
     @Override
     public void onClick(View v) {
 
+    }
+
+    public void clickNHS(View v){
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.nhs.uk/Conditions/Asthma/Pages/Introduction.aspx"));
+        startActivity(browserIntent);
+    }
+
+    public void clickAsthmaUK(View v){
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.asthma.org.uk/"));
+        startActivity(browserIntent);
+    }
+
+    public void clickWebMD(View v){
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.webmd.boots.com/asthma/"));
+        startActivity(browserIntent);
+    }
+
+    public void clickPatientInfo(View v){
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://patient.info/health/asthma-leaflet"));
+        startActivity(browserIntent);
     }
 }

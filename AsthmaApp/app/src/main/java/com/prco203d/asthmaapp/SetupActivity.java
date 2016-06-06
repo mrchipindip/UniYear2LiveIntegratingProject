@@ -173,22 +173,22 @@ public class SetupActivity extends AppCompatActivity {
         }
     }
 
-    // Overriding the back key, for first-time setup
-    @Override
-    public void onBackPressed() {
-
-        // if the app is set up already, go back like normal
-        if(isSetup()){
-            super.onBackPressed();
-        }
-        // otherwise exit
-        else{
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-        }
-    }
+//    // Overriding the back key, for first-time setup
+//    @Override
+//    public void onBackPressed() {
+//
+//        // if the app is set up already, go back like normal
+//        if(isSetup()){
+//            super.onBackPressed();
+//        }
+//        // otherwise exit
+//        else{
+//            Intent intent = new Intent(Intent.ACTION_MAIN);
+//            intent.addCategory(Intent.CATEGORY_HOME);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(intent);
+//        }
+//    }
 
     // Function checks if the app is setup of not, by whether the final submit button has been pressed
     public Boolean isSetup(){

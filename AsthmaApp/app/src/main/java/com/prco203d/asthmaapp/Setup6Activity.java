@@ -14,7 +14,9 @@ import android.widget.EditText;
 
 public class Setup6Activity extends AppCompatActivity {
 
-    //private EditText editPeakFlow   = null;
+    private EditText noteText = null;
+
+
     private Button buttonUpdate;
     private Button buttonNext;
     private Button buttonPrevious;
@@ -32,10 +34,18 @@ public class Setup6Activity extends AppCompatActivity {
         buttonNext = (Button)findViewById(R.id.buttonNext);
         buttonPrevious = (Button)findViewById(R.id.buttonPrevious);
 
+        noteText = (EditText) findViewById(R.id.editTextNote);
+
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
         // Editing setup mode
         if(isSetup()){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(getResources().getString(R.string.title_activity_setup6_done));
+
+            String notes = (sharedPrefs.getString("Notes", ""));
+
+            noteText.setText("" + notes);
 
             // Show submit button only
             buttonNext.setVisibility(View.INVISIBLE);
@@ -44,7 +54,7 @@ public class Setup6Activity extends AppCompatActivity {
         // First time setup mode
         else{
             // Show previous button and finish
-            buttonNext.setVisibility(View.INVISIBLE);
+            buttonUpdate.setVisibility(View.INVISIBLE);
         }
 
         //int peak = (sharedPrefs.getInt("Peak", 0));
@@ -53,21 +63,21 @@ public class Setup6Activity extends AppCompatActivity {
     }
 
     // Overriding the back key, for first-time setup
-    @Override
-    public void onBackPressed() {
-
-        // if the app is set up already, go back like normal
-        if(isSetup()){
-            super.onBackPressed();
-        }
-        // otherwise exit
-        else{
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-        }
-    }
+//    @Override
+//    public void onBackPressed() {
+//
+//        // if the app is set up already, go back like normal
+//        if(isSetup()){
+//            super.onBackPressed();
+//        }
+//        // otherwise exit
+//        else{
+//            Intent intent = new Intent(Intent.ACTION_MAIN);
+//            intent.addCategory(Intent.CATEGORY_HOME);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(intent);
+//        }
+//    }
 
     // Function checks if the app is setup of not, by whether the final submit button has been pressed
     public Boolean isSetup(){
@@ -84,9 +94,12 @@ public class Setup6Activity extends AppCompatActivity {
 
     // Go to next page
     public void nextPage(View view){
-        Intent intent = new Intent(this, Setup6Activity.class);
+        saveData();
+
+        // Go to the main screen. Need to clear the back stack so users can't reverse into setup
+        Intent intent = new Intent(this, NavDrawerActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
-        overridePendingTransition(R.anim.push_right_in, R.anim.push_left_out);
     }
 
     // Go to previous page
@@ -99,8 +112,7 @@ public class Setup6Activity extends AppCompatActivity {
         saveData();
 
         // Go to the main screen. Need to clear the back stack so users can't reverse into setup
-        Intent intent = new Intent(this, NavDrawerActivity.class);
-        startActivity(intent);
+        finish();
     }
 
     public void saveData() {
@@ -109,6 +121,10 @@ public class Setup6Activity extends AppCompatActivity {
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
         SharedPreferences.Editor editor = sharedPrefs.edit();
+
+        if (noteText.getText().toString() != null && noteText.getText().toString() != "" && !noteText.getText().toString().isEmpty()) {
+                editor.putString("Notes", noteText.getText().toString());
+        }
 
         // Set that the app is now setup for use
         editor.putBoolean("isSetup", true);

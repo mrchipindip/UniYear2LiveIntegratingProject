@@ -1,32 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_alignParentTop="true"
-        android:gravity="center_vertical"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        />
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.prco203d.asthmaapp.SetupActivity"
+    tools:showIn="@layout/activity_setup4"
+    android:orientation="vertical"
+    android:background="#444">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/title"
-        android:fillViewport="false"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
         android:orientation="vertical"
-        android:layout_marginTop="50dp"
-        android:padding="10dp">
+        android:id="@+id/scrollView2"
+        >
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:weightSum="1">
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:background="#fff"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <!--<TextView-->
+            <!--android:id="@+id/title"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+            <!--/>-->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -35,80 +46,281 @@
                 android:text="@string/setup4_desc"
                 android:id="@+id/textView" />
 
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"
+                android:id="@+id/lineView1"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView" />
+
+            <!-- Preventer -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/setup4_preventer"
-                android:layout_marginTop="10dp"
-                android:id="@+id/textViewRelieverTitle" />
+                android:id="@+id/textViewPreventerTitle"
+                android:layout_below="@id/lineView1"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignBottom="@+id/spinnerPreventers"
+                android:gravity="center_vertical" />
 
             <Spinner
-                android:layout_width="wrap_content"
+                android:layout_width="170dp"
                 android:layout_height="50dp"
                 android:id="@+id/spinnerPreventers"
                 android:entries="@array/stringArrayPreventers"
+                android:layout_below="@+id/lineView1"
+                android:layout_alignRight="@+id/lineView1"
+                android:layout_alignEnd="@+id/lineView1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Number of puffs to take:"
+                android:id="@+id/textViewPreventerPuffs"
+                android:layout_below="@id/spinnerPreventers"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:visibility="invisible"
                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="I take"
+                android:id="@+id/textViewPreventerAMPuffsITake"
+                android:layout_below="@+id/textViewPreventerTitle"
+                android:gravity="center_vertical" />
+
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editTextPAM"
+                android:layout_below="@id/textViewPreventerPuffs"
+                android:layout_alignBottom="@+id/textViewPreventerAMPuffsITake"
+                android:layout_toRightOf="@+id/textViewPreventerAMPuffsITake"
+                android:layout_toEndOf="@+id/textViewPreventerAMPuffsITake"
+                android:layout_alignTop="@+id/textViewPreventerAMPuffsITake"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="I take"
+                android:id="@+id/textViewPreventerPMPuffsITake"
+                android:layout_below="@+id/textViewPreventerAMPuffsITake"
+                android:gravity="center_vertical" />
+
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editTextPPM"
+                android:layout_alignBottom="@+id/textViewPreventerPMPuffsITake"
+                android:layout_toRightOf="@+id/textViewPreventerPMPuffsITake"
+                android:layout_toEndOf="@+id/textViewPreventerPMPuffsITake"
+                android:layout_alignTop="@+id/textViewPreventerPMPuffsITake"
+                android:gravity="center_horizontal"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/setup4_preventer_puffs_am"
-                android:id="@+id/textViewPreventerAMPuffs" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
-                android:id="@+id/editTextPAM"
-                android:layout_gravity="center_horizontal" />
+                android:id="@+id/textViewPreventerAMPuffs"
+                android:layout_alignBottom="@+id/editTextPAM"
+                android:layout_toRightOf="@+id/editTextPAM"
+                android:layout_toEndOf="@+id/editTextPAM"
+                android:layout_alignTop="@+id/editTextPAM"
+                android:gravity="center_vertical" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/setup4_preventer_puffs_pm"
-                android:id="@+id/textViewPreventerPMPuffs" />
+                android:id="@+id/textViewPreventerPMPuffs"
+                android:layout_alignBottom="@+id/editTextPPM"
+                android:layout_toRightOf="@+id/editTextPPM"
+                android:layout_toEndOf="@+id/editTextPPM"
+                android:layout_below="@+id/textViewPreventerAMPuffs"
+                android:gravity="center_vertical" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
-                android:id="@+id/editTextPPM" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"
+                android:id="@+id/lineView2"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textViewPreventerPMPuffs" />
 
+            <!-- Reliever -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/setup4_reliever"
-                android:id="@+id/textViewPreventerTitle" />
+                android:id="@+id/textViewRelieverTitle"
+                android:layout_below="@id/lineView2"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignBottom="@+id/spinnerAge"
+                android:gravity="center_vertical" />
 
             <Spinner
-                android:layout_width="wrap_content"
+                android:layout_width="170dp"
                 android:layout_height="50dp"
                 android:id="@+id/spinnerAge"
                 android:entries="@array/stringArrayRelievers"
-                />
+                android:layout_below="@+id/lineView2"
+                android:layout_alignRight="@+id/lineView2"
+                android:layout_alignEnd="@+id/lineView2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="I take"
+                android:id="@+id/textViewRelieverPuffsITake"
+                android:layout_below="@+id/textViewRelieverTitle"
+                android:gravity="center_vertical" />
+
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editTextR"
+                android:layout_alignBottom="@+id/textViewRelieverPuffsITake"
+                android:layout_toRightOf="@+id/textViewRelieverPuffsITake"
+                android:layout_toEndOf="@+id/textViewRelieverPuffsITake"
+                android:layout_alignTop="@+id/textViewRelieverPuffsITake"
+                android:gravity="center_horizontal"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/setup4_reliever_puffs"
-                android:id="@+id/textViewReleiverPuffs" />
+                android:id="@+id/textViewReleiverPuffs"
+                android:layout_alignBottom="@+id/editTextR"
+                android:layout_toRightOf="@+id/editTextR"
+                android:layout_toEndOf="@+id/editTextR"
+                android:layout_alignTop="@+id/editTextR"
+                android:gravity="center_vertical" />
 
-            <EditText
-                android:layout_width="match_parent"
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"
+                android:id="@+id/lineView4"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textViewReleiverPuffs" />
+
+            <!-- Rescue Pack -->
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
-                android:id="@+id/editTextR" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Do you have a rescue pack?"
+                android:id="@+id/textViewHeight"
+                android:layout_below="@id/lineView4"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                android:onClick="showRescueDialog"
+                android:layout_toLeftOf="@+id/buttonEdit4"
+                android:layout_toStartOf="@+id/buttonEdit4" />
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text=""
+                android:id="@+id/buttonEdit4"
+                android:onClick="showRescueDialog"
+                android:src="@drawable/ic_chevron_right"
+                android:scaleType="fitXY"
+                android:layout_below="@id/lineView4"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="#00ffffff"
+                android:background="#00ffffff"
+                android:layout_alignBottom="@+id/textViewTabletDays" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="-"
+                android:id="@+id/textViewRescueYesNo"
+                android:layout_below="@+id/textViewHeight"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/buttonEdit4"
+                android:onClick="showRescueDialog"
+                android:layout_toLeftOf="@+id/buttonEdit4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="-"
+                android:id="@+id/textViewTabletNumber"
+                android:layout_below="@+id/textViewRescueYesNo"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/buttonEdit4"
+                android:onClick="showRescueDialog"
+                android:layout_toLeftOf="@+id/buttonEdit4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="-"
+                android:id="@+id/textViewTabletDays"
+                android:layout_below="@+id/textViewTabletNumber"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/buttonEdit4"
+                android:onClick="showRescueDialog"
+                android:layout_toLeftOf="@+id/buttonEdit4" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"
+                android:id="@+id/lineView5"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textViewTabletDays" />
 
 
-        </LinearLayout>
+        </RelativeLayout>
     </ScrollView>
 
     <Button

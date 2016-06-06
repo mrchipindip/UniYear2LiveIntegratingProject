@@ -14,11 +14,21 @@ import android.widget.EditText;
 
 public class Setup3Activity extends AppCompatActivity {
 
-    // Change
+
     //private EditText editPeakFlow   = null;
     private Button buttonUpdate;
     private Button buttonNext;
     private Button buttonPrevious;
+
+    private EditText editDrName;
+    private EditText editDrNo;
+    private EditText editOutOfHoursName;
+    private EditText editOutOfHoursNo;
+
+    private String drName;
+    private String drNo; // James Bond lol
+    private String outOfHoursName;
+    private String outOfHoursNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +44,11 @@ public class Setup3Activity extends AppCompatActivity {
         buttonNext = (Button)findViewById(R.id.buttonNext);
         buttonPrevious = (Button)findViewById(R.id.buttonPrevious);
 
+        editDrName = (EditText) findViewById(R.id.editTextGPName);
+        editDrNo = (EditText) findViewById(R.id.editTextGPPhone);
+        editOutOfHoursName = (EditText) findViewById(R.id.editTextOoHName);
+        editOutOfHoursNo = (EditText) findViewById(R.id.editTextOoHNumber);
+
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
         // Editing setup mode
@@ -41,6 +56,11 @@ public class Setup3Activity extends AppCompatActivity {
             // Enable up button and use non-numbered activity title
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle(getResources().getString(R.string.title_activity_setup3_done));
+
+            editDrName.setText(sharedPrefs.getString("DrName",""));
+            editDrNo.setText(sharedPrefs.getString("DrNo",""));
+            editOutOfHoursName.setText(sharedPrefs.getString("OutOfHoursName",""));
+            editOutOfHoursNo.setText(sharedPrefs.getString("OutOfHoursNo",""));
 
             // Show submit button only
             buttonNext.setVisibility(View.INVISIBLE);
@@ -52,27 +72,24 @@ public class Setup3Activity extends AppCompatActivity {
             buttonUpdate.setVisibility(View.INVISIBLE);
         }
 
-        //int peak = (sharedPrefs.getInt("Peak", 0));
-        //editPeakFlow.setText("" + peak);
-
     }
 
     // Overriding the back key, for first-time setup
-    @Override
-    public void onBackPressed() {
-
-        // if the app is set up already, go back like normal
-        if(isSetup()){
-            super.onBackPressed();
-        }
-        // otherwise exit
-        else{
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-        }
-    }
+//    @Override
+//    public void onBackPressed() {
+//
+//        // if the app is set up already, go back like normal
+//        if(isSetup()){
+//            super.onBackPressed();
+//        }
+//        // otherwise exit
+//        else{
+//            Intent intent = new Intent(Intent.ACTION_MAIN);
+//            intent.addCategory(Intent.CATEGORY_HOME);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(intent);
+//        }
+//    }
 
     // Function checks if the app is setup of not, by whether the final submit button has been pressed
     public Boolean isSetup(){
@@ -89,6 +106,8 @@ public class Setup3Activity extends AppCompatActivity {
 
     // Go to next page
     public void nextPage(View view){
+        saveData();
+
         Intent intent = new Intent(this, Setup4Activity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.push_right_in, R.anim.push_left_out);
@@ -114,10 +133,45 @@ public class Setup3Activity extends AppCompatActivity {
 
         SharedPreferences.Editor editor = sharedPrefs.edit();
 
-        // Save something
+        // Validate and save Dr name
+        String tempDrName;
+        if(editDrName.getText().toString() != null && editDrName.getText().toString() != "") {
+            tempDrName = editDrName.getText().toString();
+        } else{
+            tempDrName = "";
+        }
+        editor.putString("DrName", tempDrName);
+
+        // Validate and save Dr no
+        String tempDrNo;
+        if(editDrNo.getText().toString() != null && editDrNo.getText().toString() != "") {
+            tempDrNo = editDrNo.getText().toString();
+        } else{
+            tempDrNo = "";
+        }
+        editor.putString("DrNo", tempDrNo);
+
+
+        // Validate and save OoH name
+        String tempOName;
+        if(editOutOfHoursName.getText().toString() != null && editOutOfHoursName.getText().toString() != "") {
+            tempOName = editOutOfHoursName.getText().toString();
+        } else{
+            tempOName = "";
+        }
+        editor.putString("OutOfHoursName", tempOName);
+
+        // Validate and save OoH no
+        String tempONo;
+        if(editOutOfHoursNo.getText().toString() != null && editOutOfHoursNo.getText().toString() != "") {
+            tempONo = editOutOfHoursNo.getText().toString();
+        } else{
+            tempONo = "";
+        }
+        editor.putString("OutOfHoursNo", tempONo);
+
 
         editor.apply();
-
     }
 
 }

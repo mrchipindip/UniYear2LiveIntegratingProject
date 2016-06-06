@@ -43,31 +43,34 @@
             </TableRow>
 
             <TableRow>
-                <Button
+                <android.support.v7.widget.AppCompatButton
                     android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_height="75dp"
                     android:text="@string/trigger_animals"
                     android:id="@+id/buttonAnimal"
+                    android:textAllCaps="false"
                     android:layout_gravity="center_vertical"
-                    android:onClick="buttonToggle"
+                    android:onClick="clickAnimal"
                     />
 
-                <Button
+                <android.support.v7.widget.AppCompatButton
                     android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_height="75dp"
                     android:text="@string/trigger_dust"
                     android:id="@+id/buttonDust"
+                    android:textAllCaps="false"
                     android:layout_gravity="center_vertical"
-                    android:onClick="buttonToggle"
+                    android:onClick="clickDust"
                     />
 
-                <Button
+                <android.support.v7.widget.AppCompatButton
                     android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_height="75dp"
                     android:text="@string/trigger_emotion"
                     android:id="@+id/buttonEmotion"
+                    android:textAllCaps="false"
                     android:layout_gravity="center_vertical"
-                    android:onClick="buttonToggle"
+                    android:onClick="clickEmotion"
                     />
             </TableRow>
 
@@ -97,31 +100,34 @@
             -->
 
             <TableRow>
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="75dp"
                 android:text="@string/trigger_exercise"
                 android:id="@+id/buttonExercise"
+                android:textAllCaps="false"
                 android:layout_gravity="center_vertical"
-                android:onClick="buttonToggle"
+                android:onClick="clickExercise"
                 />
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="75dp"
                 android:text="@string/trigger_foods"
                 android:id="@+id/buttonFoods"
+                android:textAllCaps="false"
                 android:layout_gravity="center_vertical"
-                android:onClick="buttonToggle"
+                android:onClick="clickFood"
             />
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="75dp"
                 android:text="@string/trigger_pollen"
                 android:id="@+id/buttonPollen"
+                android:textAllCaps="false"
                 android:layout_gravity="center_vertical"
-                android:onClick="buttonToggle"
+                android:onClick="clickPollen"
             />
 
             </TableRow>
@@ -154,92 +160,142 @@
             -->
 
             <TableRow>
-                <Button
+                <android.support.v7.widget.AppCompatButton
                     android:layout_width="0dp"
-                    android:layout_height="100dp"
+                    android:layout_height="75dp"
                     android:text="@string/trigger_smoke"
                     android:id="@+id/buttonSmoke"
+                    android:textAllCaps="false"
                     android:layout_gravity="center_vertical"
-                    android:onClick="buttonToggle"
+                    android:onClick="clickSmoke"
                     />
 
-                <Button
+                <android.support.v7.widget.AppCompatButton
                     android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_height="75dp"
                     android:text="@string/trigger_stress"
                     android:id="@+id/buttonStress"
+                    android:textAllCaps="false"
                     android:layout_gravity="center_vertical"
-                    android:onClick="buttonToggle"
+                    android:onClick="clickStress"
                     />
 
-                <Button
+                <android.support.v7.widget.AppCompatButton
                     android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_height="75dp"
                     android:text="@string/trigger_odour"
                     android:id="@+id/buttonOdours"
+                    android:textAllCaps="false"
                     android:layout_gravity="center_vertical"
-                    android:onClick="buttonToggle"
+                    android:onClick="clickOdour"
                     />
             </TableRow>
 
             <TableRow>
-                <TextView
+                <android.support.v7.widget.AppCompatButton
                     android:layout_width="100dp"
-                    android:layout_height="0dp"
-                    android:text="@string/trigger_smoke"
-                    android:id="@+id/textViewSmoke"
-                    />
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="0dp"
-                    android:text="@string/trigger_stress"
-                    android:id="@+id/textViewStress"
-                    />
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="0dp"
-                    android:text="@string/trigger_odour"
-                    android:id="@+id/textViewOdours"
-                    />
-            </TableRow>
-
-            <TableRow>
-                <Button
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_height="75dp"
                     android:text="@string/trigger_virus"
                     android:id="@+id/buttonVirus"
-                    android:layout_gravity="center_vertical" />
+                    android:textAllCaps="false"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="clickVirus"/>
 
-                <Button
+                <android.support.v7.widget.AppCompatButton
                     android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_height="75dp"
                     android:text="@string/trigger_weather"
                     android:id="@+id/buttonWeather"
-                    android:layout_gravity="center_vertical" />
+                    android:textAllCaps="false"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="clickWeather"/>
 
+                <android.support.v7.widget.AppCompatButton
+                    android:layout_width="100dp"
+                    android:layout_height="75dp"
+                    android:text="@string/trigger_weather"
+                    android:id="@+id/buttonHidden"
+                    android:textAllCaps="false"
+                    android:visibility="invisible"
+                    android:layout_gravity="center_vertical" />
             </TableRow>
 
             <TableRow>
-                <TextView
+                <android.support.v7.widget.AppCompatButton
                     android:layout_width="100dp"
-                    android:layout_height="0dp"
-                    android:text="@string/trigger_virus"
-                    android:id="@+id/textViewVirus"
-                    android:onClick="buttonToggle"
-                    />
+                    android:layout_height="75dp"
+                    android:text="@string/trigger_custom"
+                    android:id="@+id/buttonC1"
+                    android:textAllCaps="false"
+                    android:onClick="clickC1"
+                    android:layout_gravity="center_vertical" />
 
-                <TextView
+                <android.support.v7.widget.AppCompatButton
                     android:layout_width="100dp"
-                    android:layout_height="0dp"
-                    android:text="@string/trigger_weather"
-                    android:id="@+id/textViewWeather"
-                    android:onClick="buttonToggle"
-                    />
+                    android:layout_height="75dp"
+                    android:text="@string/trigger_custom"
+                    android:id="@+id/buttonC2"
+                    android:textAllCaps="false"
+                    android:onClick="clickC2"
+                    android:layout_gravity="center_vertical" />
 
+                <android.support.v7.widget.AppCompatButton
+                    android:layout_width="100dp"
+                    android:layout_height="75dp"
+                    android:text="@string/trigger_custom"
+                    android:id="@+id/buttonC3"
+                    android:textAllCaps="false"
+                    android:onClick="clickC3"
+                    android:layout_gravity="center_vertical" />
             </TableRow>
+
+            <TableRow>
+                <android.support.v7.widget.AppCompatButton
+                    android:layout_width="100dp"
+                    android:layout_height="75dp"
+                    android:text="@string/trigger_custom"
+                    android:id="@+id/buttonC4"
+                    android:textAllCaps="false"
+                    android:onClick="clickC4"
+                    android:layout_gravity="center_vertical" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:layout_width="100dp"
+                    android:layout_height="75dp"
+                    android:text="@string/trigger_custom"
+                    android:id="@+id/buttonC5"
+                    android:textAllCaps="false"
+                    android:onClick="clickC5"
+                    android:layout_gravity="center_vertical" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:layout_width="100dp"
+                    android:layout_height="75dp"
+                    android:text="@string/trigger_custom"
+                    android:id="@+id/buttonC6"
+                    android:textAllCaps="false"
+                    android:onClick="clickC6"
+                    android:layout_gravity="center_vertical" />
+            </TableRow>
+
+            <!--<TableRow>-->
+                <!--<TextView-->
+                    <!--android:layout_width="100dp"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:text="@string/trigger_virus"-->
+                    <!--android:id="@+id/textViewVirus"-->
+                    <!--android:onClick="buttonToggle"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="100dp"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:text="@string/trigger_weather"-->
+                    <!--android:id="@+id/textViewWeather"-->
+                    <!--android:onClick="buttonToggle"-->
+                    <!--/>-->
+
+            <!--</TableRow>-->
 
         </TableLayout>
 
