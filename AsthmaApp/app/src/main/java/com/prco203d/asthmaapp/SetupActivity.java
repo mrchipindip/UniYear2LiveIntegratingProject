@@ -119,7 +119,12 @@ public class SetupActivity extends AppCompatActivity {
             java.text.DateFormat formatter = java.text.DateFormat.getDateInstance(java.text.DateFormat.LONG); // one of SHORT, MEDIUM, LONG, FULL, or DEFAULT
             formatter.setTimeZone(displayCalendar.getTimeZone());
             String formattedDoB = formatter.format(displayCalendar.getTime());
-            dobDisplay.setText(formattedDoB);
+            if(year == 0){
+                dobDisplay.setText("-");
+            }
+            else{
+                dobDisplay.setText(formattedDoB);
+            }
 
             String gender = sharedPrefs.getString("Sex", "--");
             Log.d("PF Debug", gender);
@@ -135,7 +140,13 @@ public class SetupActivity extends AppCompatActivity {
 
             heightInCM = sharedPrefs.getInt("HeightCM", 0);
             String height = "" + sharedPrefs.getInt("HeightCM", 0) +"cm";
-            heightDisplay.setText(height);
+
+            if(heightInCM == 0){
+                heightDisplay.setText("-");
+            }else{
+                heightDisplay.setText(height);
+            }
+
         }
 
         // First time setup mode

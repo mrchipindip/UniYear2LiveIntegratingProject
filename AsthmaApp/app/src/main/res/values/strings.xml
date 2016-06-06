@@ -108,7 +108,7 @@
     <string name="setup1_gender">Sex:</string>
     <string name="setup1_height">Height:</string>
 
-    <string name="setup_disclaimer">Welcome to Asthma Aid! Though care has been taken to provide information as accurately as possible, this app should not be used to replace professional medical advice. \nInformation you provide to the app is not shared with any third party, and can be edited or deleted at any time from My Data on the main menu.</string>
+    <string name="setup_disclaimer">Welcome to Asthma Aid! Though care has been taken to provide information as accurately as possible, this app should not be used to replace professional medical advice. \n\nInformation you provide to the app is not shared with any third party, and can be edited or deleted at any time from My Data on the main menu.</string>
 
     <string name="setup1_female">Female</string>
     <string name="setup1_male">Male</string>
