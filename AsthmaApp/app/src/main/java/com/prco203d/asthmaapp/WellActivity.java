@@ -60,8 +60,8 @@ public class WellActivity extends AppCompatActivity implements View.OnClickListe
         peak = (sharedPrefs.getInt("Peak", 0));
         topLeftButton.setText("" + peak);
 
-        preventerAm = (sharedPrefs.getInt("PreventerAm", 0));
-        preventerPM = (sharedPrefs.getInt("PreventerPm", 0));
+        preventerAm = (sharedPrefs.getInt("PreventerAM", 0));
+        preventerPM = (sharedPrefs.getInt("PreventerPM", 0));
         preventerInhaler = sharedPrefs.getString("PreventerName", "Not Given");
 
         bottomLeftButton.setText("In the morning you should take " + preventerAm + " puffs of your " + preventerInhaler + " inhaler.");
