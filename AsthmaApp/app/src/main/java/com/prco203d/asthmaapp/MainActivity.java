@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnKeyListener {
 
@@ -34,6 +35,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView FeelingTodayTextView = null;
     public int peakFlowToday;
     private String name;
+    private String savedPFValues;
+    private String savedPFDates;
+
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPrefs.edit();
+        editor.putString("PFValues", "this is a value");
+        editor.putString("PFDates", "this is a date");
+        editor.apply();
 
         Toolbar toolbar          = (Toolbar) findViewById(R.id.toolbar);
         submitButton             = (Button) findViewById(R.id.submitButton);
@@ -65,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, SetupActivity.class);
             startActivity(intent);
         }
+
 
     }
 
@@ -135,11 +145,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.submitButton:
-
+                addPFData();
             try {
                 peakFlowToday = Integer.valueOf(peakFlowVariableEditText.getText().toString());
+                SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPrefs.edit();
+                editor.putInt("Peak", peakFlowToday);
+                editor.apply();
                 submitButton.setEnabled(false);
                 EditButton.setEnabled(true);
+                addPFData();
                 Toast submitToast = Toast.makeText(this, "Peak flow submitted: " + peakFlowToday , Toast.LENGTH_LONG);
                 submitToast.setGravity(Gravity.TOP, -430, 430);
                 submitToast.show();
@@ -149,6 +164,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast noValueToast = Toast.makeText(this, R.string.no_value, Toast.LENGTH_LONG);
                 noValueToast.setGravity(Gravity.TOP, -430, 430);
                 noValueToast.show();
+                addPFData();
             }
                 break;
 
@@ -165,6 +181,78 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
         }
+    }
+
+    public Integer GetTodaysPF()
+    {
+        return peakFlowToday;
+    }
+    void addPFData()
+    {
+//        //peakFlowToday
+        SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPrefs.edit();
+        editor.putString("PFValues", "this is a value");
+        editor.putString("PFDates", "this is a date");
+        editor.apply();
+//
+//        //check if the prefs are present already
+//        if (sharedPrefs.contains("PFValues") && sharedPrefs.contains("PFDates"))
+//        {
+//
+//
+//            SharedPreferences.Editor editor = sharedPrefs.edit();
+//            //if they are then append the new information to the current pref
+//            savedPFValues = sharedPrefs.getString("PFValues", "");
+//            savedPFDates = sharedPrefs.getString("PFDates", "");
+//
+//
+//
+//            savedPFValues = new StringBuilder(savedPFValues).append("," + Integer.toString(peakFlowToday)).toString();
+//            editor.putString("PFValues", savedPFValues);
+//            savedPFDates = new StringBuilder(savedPFDates).append("," + Long.toString(new java.util.Date().getTime())).toString();
+//            editor.putString("PFDates", savedPFDates);
+//
+//            editor.apply();
+//        }
+//        else
+//        {
+//            System.out.println("...................else clause initialted....................");
+//            //if not create the strings and commit them to the pref
+//            savedPFValues = Integer.toString(peakFlowToday);
+//
+//            SharedPreferences.Editor editor = sharedPrefs.edit();
+//
+//            editor.putString("PFValues", savedPFValues);
+//            System.out.println(savedPFValues);
+//
+//            savedPFDates = Long.toString(new java.util.Date().getTime());
+//            editor.putString("PFDates", savedPFDates);
+//            System.out.println(savedPFDates);
+//            editor.apply();
+//
+//            //cheekyTestMethod();
+//
+//        }
+    }
+
+    void cheekyTestMethod()
+    {
+        savedPFValues = new StringBuilder(savedPFValues).append("," + Integer.toString(400)).toString();
+        savedPFDates = new StringBuilder(savedPFDates).append("," + Long.toString(new java.util.Date().getTime())).toString();
+
+        savedPFValues = new StringBuilder(savedPFValues).append("," + Integer.toString(450)).toString();
+        savedPFDates = new StringBuilder(savedPFDates).append("," + Long.toString(new java.util.Date().getTime())).toString();
+
+        savedPFValues = new StringBuilder(savedPFValues).append("," + Integer.toString(500)).toString();
+        savedPFDates = new StringBuilder(savedPFDates).append("," + Long.toString(new java.util.Date().getTime())).toString();
+
+        savedPFValues = new StringBuilder(savedPFValues).append("," + Integer.toString(550)).toString();
+        savedPFDates = new StringBuilder(savedPFDates).append("," + Long.toString(new java.util.Date().getTime())).toString();
+
+        editor.putString("PFDates", savedPFDates);
+        editor.putString("PFValues", savedPFValues);
+        editor.commit();
     }
 
     @Override

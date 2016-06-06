@@ -2,7 +2,10 @@ package com.prco203d.asthmaapp;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
+import android.widget.DatePicker;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -40,10 +44,17 @@ import java.util.List;
 import java.util.Set;
 import java.util.StringTokenizer;
 
+import cn.aigestudio.datepicker.bizs.calendars.DPCManager;
+import cn.aigestudio.datepicker.bizs.decors.DPDecor;
+
 public class GraphAndCalendarActivity extends AppCompatActivity {
 
     ArrayList<Integer> pfValues = new ArrayList<Integer>();
     ArrayList<Long> pfDates = new ArrayList<Long>();
+    SharedPreferences.Editor editor;
+
+    String savedPFValues;
+    String savedPFDates;
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -53,12 +64,34 @@ public class GraphAndCalendarActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
         buildGraph();
+        DatePicker picker = (DatePicker) findViewById(R.id.main_dp);
+
+       // manageCalendar();
         //buildCalendar();
     }
 
-
+//    void manageCalendar()
+//    {
+//        List<String> tmp = new ArrayList<>();
+//        tmp.add("2016-6-1");
+//        tmp.add("2016-6-8");
+//        tmp.add("2016-6-16");
+//        DPCManager.getInstance().setDecorBG(tmp);
+//
+//        DatePicker picker = (DatePicker) findViewById(R.id.main_dp);
+//        picker.s
+//        picker.setDPDecor(new DPDecor() {
+//            @Override
+//            public void drawDecorBG(Canvas canvas, Rect rect, Paint paint) {
+//                paint.setColor(Color.RED);
+//                canvas.drawCircle(rect.centerX(), rect.centerY(), rect.width() / 2F, paint);
+//            }
+//        });
+//    }
     void buildGraph() {
 
         setContentView(R.layout.activity_graph_and_calendar);
@@ -68,27 +101,50 @@ public class GraphAndCalendarActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
+        //if (MainActivity.class.)
+
         Calendar calendar = Calendar.getInstance();
         Date d1 = calendar.getTime();
-        calendar.add(Calendar.DATE, 1);
+        calendar.add(Calendar.DATE, -1);
         Date d2 = calendar.getTime();
-        calendar.add(Calendar.DATE, 1);
+        calendar.add(Calendar.DATE, -1);
+        //System.out.println(d2);
         Date d3 = calendar.getTime();
-        calendar.add(Calendar.DATE, 1);
+        calendar.add(Calendar.DATE, -1);
         Date d4 = calendar.getTime();
-        calendar.add(Calendar.DATE, 1);
+        calendar.add(Calendar.DATE, -1);
         Date d5 = calendar.getTime();
 
         GraphView graph = (GraphView) findViewById(R.id.PFGraph);
+//        savedPFValues = "300";
+//        savedPFDates = Long.toString(new java.util.Date().getTime());
+//        savedPFValues = new StringBuilder(savedPFValues).append("," + Integer.toString(400)).toString();
+//        savedPFDates = new StringBuilder(savedPFDates).append("," + Long.toString(new java.util.Date().getTime())).toString();
+//
+//        savedPFValues = new StringBuilder(savedPFValues).append("," + Integer.toString(450)).toString();
+//        savedPFDates = new StringBuilder(savedPFDates).append("," + Long.toString(new java.util.Date().getTime())).toString();
+//
+//        savedPFValues = new StringBuilder(savedPFValues).append("," + Integer.toString(500)).toString();
+//        savedPFDates = new StringBuilder(savedPFDates).append("," + Long.toString(new java.util.Date().getTime())).toString();
+//
+//        savedPFValues = new StringBuilder(savedPFValues).append("," + Integer.toString(550)).toString();
+//        savedPFDates = new StringBuilder(savedPFDates).append("," + Long.toString(new java.util.Date().getTime())).toString();
+//
+//
+//        editor.putString("PFDates", savedPFDates);
+//        editor.putString("PFValues", savedPFValues);
+//        editor.commit();
 
+        //openPFSharedPref();
+        //loadGraphValues(pfValues, pfDates);
             LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]{
-                    new DataPoint(d1, 300),
-                    new DataPoint(d2, 325),
+                    new DataPoint(d5, 300),
+                    new DataPoint(d4, 325),
                     new DataPoint(d3, 300),
-                    new DataPoint(d4, 375),
-                    new DataPoint(d5, 400)
+                    new DataPoint(d2, 375),
+                    new DataPoint(d1, 400)
             });
-            graph.addSeries(series);
+           graph.addSeries(series);
         //currently adding value passing
 
 
@@ -114,10 +170,13 @@ public class GraphAndCalendarActivity extends AppCompatActivity {
         pfDates.clear();
 
         SharedPreferences sharedPrefs = getSharedPreferences("UserData", Context.MODE_PRIVATE);
-
+        System.out.println("wsorking123");
+        System.out.println(sharedPrefs.getBoolean("isSetup", false));
         String savedPFValues = sharedPrefs.getString("PFValues", "");
+        System.out.println(savedPFValues);
         StringTokenizer st = new StringTokenizer(savedPFValues, ",");
-        String savedPFDate = sharedPrefs.getString("PFValues", "");
+        String savedPFDate = sharedPrefs.getString("PFDates", "");
+        System.out.println(savedPFDates);
         StringTokenizer stDate = new StringTokenizer(savedPFDate, ",");
 
         int numValues = st.countTokens();
@@ -148,7 +207,7 @@ public class GraphAndCalendarActivity extends AppCompatActivity {
             graph.addSeries(series);
         }
     }
-
+//
 //    void buildCalendar()
 //    {
 //        Calendar nextYear = Calendar.getInstance();
