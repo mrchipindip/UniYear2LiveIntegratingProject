@@ -67,6 +67,7 @@ public class NavDrawerActivity extends AppCompatActivity
         // Check if setup screen has been encountered
         if((sharedPrefs.getBoolean("isSetup", false) == false)){
             Intent intent = new Intent(this, SetupActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
     }

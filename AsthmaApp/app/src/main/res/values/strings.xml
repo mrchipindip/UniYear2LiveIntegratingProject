@@ -208,7 +208,7 @@
     <string name="my_data_s2_title">Peak Flow</string>
     <string name="my_data_s2_desc">Personal best, warning and critical peak flow levels.</string>
     <string name="my_data_s3_title">Contact Details</string>
-    <string name="my_data_s3_desc">GP and out of hours contact details, appointment date.</string>
+    <string name="my_data_s3_desc">GP and out of hours names and contact details.</string>
     <string name="my_data_s4_title">Inhalers &amp; Medication</string>
     <string name="my_data_s4_desc">Preventer and reliever names, doses and rescue pack.</string>
     <string name="my_data_s5_title">Triggers</string>
